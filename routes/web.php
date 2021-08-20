@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AccountTable;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DetailController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PersonalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/admin',[AdminController::class,'index']);
+
+Route::get('/admin/table',[AccountTable::class,'index']);
+
+Route::get('/index',[IndexController::class,'index']);
+
+Route::get('/personal',[PersonalController::class,'index']);
+
+Route::get('/detail',[DetailController::class,'index']);
