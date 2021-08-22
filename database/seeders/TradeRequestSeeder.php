@@ -24,8 +24,8 @@ class TradeRequestSeeder extends Seeder
                 'account_id' => 2,
                 'messenger_request' => 'Trade with me',
                 'status_request' => 1,
-                'create_at' => Carbon::now()->subDay(5),
-                'update_at' => Carbon::now()->subDay(1)
+                'created_at' => Carbon::now()->subDay(5),
+                'updated_at' => Carbon::now()->subDay(1)
             ],
             [
                 'request_id' => 2,
@@ -34,8 +34,8 @@ class TradeRequestSeeder extends Seeder
                 'account_id' => 2,
                 'messenger_request' => 'Trade with me',
                 'status_request' => 1,
-                'create_at' => Carbon::now()->subDay(2),
-                'update_at' => Carbon::now()->subDay(1)
+                'created_at' => Carbon::now()->subDay(2),
+                'updated_at' => Carbon::now()->subDay(1)
             ],
             [
                 'request_id' => 3,
@@ -44,8 +44,8 @@ class TradeRequestSeeder extends Seeder
                 'account_id' => 2,
                 'messenger_request' => 'Trade with me',
                 'status_request' => 1,
-                'create_at' => Carbon::now()->subDay(4),
-                'update_at' => Carbon::now()->subDay(1)
+                'created_at' => Carbon::now()->subDay(4),
+                'updated_at' => Carbon::now()->subDay(1)
             ],
             [
                 'request_id' => 4,
@@ -54,8 +54,8 @@ class TradeRequestSeeder extends Seeder
                 'account_id' => 2,
                 'messenger_request' => 'Trade with me',
                 'status_request' => 1,
-                'create_at' => Carbon::now()->subDay(7),
-                'update_at' => Carbon::now()->subDay(1)
+                'created_at' => Carbon::now()->subDay(7),
+                'updated_at' => Carbon::now()->subDay(1)
             ],
         ]);
     }

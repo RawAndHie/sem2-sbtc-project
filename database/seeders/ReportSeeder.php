@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class ReportSeeder extends Seeder
@@ -18,42 +19,41 @@ class ReportSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('reports')->insert([
             [
                 'report_id' => 1,
-                'account_id' =>1,
+                'account_id' => 1,
                 'messenger_report' => 'tố cáo abc',
-                'create_at' => Carbon::now(),
-                'update_at' => Carbon::now(),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ],
             [
-            'report_id' => 2,
-            'account_id' =>2,
-            'messenger_report' => 'tố cáo abc',
-                'create_at' => Carbon::now(),
-                'update_at' => Carbon::now(),
+                'report_id' => 2,
+                'account_id' => 2,
+                'messenger_report' => 'tố cáo abc',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ],
             [
                 'report_id' => 3,
-                'account_id' =>3,
+                'account_id' => 3,
                 'messenger_report' => 'tố cáo abc',
-                'create_at' => Carbon::now(),
-                'update_at' => Carbon::now(),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ],
             [
                 'report_id' => 4,
-                'account_id' =>4,
+                'account_id' => 4,
                 'messenger_report' => 'tố cáo abc',
-                'create_at' => Carbon::now(),
-                'update_at' => Carbon::now(),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ],
             [
                 'report_id' => 5,
-                'account_id' =>5,
+                'account_id' => 5,
                 'messenger_report' => 'tố cáo abc',
-                'create_at' => Carbon::now(),
-                'update_at' => Carbon::now(),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ],
 
         ]);
-
 
 
     }

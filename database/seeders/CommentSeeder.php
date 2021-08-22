@@ -22,40 +22,40 @@ class CommentSeeder extends Seeder
                 'trade_id' => 1,
                 'account_id' => 5,
                 'content' => 'Ông rảnh lúc mấy giờ ?',
-                'create_at' => Carbon::create(2021, 8, 21, 21, 40, 16)->diffForHumans(Carbon::now()),
-                'update_at' => Carbon::now()
+                'created_at' => Carbon::create(2021, 8, 21, 21, 40, 16), //->diffForHumans(Carbon::now()),
+                'updated_at' => Carbon::now()
             ],
             [
                 'comment_id' => 2,
                 'trade_id' => 3,
                 'account_id' => 5,
                 'content' => 'Đổi đồ khác được không bạn ?',
-                'create_at' => Carbon::create(2021, 8, 21, 17, 40, 16)->diffForHumans(Carbon::now()),
-                'update_at' => Carbon::now()
+                'created_at' => Carbon::create(2021, 8, 21, 17, 40, 16), //->diffForHumans(Carbon::now()),
+                'updated_at' => Carbon::now()
             ],
             [
                 'comment_id' => 3,
                 'trade_id' => 4,
                 'account_id' => 5,
                 'content' => 'Ông rảnh lúc mấy giờ ?',
-                'create_at' => Carbon::create(2021, 8, 21, 15, 40, 16)->diffForHumans(Carbon::now()),
-                'update_at' => Carbon::now()
+                'created_at' => Carbon::create(2021, 8, 21, 15, 40, 16), //, //->diffForHumans(Carbon::now()),
+                'updated_at' => Carbon::now()
             ],
             [
                 'comment_id' => 4,
                 'trade_id' => 2,
                 'account_id' => 5,
                 'content' => 'Ông rảnh lúc mấy giờ ?',
-                'create_at' => Carbon::create(2021, 8, 22, 21, 40, 16)->diffForHumans(Carbon::now()),
-                'update_at' => Carbon::now()
+                'created_at' => Carbon::create(2021, 8, 22, 21, 40, 16), //->diffForHumans(Carbon::now()),
+                'updated_at' => Carbon::now()
             ],
             [
                 'comment_id' => 5,
                 'trade_id' => 1,
                 'account_id' => 5,
                 'content' => 'Ông rảnh lúc mấy giờ ?',
-                'create_at' => Carbon::create(2021, 8, 21, 11, 40, 16)->diffForHumans(Carbon::now()),
-                'update_at' => Carbon::now()
+                'created_at' => Carbon::create(2021, 8, 21, 11, 40, 16), //->diffForHumans(Carbon::now()),
+                'updated_at' => Carbon::now()
             ]
 
 
