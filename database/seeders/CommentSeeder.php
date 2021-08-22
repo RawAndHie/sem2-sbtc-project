@@ -58,6 +58,7 @@ class CommentSeeder extends Seeder
                 'update_at' => Carbon::now()
             ]
 
+
         ]);
     }
 }
