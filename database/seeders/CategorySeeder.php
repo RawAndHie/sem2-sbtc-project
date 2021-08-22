@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 
 class CategorySeeder extends Seeder
 {
@@ -19,22 +20,25 @@ class CategorySeeder extends Seeder
 
         \Illuminate\Support\Facades\DB::table('categories')->insert([
             [
-                'id' => 1,
-                'name' => 'Quần thời trang nam',
-                'created_at' => \Illuminate\Support\Carbon::now()->addDays(-10),
-                'updated_at' => \Illuminate\Support\Carbon::now()->addDays(-9),
+                'category_id' => 1,
+                'category_name' => 'Đồ điện tử',
+                'create_by_id' => 1,
+                'created_at' => Carbon::now()->subDay(10),
+                'updated_at' => Carbon::now()->subDay(9),
             ],
             [
-                'id' => 2,
-                'name' => 'Quần thời trang nữ',
-                'created_at' => \Illuminate\Support\Carbon::now()->addDays(-8),
-                'updated_at' => \Illuminate\Support\Carbon::now()->addDays(-8),
+                'category_id' => 2,
+                'category_name' => 'Trang sức cũ',
+                'create_by_id' => 1,
+                'created_at' => Carbon::now()->subDay(8),
+                'updated_at' => Carbon::now()->subDay(8),
             ],
             [
-                'id' => 3,
-                'name' => 'Quần thời trang trẻ em',
-                'created_at' => \Illuminate\Support\Carbon::now()->addDays(-7),
-                'updated_at' => \Illuminate\Support\Carbon::now()->addDays(-6),
+                'category_id' => 3,
+                'category_name' => 'Các loại linh tinh',
+                'create_by_id' => 1,
+                'created_at' => Carbon::now()->subDay(7),
+                'updated_at' => Carbon::now()->subDay(6),
             ],
         ]);
     }

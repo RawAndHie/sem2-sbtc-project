@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class AccountSeeder extends Seeder
@@ -27,7 +28,7 @@ class AccountSeeder extends Seeder
                 'image_avatar' => 'https://png.pngtree.com/png-clipart/20190903/original/pngtree-couple-boy-cute-avatar-png-image_4445471.jpg',
                 'image_id_1' => 'https://cdn.luatminhkhue.vn/lmk/articles/12/61370/huong-dan-thu-tuc-cap-lai-chung-minh-thu--cmnd---the-can-cuoc-khi-bi-mat-theo-quy-dinh-moi-nhat---61370.jpg',
                 'image_id_2' => 'https://cs.vtcmobile.vn/hc/article_attachments/115009287188/CMNDsau.jpg   ',
-                'id_number' => '1244134324'
+                'id_number' => '1244134324',
             ],
             [
                 'account_id' => 2,
@@ -69,7 +70,7 @@ class AccountSeeder extends Seeder
                 'id_number' => '1244134324'
             ],
             [
-                'account_id' => 1,
+                'account_id' => 5,
                 'username' => 'manhtri',
                 'password' => '2321',
                 'gmail' => 'dinhmanhtri@gmail.com',
