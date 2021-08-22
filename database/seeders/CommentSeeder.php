@@ -57,6 +57,7 @@ class CommentSeeder extends Seeder
                 'create_at' => Carbon::create(2021, 8, 21, 11, 40, 16)->diffForHumans(Carbon::now()),
                 'update_at' => Carbon::now()
             ]
+
         ]);
     }
 }
