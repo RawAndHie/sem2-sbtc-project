@@ -20,6 +20,7 @@ class TradeRequestSeeder extends Seeder
             [
                 'request_id' => 1,
                 'trade_id' => 2,
+                'trade_request_id' => 1,
                 'account_id' => 2,
                 'messenger_request' => 'Trade with me',
                 'status_request' => 1,
@@ -29,6 +30,7 @@ class TradeRequestSeeder extends Seeder
             [
                 'request_id' => 2,
                 'trade_id' => 1,
+                'trade_request_id' => 3,
                 'account_id' => 2,
                 'messenger_request' => 'Trade with me',
                 'status_request' => 1,
@@ -38,6 +40,7 @@ class TradeRequestSeeder extends Seeder
             [
                 'request_id' => 3,
                 'trade_id' => 2,
+                'trade_request_id' => 4,
                 'account_id' => 2,
                 'messenger_request' => 'Trade with me',
                 'status_request' => 1,
@@ -47,6 +50,7 @@ class TradeRequestSeeder extends Seeder
             [
                 'request_id' => 4,
                 'trade_id' => 1,
+                'trade_request_id' => 5,
                 'account_id' => 2,
                 'messenger_request' => 'Trade with me',
                 'status_request' => 1,
