@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Trade;
+use App\Models\AccountClient;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -13,7 +15,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('client.index');
+        $list = DB::table('trades');
+        $account = DB::table('account_clients');
+        return view('client.index',['list' => Trade::paginate(6)]);
     }
 
     /**
