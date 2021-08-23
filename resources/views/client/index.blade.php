@@ -43,60 +43,26 @@
                                 <h2 class="title">Tin nổi bật</h2>
                             </div>
                             <div class="list-item-sidebar">
-                                <div class="item-post">
-                                    <a href="#" class="item-image">
-                                        <img src="images/product-1.jpg" alt="">
-                                    </a>
-                                    <div class="item-info">
-                                        <h3>
-                                            <a href="#">Chính chủ bán nhà có sẵn hợp đồng cho thuê 35 triệu</a>
-                                        </h3>
-                                        <div class="price">
-                                            <p>
-                                                16.500 VNĐ
+                                @for($list = 0; $list <3 ; $list ++ )
+                                    <div class="item-post">
+                                        <a href="#" class="item-image">
+                                            <img src="{{ $item->image }}" style="max-width: 30%" alt="">
+                                        </a>
+                                        <div class="item-info">
+                                            <h3>
+                                                <a href="#"> {{ $item->title }} </a>
+                                            </h3>
+                                            <div class="price">
+                                                <p>
+                                                    {{ $item->content }}
+                                                </p>
+                                            </div>
+                                            <p class="location">
+                                                {{ $item->address }}
                                             </p>
                                         </div>
-                                        <p class="location">
-                                            Phường Linh Xuân, Quận Thủ Đức, TP Hồ Chí Minh
-                                        </p>
                                     </div>
-                                </div>
-                                <div class="item-post">
-                                    <a href="#" class="item-image">
-                                        <img src="images/product-1.jpg" alt="">
-                                    </a>
-                                    <div class="item-info">
-                                        <h3>
-                                            <a href="#">Chính chủ bán nhà có sẵn hợp đồng cho thuê 35 triệu</a>
-                                        </h3>
-                                        <div class="price">
-                                            <p>
-                                                16.500 VNĐ
-                                            </p>
-                                        </div>
-                                        <p class="location">
-                                            Phường Linh Xuân, Quận Thủ Đức, TP Hồ Chí Minh
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="item-post">
-                                    <a href="#" class="item-image">
-                                        <img src="images/product-1.jpg" alt="">
-                                    </a>
-                                    <div class="item-info">
-                                        <h3>
-                                            <a href="#">Chính chủ bán nhà có sẵn hợp đồng cho thuê 35 triệu</a>
-                                        </h3>
-                                        <div class="price">
-                                            <p>
-                                                16.500 VNĐ
-                                            </p>
-                                        </div>
-                                        <p class="location">
-                                            Phường Linh Xuân, Quận Thủ Đức, TP Hồ Chí Minh
-                                        </p>
-                                    </div>
-                                </div>
+                                @endfor
                             </div>
                         </div>
                     </div>
