@@ -209,9 +209,12 @@ main .main-right {
 .list-item-post .item-post img {
     display: block;
     margin: 0 auto;
-    height: 100%;
+    width: 150px;
+    height: 150px;
     -o-object-fit: cover;
     object-fit: cover;
+    background-position: center center;
+    background-size: cover;
 }
 
 .list-item-post .item-post .item-image {
@@ -236,23 +239,23 @@ main .main-right {
 .list-item-post .item-post .item-info h3 {
     margin-bottom: 5px;
     line-height: 20px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: normal;
 }
 
 .list-item-post .item-post .item-info h3 a {
-    color: #3c3241;
+    color: #40a691;
     text-decoration: none;
 }
 
 .list-item-post .item-post .item-info h3 a:hover {
-    color: #40a691;
+    color: #03e1ff;
     transition: .2s;
 }
 
 .list-item-post .item-post .item-info .price p {
     font-size: 16px;
-    color: #40a691;
+    color: black;
     font-weight: 600;
     margin: 0;
     padding: 0;
