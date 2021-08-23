@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AccountTable;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PersonalController;
@@ -27,3 +29,10 @@ Route::get('/index',[IndexController::class,'index']);
 Route::get('/personal',[PersonalController::class,'index']);
 
 Route::get('/detail',[DetailController::class,'index']);
+
+Route::get('/contact-us',[ContactUsController::class,'index']);
+
+Route::get('/about-us',[AboutUsController::class,'index']);
+
+
+
