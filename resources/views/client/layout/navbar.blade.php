@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <div class="col-lg-1 col-md-3 col-6">
                 <div class="logo-header">
-                    <a href="/index">
+                    <a href="/">
                         <img src="images/logo.png" alt="" height="140" width="10%"  >
                     </a>
                 </div>

@@ -30,7 +30,7 @@ Route::get('/admin/account-pending',[AccountPendingController::class,'index']);
 
 Route::get('/admin/post-pending',[PostPendingController::class,'index']);
 
-Route::get('/index',[IndexController::class,'index']);
+Route::get('/',[IndexController::class,'index']);
 
 Route::get('/personal',[PersonalController::class,'index']);
 
