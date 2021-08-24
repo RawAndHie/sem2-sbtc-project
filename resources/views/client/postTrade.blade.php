@@ -1,4 +1,178 @@
 @extends('client.layout.master')
 @section('content')
-    <h1> Form đăng bài</h1>
+    <main class="main">
+        <style xmlns="http://www.w3.org/1999/html">
+            span.txt-strike, span.txt-price-ads {
+                float: right
+            }
+
+            .div-error-cke .ck.ck-editor__main > .ck-editor__editable {
+                background-color: rgba(255, 0, 0, 0.05);
+            }
+
+            .ck.ck-editor__main > .ck-editor__editable {
+                min-height: 200px;
+            }
+
+            .txt-greenl {
+                color: var(--primary-1) !important;
+                font-style: normal !important;
+                padding-left: 5px;
+            }
+        </style>
+        <section class="post-information-area">
+            <div class="area-inner">
+                <h1 class="title-page">Đăng tin</h1>
+                <div class="form-posting-area">
+                    <form action="/save-post-information.html" method="post" id="save_post"
+                          class="form-posting form-horizontal">
+                        <fieldset class="form-posting-inner">
+                            <!-- Multiple Radios -->
+                            <div class="form-group row">
+                                <input type="hidden" name="_id" value="">
+                                <input type="hidden" name="csrf_token">
+                                <label class="col-md-12 control-label" for="parent_id">Chọn thông tin (<span
+                                        style="color: red">*</span>):</label>
+                                <div class="col-md-4" id="div_parent_id">
+                                    <select required id="parent_id" name="parent_id" class="form-control">
+                                        <option value="" hidden disabled selected>Chọn danh mục</option>
+                                        <option value="74">Đồ điện tử</option>
+                                        <option value="73">Trang sức cũ</option>
+                                        <option value="59">Các loại linh tinh</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Expand Value-->
+                            <div class="form-group row" id="expand-value">
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group row">
+                                <label class="col-md-12 control-label" for="title">Tiêu đề (<span
+                                        style="color: red">*</span>):</label>
+                                <div class="col-md-12">
+                                    <input maxlength="70" required id="title" name="title" type="text" placeholder=""
+                                           class="form-control input-md" value="">
+                                </div>
+                            </div>
+
+                            <!-- Select Basic -->
+                            <div class="form-group row">
+                                <label class="col-md-12 control-label">Địa chỉ (<span
+                                        style="color: red">*</span>):</label>
+                                <div class="col-md-4">
+                                    <select required id="location_city_id" name="location_city_id" class="form-control">
+                                        <option value="" hidden disabled selected>Chọn Tỉnh/TP</option>
+                                        <option value="1" >Hà Nội</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <select required name="location_city_id" class="form-control">
+                                        <option value="" hidden disabled selected>Chọn Quận/Huyện</option>
+                                        <option value="1">Ba Đình</option>
+                                        <option value="2">Bắc Từ Liêm</option>
+                                        <option value="3">Cầu Giấy</option>
+                                        <option value="4">Đống Đa</option>
+                                        <option value="5">Hà Đông</option>
+                                        <option value="6">Hai Bà Trưng</option>
+                                        <option value="7">Hoàn Kiếm</option>
+                                        <option value="8">Hoàng Mai</option>
+                                        <option value="9">Long Biên</option>
+                                        <option value="10">Nam Từ Liêm</option>
+                                        <option value="11">Tây Hồ</option>
+                                        <option value="12">Thanh Xuân</option>
+                                        <option value="13">Sơn Tây</option>
+                                        <option value="14">Ba Vì</option>
+                                        <option value="15">Chương Mỹ</option>
+                                        <option value="16">Đan Phượng</option>
+                                        <option value="17">Đông Anh</option>
+                                        <option value="18">Gia Lâm</option>
+                                        <option value="19">Hoài Đức</option>
+                                        <option value="20">Mê Linh</option>
+                                        <option value="21">Mỹ Đức</option>
+                                        <option value="22">Phú Xuyên</option>
+                                        <option value="23">Phúc Thọ</option>
+                                        <option value="24">Quốc Oai</option>
+                                        <option value="25">Sóc Sơn</option>
+                                        <option value="26">Thạch Thất</option>
+                                        <option value="27">Thanh Oai</option>
+                                        <option value="28">Thanh Trì</option>
+                                        <option value="29">Thường Tín</option>
+                                        <option value="30">Ứng Hòa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <input id="frm_posting_so_nha" name="location_home_number" type="text" placeholder="Số nhà"
+                                           class="form-control input-md" value="">
+                                    <span class="help-block"></span>
+                                </div>
+
+                                <div class="col-md-8">
+                                    <input required id="location_street" name="location_street" type="text"
+                                           placeholder="Đường, Phường/Xã" class="form-control input-md"
+                                           value="">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <!-- Textarea -->
+                            <div class="form-group row" id="div__content__cke">
+                                <label class="col-md-12 control-label" for="content">Mô tả chi tiết (<span
+                                        style="color: red">*</span>):
+                                    <div class="word-count-cke">
+                                        (
+                                        <div id="myCounter"></div>
+                                        /1000)
+                                    </div>
+                                </label>
+                                <div class="col-md-12" id="div-content-cke">
+                            <textarea class="form-control" id="content" name="content"
+                                      placeholder="Nhập mô tả bằng tiếng Việt có dấu"> </textarea>
+                                </div>
+                            </div>
+
+
+                            <!-- File Button Upload Images -->
+                            <div class="form-group row" id="div__upload__images">
+                                <label class="col-md-12 control-label">Hình ảnh:</label>
+                                <div class="col-md-12">
+                                    <div class="wrap-upload-file">
+                                        <div id="fileList">
+                                            <ul id="list-images">
+                                                <!-- Upload image -->
+                                            </ul>
+                                        </div>
+                                        <!-- Upload image -->
+                                        <label class="input-file-label" for="uploadcomment" style="position: relative">
+                                    <span>
+                                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M25 0.000732422L3.125 25.0007H15.625V37.5008H34.375V25.0007H46.875L25 0.000732422Z"
+                                                  fill="#F2F5F8"/>
+                                            <path d="M47 44H3V50H47V44Z" fill="#F2F5F8"/>
+                                        </svg>
+                                    </span>
+                                            <span>Chọn ảnh để tải lên</span>
+                                            <span>Lưu ý: Số lượng tối đa là 6 ảnh, dung lượng tối đa là <span>5MB/ 1 ảnh</span>, định dạng ảnh hỗ trợ là: JPG, JPEG, PNG</span>
+                                            <input id="uploadcomment" name="fileupload" class="input-file-upload"
+                                                   type="file" accept="image/png,image/x-png,image/gif,image/jpeg"
+                                                   style="position: absolute;display: block;width: 100%;height: 100%;opacity: 0;">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" id="singlebutton" class="btn-post-information">Đăng tin</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 @endsection
