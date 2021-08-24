@@ -46,17 +46,6 @@
                                             </tr>
                                             @endforeach
                                             </tbody>
-                                            <tfoot style="text-align: center">
-                                            <tr>
-                                                <th style="width: 3.85195%;"><input type="checkbox" value=""/></th>
-                                                <th style="width: 16.5801%;">Tiêu đề bài viết</th>
-                                                <th style="width: 10.551%;">Nguời đăng</th>
-                                                <th style="width: 25.4309%;">Ảnh sản phẩm</th>
-                                                <th style="width: 17.9199%;">Giới thiệu sản phẩm</th>
-                                                <th style="width: 7.87138%;">Category</th>
-                                                <th style="width: 15.86166%;">Xác nhận</th>
-                                            </tr>
-                                            </tfoot>
                                     </table>
                                     @include('.admin.pagination.default', ['paginator' => $list])
                                 </div>
