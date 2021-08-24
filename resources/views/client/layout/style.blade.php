@@ -9,4 +9,7 @@
 <link rel="stylesheet" href="css/reponsive.css">
 <link rel="stylesheet" href="css/css.min.css">
 
+<link rel="stylesheet" href="{{URL::asset('css/easy-autocomplete.css')}}"/>
+<link rel="stylesheet" href="{{URL::asset('css/custom.css')}}"/>
+
 

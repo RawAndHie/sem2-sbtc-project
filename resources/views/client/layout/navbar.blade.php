@@ -25,7 +25,7 @@
                             </a>
                         </li>
                         <li class="btn-post">
-                            <a href="#">
+                            <a href="{{URL::asset('/port')}}">
                                 <i class="fas fa-plus-square"></i> Đăng tin
                             </a>
                         </li>
