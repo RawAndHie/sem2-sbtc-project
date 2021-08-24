@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Trade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostPendingController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $list = DB::table('trades');
+        return view('admin.post.tradePost',['list' => Trade::paginate(10)]);
     }
 
     /**
@@ -23,7 +26,6 @@ class PostPendingController extends Controller
      */
     public function create()
     {
-        return view('admin.postPending');
     }
 
     /**

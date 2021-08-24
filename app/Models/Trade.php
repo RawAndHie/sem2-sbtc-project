@@ -12,4 +12,7 @@ class Trade extends Model
     public function account(){
         return $this->hasOne(AccountClient::class, 'account_id', 'account_id');
     }
+    public function category(){
+        return $this->hasOne(Category::class, 'category_id', 'category_id');
+    }
 }

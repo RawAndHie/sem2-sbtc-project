@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin',[AdminController::class,'index']);
+Route::get('/admin/index',[AdminController::class,'index']);
 
 Route::get('/admin/account-pending',[AccountPendingController::class,'index']);
 
