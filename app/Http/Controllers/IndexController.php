@@ -16,8 +16,7 @@ class IndexController extends Controller
     public function index()
     {
         $list = DB::table('trades');
-        $account = DB::table('account_clients');
-        return view('client.index',['list' => Trade::paginate(6)]);
+        return view('client.index',['list' => Trade::paginate(4)]);
     }
 
     /**

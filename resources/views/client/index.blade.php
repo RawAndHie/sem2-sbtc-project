@@ -24,7 +24,7 @@
                                                     {{ $item->content }}
                                                 </p>
                                             </div>
-                                            <p style="font-size: 15px">Đăng bởi : sbtc  </p>
+                                            <p style="font-size: 15px">Đăng bởi : {{ $item->account->full_name }}  </p>
 
                                             <p class="location">
                                                 {{ $item->address }}
