@@ -24,7 +24,7 @@
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link" href="#">Chờ kiểm duyệt</a>
+                        <a class="nav-link" href="/admin/post-pending">Chờ kiểm duyệt</a>
                         <a class="nav-link" href="#">Danh sách bài đăng</a>
                     </nav>
                 </div>
@@ -35,7 +35,7 @@
                 </a>
                 <div class="collapse" id="collapseMembers" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Chờ kiểm duyệt</a>
+                        <a class="nav-link" href="/admin/account-pending">Chờ kiểm duyệt</a>
                         <a class="nav-link" href="#">Danh sách thành viên</a>
                     </nav>
                 </div>

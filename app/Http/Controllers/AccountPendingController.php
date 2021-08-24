@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AccountClient;
+use App\Models\Trade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AccountPendingController extends Controller
 {
@@ -13,7 +16,8 @@ class AccountPendingController extends Controller
      */
     public function index()
     {
-        return view('admin.accountPending');
+        $list = DB::table('account_clients');
+        return view('admin.account.accountPending',['list' => AccountClient::paginate(10)]);
     }
 
     /**
