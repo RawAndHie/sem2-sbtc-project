@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
+use App\Models\Category;
+use App\Models\DiaGioiHanhChinh;
+use App\Models\QuanHuyen;
+use App\Models\ThanhPho;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TradeController extends Controller
 {
@@ -13,7 +20,10 @@ class TradeController extends Controller
      */
     public function index()
     {
-        return view('client.postTrade');
+//        $address = DB::table('tinhthanhpho')->get();
+        $quanhuyen = QuanHuyen::all()->where('matp','01');
+        $category = Category::all();
+        return view('client.postTrade', ['quanhuyen' => $quanhuyen, 'category' => $category]);
     }
 
     /**

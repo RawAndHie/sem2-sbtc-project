@@ -19,30 +19,16 @@
                 font-style: normal !important;
                 padding-left: 5px;
             }
+
+
         </style>
         <section class="post-information-area">
             <div class="area-inner">
                 <h1 class="title-page">Đăng tin</h1>
                 <div class="form-posting-area">
-                    <form action="/save-post-information.html" method="post" id="save_post"
+                    <form action="/post" method="post" id="save_post"
                           class="form-posting form-horizontal">
                         <fieldset class="form-posting-inner">
-                            <!-- Multiple Radios -->
-                            <div class="form-group row">
-                                <input type="hidden" name="_id" value="">
-                                <input type="hidden" name="csrf_token">
-                                <label class="col-md-12 control-label" for="parent_id">Chọn thông tin (<span
-                                        style="color: red">*</span>):</label>
-                                <div class="col-md-4" id="div_parent_id">
-                                    <select required id="parent_id" name="parent_id" class="form-control">
-                                        <option value="" hidden disabled selected>Chọn danh mục</option>
-                                        <option value="74">Đồ điện tử</option>
-                                        <option value="73">Trang sức cũ</option>
-                                        <option value="59">Các loại linh tinh</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- Expand Value-->
                             <div class="form-group row" id="expand-value">
                             </div>
                             <!-- Text input-->
@@ -55,50 +41,40 @@
                                 </div>
                             </div>
 
-                            <!-- Select Basic -->
+                            <div class="form-group row">
+                                <input type="hidden" name="_id" value="">
+                                <input type="hidden" name="csrf_token">
+                                <label class="col-md-12 control-label" for="parent_id">Chọn thông tin (<span
+                                        style="color: red">*</span>):</label>
+                                <div class="col-md-4" id="div_parent_id">
+                                    <select required id="parent_id" name="parent_id" class="form-control">
+                                        <option value="" hidden disabled selected>Chọn danh mục</option>
+                                        @foreach($category as $categories)
+                                            <option value="{{ $categories->category_id }}">{{ $categories->category_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="form-group row">
                                 <label class="col-md-12 control-label">Địa chỉ (<span
                                         style="color: red">*</span>):</label>
                                 <div class="col-md-4">
-                                    <select required id="location_city_id" name="location_city_id" class="form-control">
+                                    <select required class="form-control"  name="city" multiple>
                                         <option value="" hidden disabled selected>Chọn Tỉnh/TP</option>
-                                        <option value="1" >Hà Nội</option>
+{{--                                        @foreach($thanhpho as $tp)--}}
+{{--                                            <option value="{{ $tp->matp }}">{{ $tp->name }}</option>--}}
+{{--                                        @endforeach--}}
+                                        <option value="001">Hà Nội</option>--}}
                                     </select>
                                 </div>
 
                                 <div class="col-md-4">
                                     <select required name="location_city_id" class="form-control">
                                         <option value="" hidden disabled selected>Chọn Quận/Huyện</option>
-                                        <option value="1">Ba Đình</option>
-                                        <option value="2">Bắc Từ Liêm</option>
-                                        <option value="3">Cầu Giấy</option>
-                                        <option value="4">Đống Đa</option>
-                                        <option value="5">Hà Đông</option>
-                                        <option value="6">Hai Bà Trưng</option>
-                                        <option value="7">Hoàn Kiếm</option>
-                                        <option value="8">Hoàng Mai</option>
-                                        <option value="9">Long Biên</option>
-                                        <option value="10">Nam Từ Liêm</option>
-                                        <option value="11">Tây Hồ</option>
-                                        <option value="12">Thanh Xuân</option>
-                                        <option value="13">Sơn Tây</option>
-                                        <option value="14">Ba Vì</option>
-                                        <option value="15">Chương Mỹ</option>
-                                        <option value="16">Đan Phượng</option>
-                                        <option value="17">Đông Anh</option>
-                                        <option value="18">Gia Lâm</option>
-                                        <option value="19">Hoài Đức</option>
-                                        <option value="20">Mê Linh</option>
-                                        <option value="21">Mỹ Đức</option>
-                                        <option value="22">Phú Xuyên</option>
-                                        <option value="23">Phúc Thọ</option>
-                                        <option value="24">Quốc Oai</option>
-                                        <option value="25">Sóc Sơn</option>
-                                        <option value="26">Thạch Thất</option>
-                                        <option value="27">Thanh Oai</option>
-                                        <option value="28">Thanh Trì</option>
-                                        <option value="29">Thường Tín</option>
-                                        <option value="30">Ứng Hòa</option>
+                                        @foreach($quanhuyen as $qh)
+                                            <option value="{{ $qh->maqh }}">{{ $qh->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
