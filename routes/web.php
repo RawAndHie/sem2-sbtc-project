@@ -41,6 +41,7 @@ Route::get('/contact-us',[ContactUsController::class,'index']);
 Route::get('/about-us',[AboutUsController::class,'index']);
 
 Route::get('/register',[RegisterController::class,'index']);
+Route::post('/register',[RegisterController::class,'store']);
 
 Route::get('/post',[TradeController::class,'index']);
 

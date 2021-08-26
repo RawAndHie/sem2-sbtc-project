@@ -97,7 +97,7 @@ nav.horizontal ul li {
 
 /* horizontal menu */
 img {
-    max-width: 100%;
+    max-width: 20%;
 }
 
 body {
@@ -115,7 +115,7 @@ body {
 h1 {
     font-size: 3em;
     text-align: center;
-    color: #fff;
+    color: #40a691;
     font-weight: 100;
     text-transform: capitalize;
     letter-spacing: 4px;
