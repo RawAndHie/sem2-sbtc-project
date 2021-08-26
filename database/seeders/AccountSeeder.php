@@ -26,8 +26,7 @@ class AccountSeeder extends Seeder
                 'full_name' => 'dieuhuyphuc',
                 'phone' => '124365478',
                 'image_avatar' => 'https://png.pngtree.com/png-clipart/20190903/original/pngtree-couple-boy-cute-avatar-png-image_4445471.jpg',
-                'image_id_1' => 'https://cdn.luatminhkhue.vn/lmk/articles/12/61370/huong-dan-thu-tuc-cap-lai-chung-minh-thu--cmnd---the-can-cuoc-khi-bi-mat-theo-quy-dinh-moi-nhat---61370.jpg',
-                'image_id_2' => 'https://cs.vtcmobile.vn/hc/article_attachments/115009287188/CMNDsau.jpg   ',
+                'image_id' => 'https://cdn.luatminhkhue.vn/lmk/articles/12/61370/huong-dan-thu-tuc-cap-lai-chung-minh-thu--cmnd---the-can-cuoc-khi-bi-mat-theo-quy-dinh-moi-nhat---61370.jpg',
                 'id_number' => '1244134324',
             ],
             [
@@ -40,7 +39,6 @@ class AccountSeeder extends Seeder
                 'phone' => '124365473',
                 'image_avatar' => 'https://png.pngtree.com/png-clipart/20190903/original/pngtree-couple-boy-cute-avatar-png-image_4445471.jpg',
                 'image_id_1' => 'https://cdn.luatminhkhue.vn/lmk/articles/12/61370/huong-dan-thu-tuc-cap-lai-chung-minh-thu--cmnd---the-can-cuoc-khi-bi-mat-theo-quy-dinh-moi-nhat---61370.jpg',
-                'image_id_2' => 'https://cs.vtcmobile.vn/hc/article_attachments/115009287188/CMNDsau.jpg   ',
                 'id_number' => '1244134324'
             ],
             [
@@ -53,7 +51,6 @@ class AccountSeeder extends Seeder
                 'phone' => '124365475',
                 'image_avatar' => 'https://png.pngtree.com/png-clipart/20190903/original/pngtree-couple-boy-cute-avatar-png-image_4445471.jpg',
                 'image_id_1' => 'https://cdn.luatminhkhue.vn/lmk/articles/12/61370/huong-dan-thu-tuc-cap-lai-chung-minh-thu--cmnd---the-can-cuoc-khi-bi-mat-theo-quy-dinh-moi-nhat---61370.jpg',
-                'image_id_2' => 'https://cs.vtcmobile.vn/hc/article_attachments/115009287188/CMNDsau.jpg   ',
                 'id_number' => '1244134324'
             ],
             [
@@ -66,7 +63,6 @@ class AccountSeeder extends Seeder
                 'phone' => '1243654448',
                 'image_avatar' => 'https://png.pngtree.com/png-clipart/20190903/original/pngtree-couple-boy-cute-avatar-png-image_4445471.jpg',
                 'image_id_1' => 'https://cdn.luatminhkhue.vn/lmk/articles/12/61370/huong-dan-thu-tuc-cap-lai-chung-minh-thu--cmnd---the-can-cuoc-khi-bi-mat-theo-quy-dinh-moi-nhat---61370.jpg',
-                'image_id_2' => 'https://cs.vtcmobile.vn/hc/article_attachments/115009287188/CMNDsau.jpg   ',
                 'id_number' => '1244134324'
             ],
             [
@@ -79,7 +75,6 @@ class AccountSeeder extends Seeder
                 'phone' => '124232478',
                 'image_avatar' => 'https://png.pngtree.com/png-clipart/20190903/original/pngtree-couple-boy-cute-avatar-png-image_4445471.jpg',
                 'image_id_1' => 'https://cdn.luatminhkhue.vn/lmk/articles/12/61370/huong-dan-thu-tuc-cap-lai-chung-minh-thu--cmnd---the-can-cuoc-khi-bi-mat-theo-quy-dinh-moi-nhat---61370.jpg',
-                'image_id_2' => 'https://cs.vtcmobile.vn/hc/article_attachments/115009287188/CMNDsau.jpg   ',
                 'id_number' => '1244134324'
             ],
 
