@@ -20,12 +20,17 @@
                 <div class="btn-action">
                     <ul>
                         <li class="btn-login">
-                            <a href="#">
-                                Đăng nhập
+                                <a href="#">
+                                    Đăng nhập
+                                </a>
+                        </li>
+                        <li class="btn-login">
+                            <a href="/register">
+                                Đăng ký
                             </a>
                         </li>
                         <li class="btn-post">
-                            <a href="{{URL::asset('/port')}}">
+                            <a href="{{URL::asset('/post')}}">
                                 <i class="fas fa-plus-square"></i> Đăng tin
                             </a>
                         </li>
