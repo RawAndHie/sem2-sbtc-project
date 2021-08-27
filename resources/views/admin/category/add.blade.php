@@ -12,8 +12,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="" method="POST">
-
+                        <form action="/add-category" method="POST">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="">Tên danh mục</label>
