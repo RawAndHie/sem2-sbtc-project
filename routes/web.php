@@ -31,10 +31,11 @@ Route::get('/admin/account-pending',[AccountPendingController::class,'index']);
 
 Route::get('/admin/post-pending',[PostPendingController::class,'index']);
 
-Route::get('/admin/add-category',[CategoryController::class,'index']);
+Route::get('/admin/list-category',[CategoryController::class,'index']);
 //Route::post('/admin/add-category',[CategoryController::class,'index']);
 
-Route::get('/admin/list-category',[CategoryController::class,'show']);
+Route::get('/admin/add-category',[CategoryController::class,'create']);
+Route::post('/admin/add-category',[CategoryController::class,'store']);
 
 Route::get('/',[IndexController::class,'index']);
 

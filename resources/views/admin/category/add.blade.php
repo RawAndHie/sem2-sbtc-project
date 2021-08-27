@@ -12,12 +12,14 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="/add-category" method="POST">
+                        <form action="/admin/add-category" method="POST">
+                            @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="">Tên danh mục</label>
                                     <div class="row">
-                                        <input type="text" name="name" class="form-control" placeholder="Nhập tên danh mục">
+                                        <input type="text" name="name" class="form-control"
+                                               placeholder="Nhập tên danh mục">
                                         @error('name')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror

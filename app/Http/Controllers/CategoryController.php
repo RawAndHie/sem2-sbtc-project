@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 
 use App\Models\Trade;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,7 +19,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.category.list');
+        return view('admin.category.listCategory',['list' => Category::paginate(10)]);
     }
 
     /**
@@ -48,7 +49,12 @@ class CategoryController extends Controller
                 'name.min' => 'Tên danh mục phải lớn hơn 4 ký tự.',
                 'name.max' => 'Tên danh mục phải nhỏ hơn 255 ký tự.',
             ]
+
         );
+        $obj = new Category();
+        $obj->category_name = $request->get('name');
+        $obj->save();
+        return redirect('/admin/list-category');
     }
 
 
@@ -56,12 +62,12 @@ class CategoryController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
      public function show()
     {
 //        $list = DB::table('categories');
-        return view('admin.category.listCategory',['list' => Category::paginate(10)]);
+
 
     }
 
