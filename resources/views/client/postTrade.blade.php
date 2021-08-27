@@ -36,7 +36,7 @@
                                 <label class="col-md-12 control-label" for="title">Tiêu đề (<span
                                         style="color: red">*</span>):</label>
                                 <div class="col-md-12">
-                                    <input maxlength="70" required id="title" name="title" type="text" placeholder=""
+                                    <input style="border: solid 1px rgb(27 24 24);" maxlength="70" required id="title" name="title" type="text" placeholder="Vui lòng nhập tiêu đề bài viết"
                                            class="form-control input-md" value="">
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <select required name="location_city_id" class="form-control">
+                                    <select required class="form-control" >
                                         <option value="" hidden disabled selected>Chọn Quận/Huyện</option>
                                         @foreach($quanhuyen as $qh)
                                             <option value="{{ $qh->maqh }}">{{ $qh->name }}</option>
