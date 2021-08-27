@@ -12,15 +12,15 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="/admin/add-category" method="POST">
+                        <form action="/admin/edit-contact-us" method="POST">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="">Chỉnh sửa</label>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <textarea name="aboutUsPage" id="ckeditorContactUs" cols="100" rows="8">
-                                                Html update ở đây
+                                            <textarea name="contactUsPage" id="ckeditorContactUs" cols="100" rows="8">
+                                                {{$list->contactUsPage}}
                                             </textarea>
                                         </div>
                                         {{--                                        @error('name')--}}
@@ -32,7 +32,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Tạo danh mục</button>
+                                <button type="submit" class="btn btn-primary">Xác nhận</button>
                             </div>
                             @csrf
                         </form>

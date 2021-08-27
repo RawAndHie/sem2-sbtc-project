@@ -15,9 +15,9 @@ class CreateConfigsTable extends Migration
     {
         Schema::create('configs', function (Blueprint $table) {
             $table->id();
-            $table->text('contactUsPage');
-            $table->text('aboutUsPage');
-            $table->text('policyPage');
+            $table->text('contactUsPage')->default('null');
+            $table->text('aboutUsPage')->default('null');
+            $table->text('policyPage')->default('null');
             $table->string('titlePage')->default('null');
             $table->string('descriptionPage')->default('null');
             $table->string('keywordPage')->default('null');
