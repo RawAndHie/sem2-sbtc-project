@@ -12,25 +12,27 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="/admin/add-category" method="POST">
+                        <form action="/admin/edit-about-us/" method="POST">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="">Chỉnh sửa</label>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <textarea value="html o day" name="aboutUsPage" id="ckeditorAboutUs" cols="100" rows="8" >Html update ở đây</textarea>
+                                                <textarea value="html o day" name="aboutUsPage" id="ckeditorAboutUs" cols="100" rows="8">
+                                                    {{$list->aboutUsPage}}
+                                                </textarea>
                                         </div>
-{{--                                        @error('name')--}}
-{{--                                        <div class="alert alert-danger">{{ $message }}</div>--}}
-{{--                                        @enderror--}}
+                                        {{--                                        @error('name')--}}
+                                        {{--                                        <div class="alert alert-danger">{{ $message }}</div>--}}
+                                        {{--                                        @enderror--}}
                                     </div>
                                 </div>
                             </div>
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Tạo danh mục</button>
+                                <button type="submit" class="btn btn-primary">Xác nhận</button>
                             </div>
                             @csrf
                         </form>

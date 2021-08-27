@@ -53,6 +53,10 @@ Route::get('/admin/edit-about-us',[ConfigController::class,'aboutUsPage']);
 Route::get('/admin/edit-contact-us',[ConfigController::class,'contactUsPage']);
 Route::get('/admin/edit-policy',[ConfigController::class,'policyPage']);
 
+Route::post('/admin/edit-about-us/',[ConfigController::class,'aboutUsStore']);
+//Route::get('/admin/edit-contact-us',[ConfigController::class,'contactUsPage']);
+//Route::get('/admin/edit-policy',[ConfigController::class,'policyPage']);
+
 Route::get('/admin/list-category',[CategoryController::class,'index']);
 //Route::post('/admin/add-category',[CategoryController::class,'index']);
 

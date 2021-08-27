@@ -19,8 +19,8 @@
                                     <label for="">Chỉnh sửa</label>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <textarea name="aboutUsPage" id="ckeditorPolicy" cols="100" rows="8">
-                                                Html update ở đây
+                                            <textarea name="policyPage" id="ckeditorPolicy" cols="100" rows="8">
+                                                {{$list->policyPage}}
                                             </textarea>
                                         </div>
                                         {{--                                        @error('name')--}}
@@ -32,7 +32,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Tạo danh mục</button>
+                                <button type="submit" class="btn btn-primary">Xác nhận</button>
                             </div>
                             @csrf
                         </form>
