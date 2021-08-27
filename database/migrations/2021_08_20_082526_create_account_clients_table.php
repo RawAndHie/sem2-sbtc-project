@@ -18,13 +18,13 @@ class CreateAccountClientsTable extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('gmail');
-            $table->integer('gender');
+            $table->integer('gender')->default(1); //1 = nam , 2 = nữ
             $table->string('full_name');
             $table->string('phone');
-            $table->string('image_avatar');
-            $table->string('image_id_1');
-            $table->string('image_id_2');
+            $table->string('image_avatar')->default('https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg');
+            $table->string('image_id');
             $table->string('id_number');
+            $table->integer('status')->default(1); // 1. Đang chờ, 2 đồng ý , 3. Từ chối
             $table->timestamps();
         });
     }

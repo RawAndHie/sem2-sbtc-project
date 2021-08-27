@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class AccountClient extends Model
 {
+    protected $table = 'account_clients';
     use HasFactory;
 }

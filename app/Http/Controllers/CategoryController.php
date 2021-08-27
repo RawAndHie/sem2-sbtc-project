@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+
+use App\Models\Trade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class CategoryController extends Controller
@@ -55,15 +58,18 @@ class CategoryController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+     public function show()
     {
-        //
+//        $list = DB::table('categories');
+        return view('admin.category.listCategory',['list' => Category::paginate(10)]);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
+
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -76,6 +82,7 @@ class CategoryController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
+
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -87,6 +94,7 @@ class CategoryController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
+
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

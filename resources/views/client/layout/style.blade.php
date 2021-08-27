@@ -13,6 +13,7 @@
 
 <link rel="stylesheet" href="{{URL::asset('css/easy-autocomplete.css')}}"/>
 <link rel="stylesheet" href="{{URL::asset('css/custom.css')}}"/>
+<link rel="stylesheet" href="{{URL::asset('css/register.css')}}"/>
 
 
 

@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AccountPendingController;
 use App\Http\Controllers\AccountTable;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\IndexController;
@@ -30,6 +31,11 @@ Route::get('/admin/account-pending',[AccountPendingController::class,'index']);
 
 Route::get('/admin/post-pending',[PostPendingController::class,'index']);
 
+Route::get('/admin/add-category',[CategoryController::class,'index']);
+//Route::post('/admin/add-category',[CategoryController::class,'index']);
+
+Route::get('/admin/list-category',[CategoryController::class,'show']);
+
 Route::get('/',[IndexController::class,'index']);
 
 Route::get('/personal',[PersonalController::class,'index']);
@@ -41,6 +47,7 @@ Route::get('/contact-us',[ContactUsController::class,'index']);
 Route::get('/about-us',[AboutUsController::class,'index']);
 
 Route::get('/register',[RegisterController::class,'index']);
+Route::post('/register',[RegisterController::class,'store']);
 
 Route::get('/post',[TradeController::class,'index']);
 
