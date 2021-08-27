@@ -5,6 +5,7 @@ use App\Http\Controllers\AccountPendingController;
 use App\Http\Controllers\AccountTable;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\IndexController;
@@ -24,19 +25,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/admin/index',[AdminController::class,'index']);
-
-Route::get('/admin/account-pending',[AccountPendingController::class,'index']);
-
-Route::get('/admin/post-pending',[PostPendingController::class,'index']);
-
-Route::get('/admin/list-category',[CategoryController::class,'index']);
-//Route::post('/admin/add-category',[CategoryController::class,'index']);
-
-Route::get('/admin/add-category',[CategoryController::class,'create']);
-Route::post('/admin/add-category',[CategoryController::class,'store']);
-
+//client
 Route::get('/',[IndexController::class,'index']);
 
 Route::get('/personal',[PersonalController::class,'index']);
@@ -52,3 +41,20 @@ Route::post('/register',[RegisterController::class,'store']);
 
 Route::get('/post',[TradeController::class,'index']);
 
+//admin
+
+Route::get('/admin/index',[AdminController::class,'index']);
+
+Route::get('/admin/account-pending',[AccountPendingController::class,'index']);
+
+Route::get('/admin/post-pending',[PostPendingController::class,'index']);
+
+Route::get('/admin/edit-about-us',[ConfigController::class,'aboutUsPage']);
+Route::get('/admin/edit-contact-us',[ConfigController::class,'contactUsPage']);
+Route::get('/admin/edit-policy',[ConfigController::class,'policyPage']);
+
+Route::get('/admin/list-category',[CategoryController::class,'index']);
+//Route::post('/admin/add-category',[CategoryController::class,'index']);
+
+Route::get('/admin/add-category',[CategoryController::class,'create']);
+Route::post('/admin/add-category',[CategoryController::class,'store']);
