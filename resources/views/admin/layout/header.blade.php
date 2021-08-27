@@ -39,6 +39,19 @@
                         <a class="nav-link" href="#">Danh sách thành viên</a>
                     </nav>
                 </div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePage" aria-expanded="false" aria-controls="collapsePage">
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                    Quản lý trang web
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapsePage" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="/admin/edit-about-us">Chỉnh sửa trang about us</a>
+                        <a class="nav-link" href="/admin/edit-contact-us">Chỉnh sửa trang contact us</a>
+                        <a class="nav-link" href="/admin/edit-policy">Chỉnh sửa trang policy</a>
+
+                    </nav>
+                </div>
             </div>
         </div>
         <div class="sb-sidenav-footer">
