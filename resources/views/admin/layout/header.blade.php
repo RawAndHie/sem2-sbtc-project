@@ -13,8 +13,8 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Thêm danh mục</a>
-                        <a class="nav-link" href="#">Danh sách danh mục</a>
+                        <a class="nav-link" href="/admin/add-category">Thêm danh mục</a>
+                        <a class="nav-link" href="/admin/list-category">Danh sách danh mục</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
