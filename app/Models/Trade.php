@@ -10,10 +10,10 @@ class Trade extends Model
     use HasFactory;
     protected $table = 'trades';
     public function account(){
-        return $this->hasOne(AccountClient::class, 'account_id', 'account_id');
+        return $this->hasOne(AccountClient::class, 'id', 'account_id');
     }
     public function category(){
-        return $this->hasOne(Category::class, 'category_id', 'category_id');
+        return $this->hasOne(Category::class, 'id', 'category_id');
     }
 
 }
