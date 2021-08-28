@@ -14,7 +14,7 @@ class CreateAccountClientsTable extends Migration
     public function up()
     {
         Schema::create('account_clients', function (Blueprint $table) {
-            $table->id('account_id');
+            $table->id('id');
             $table->string('username');
             $table->string('password');
             $table->string('gmail');

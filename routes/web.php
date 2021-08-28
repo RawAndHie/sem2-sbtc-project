@@ -52,6 +52,9 @@ Route::post('/post',[TradeController::class,'store']);
 Route::get('/admin/index',[AdminController::class,'index']);
 
 Route::get('/admin/account-pending',[AccountPendingController::class,'index']);
+Route::post('/admin/account-pending/{id}',[AccountPendingController::class,'update']);
+Route::delete('/admin/account-pending/{id}',[AccountPendingController::class,'destroy']);
+
 
 Route::get('/admin/post-pending',[PostPendingController::class,'index']);
 

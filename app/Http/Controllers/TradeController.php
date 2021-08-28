@@ -30,12 +30,6 @@ class TradeController extends Controller
         return view('client.postTrade', ['thanhpho' => $thanhpho, 'category' => $category]);
     }
 
-    public function getQuanHuyen(Request $request)
-    {
-        $data['quanhuyen'] = QuanHuyen::all()->where("matp",$request->matp);
-        return response()->json($data);
-    }
-
     /**
      * Show the form for creating a new resource.
      *

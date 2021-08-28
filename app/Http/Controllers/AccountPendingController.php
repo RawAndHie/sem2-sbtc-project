@@ -16,8 +16,8 @@ class AccountPendingController extends Controller
      */
     public function index()
     {
-        $list = DB::table('account_clients');
-        return view('admin.account.accountPending',['list' => AccountClient::paginate(10)]);
+        $list = AccountClient::where('status',  1)->paginate(10);
+        return view('admin.account.accountPending',['list' => $list]);
     }
 
     /**
@@ -68,21 +68,28 @@ class AccountPendingController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $obj = AccountClient::find($id);
+        $obj->status = 2;
+        $obj->save();
+        return redirect('admin/account-pending');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        //
+        $obj = AccountClient::find($id);
+        $obj->status = 3;
+        $obj->save();
+        return redirect('admin/account-pending');
     }
 }
