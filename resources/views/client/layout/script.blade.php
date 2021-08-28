@@ -31,16 +31,8 @@
 </script>
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 
-<script>
-    {{--jQuery(document).ready(function ($){--}}
-    {{--    $("#thanhpho").change(function (event){--}}
-    {{--        $matp = $("#thanhpho").val();--}}
-    {{--        $.post('{{}}',{"$matp": $matp},function (data) {--}}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw_u8OnhOyHsZJFkxjWC22-OBddFbFCks&libraries=places"></script>
 
-    {{--        })--}}
-    {{--    })--}}
-    {{--})--}}
-</script>
 <script src="{{asset('js/jquery.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/all.min.js')}}"></script>

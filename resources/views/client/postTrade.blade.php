@@ -1,5 +1,10 @@
 @extends('client.layout.master')
 @section('content')
+    <style>
+        input {
+            border: solid 1px black;
+        }
+    </style>
     <main class="main">
         <section class="post-information-area">
             <div class="area-inner">
@@ -54,6 +59,26 @@
                                     <span class="help-block"></span>
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label for="">Map</label>
+                                <input class="form-control" type="text" id="searchmap" placeholder="Nhập địa chỉ">
+                                <div id="map-canvas"></div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-5">
+                                    <label for="">Lat</label>
+                                    <input class="form-control" type="text" id="lat" name="lat">
+                                </div>
+
+                                <div class="col-md-5">
+                                    <label for="">Long</label>
+                                    <input class="form-control" type="text" id="lng" name="lng">
+                                </div>
+                            </div>
+
+
 
                             <!-- Address-->
 {{--                            <div class="form-group row">--}}
@@ -140,6 +165,7 @@
                     </form>
                 </div>
             </div>
+
         </section>
     </main>
 @endsection
