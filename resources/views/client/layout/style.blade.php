@@ -16,4 +16,3 @@
 <link rel="stylesheet" href="{{URL::asset('css/register.css')}}"/>
 
 
-
