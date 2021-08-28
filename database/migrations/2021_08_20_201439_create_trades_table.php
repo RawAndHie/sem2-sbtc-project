@@ -20,9 +20,9 @@ class CreateTradesTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('content');
-            $table->string('image');
+            $table->text('image');
             $table->string('address');
-            $table->integer('status_trade');
+            $table->integer('status_trade')->default(1);
             $table->foreign('account_id')->references('account_id')->on('account_clients');
             $table->foreign('category_id')->references('category_id')->on('categories');
             $table->timestamps();

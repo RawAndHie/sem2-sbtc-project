@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AccountPendingController;
 use App\Http\Controllers\AccountTable;
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ConfigController;
@@ -40,6 +41,11 @@ Route::get('/register',[RegisterController::class,'index']);
 Route::post('/register',[RegisterController::class,'store']);
 
 Route::get('/post',[TradeController::class,'index']);
+Route::post('/post',[TradeController::class,'store']);
+
+//Route::post('/quanhuyen/{id}', [TradeController::class, 'getQuanHuyen'])->name('get.qh');
+//Route::post('/phuongxa/{id}', [TradeController::class, 'getPhuongXa']);
+
 
 //admin
 
@@ -54,8 +60,8 @@ Route::get('/admin/edit-contact-us',[ConfigController::class,'contactUsPage']);
 Route::get('/admin/edit-policy',[ConfigController::class,'policyPage']);
 
 Route::post('/admin/edit-about-us/',[ConfigController::class,'aboutUsStore']);
-//Route::get('/admin/edit-contact-us',[ConfigController::class,'contactUsPage']);
-//Route::get('/admin/edit-policy',[ConfigController::class,'policyPage']);
+Route::post('/admin/edit-contact-us',[ConfigController::class,'contactUsStore']);
+Route::post('/admin/edit-policy',[ConfigController::class,'policyStore']);
 
 Route::get('/admin/list-category',[CategoryController::class,'index']);
 //Route::post('/admin/add-category',[CategoryController::class,'index']);

@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TradeSeeder::class);
         $this->call(TradeRequestSeeder::class);
         $this->call(CommentSeeder::class);
+        $this->call(ConfigSeeder::class);
 
     }
 }

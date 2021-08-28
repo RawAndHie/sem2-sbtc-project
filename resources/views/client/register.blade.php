@@ -41,11 +41,11 @@
                         <input type="text" name="id_number" placeholder="ID">
                     </div>
                     <div class="form-group">
-                        <input type="hidden" name="idCard" id="imgUpload" placeholder="ID photo on the front">
-                        <div id="previewDiv">
+                        <input type="hidden" name="imgUpload" id="imgUpload" placeholder="ID photo on the front">
+                        <div name="previewDiv">
 
                         </div>
-                        <button id="upload_widget" class="btn btn-sm btn-primary">Upload files</button>
+                        <button type="button" id="upload_widget" class="btn btn-sm btn-primary">Upload files</button>
                     </div>
                     <div class="wthree-text form-group">
                         <label class="anim">

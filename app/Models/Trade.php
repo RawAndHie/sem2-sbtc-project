@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Trade extends Model
 {
     use HasFactory;
-
+    protected $table = 'trades';
     public function account(){
         return $this->hasOne(AccountClient::class, 'account_id', 'account_id');
     }

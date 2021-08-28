@@ -32,7 +32,7 @@ class RegisterController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return array
+     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
@@ -68,13 +68,14 @@ class RegisterController extends Controller
         );
         //db
         $obj = new AccountClient();
+
         $obj->username = $request->get('username');
         $obj->gmail = $request->get('email');
         $obj->password = $request->get('password');
         $obj->phone = $request->get('phone');
         $obj->full_name = $request->get('fullName');
         $obj->id_number = $request->get('id_number');
-        $obj->image_id = $request->get('idCard');
+        $obj->image_id = $request->get('imgUpload');
         $obj->save();
         return redirect('/');
     }

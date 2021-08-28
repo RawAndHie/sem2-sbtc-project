@@ -10,11 +10,13 @@
                 var imgUpload = document.getElementById('imgUpload');
                 var previewDiv = document.getElementById('previewDiv');
                 if (imgUpload) {
-                    var currentImageValue = imgUpload.value;
-                    if(currentImageValue.length > 0){
+                    var currentImageValue = imgUpload.value;  // imgUpload.value = link anh link1, link2 , link 3
+                    if (currentImageValue.length > 0) {
                         currentImageValue += ',';
                     }
                     currentImageValue += result.info.secure_url;
+
+
                     imgUpload.value = currentImageValue;
                     previewDiv.src = result.info.secure_url;
                     previewDiv.innerHTML += `<img src="${result.info.secure_url}"  class="img-rounded" alt="" width="100px">`;
@@ -27,7 +29,18 @@
         myWidget.open();
     }, false);
 </script>
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 
+<script>
+    {{--jQuery(document).ready(function ($){--}}
+    {{--    $("#thanhpho").change(function (event){--}}
+    {{--        $matp = $("#thanhpho").val();--}}
+    {{--        $.post('{{}}',{"$matp": $matp},function (data) {--}}
+
+    {{--        })--}}
+    {{--    })--}}
+    {{--})--}}
+</script>
 <script src="{{asset('js/jquery.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/all.min.js')}}"></script>
