@@ -14,9 +14,9 @@ class CreateReportsTable extends Migration
     public function up()
     {
         Schema::create('reports', function (Blueprint $table) {
-            $table->id('report_id');
+            $table->id('id');
             $table->bigInteger('account_id')->unsigned();;
-            $table->foreign('account_id')->references('account_id')->on('account_clients');
+            $table->foreign('account_id')->references('id')->on('account_clients');
             $table->text('messenger_report');
             $table->timestamps();
         });

@@ -45,7 +45,7 @@ class RegisterController extends Controller
                 'fullName' => 'required|min:5',
                 'phone' => 'required|min:10|max:11',
                 'id_number' => 'required',
-                'idCard' => 'required'
+                'imgUpload' => 'required'
 
             ],
             [
@@ -63,7 +63,7 @@ class RegisterController extends Controller
                 'fullName.required' => 'Tên không được để trống',
                 'fullName.min' => 'Tên tối thiểu 5 ký tự',
                 'id_number.required' => 'Số thẻ không được để trống',
-                'idCard.required' => 'Vui lòng thêm ảnh giấy tờ tùy thân'
+                'imgUpload.required' => 'Vui lòng thêm ảnh giấy tờ tùy thân'
             ]
         );
         //db

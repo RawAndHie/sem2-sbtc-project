@@ -18,7 +18,7 @@ class TradeRequestSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('trade_requests')->truncate();
         \Illuminate\Support\Facades\DB::table('trade_requests')->insert([
             [
-                'request_id' => 1,
+                'id' => 1,
                 'trade_id' => 2,
                 'trade_request_id' => 1,
                 'account_id' => 2,
@@ -28,7 +28,7 @@ class TradeRequestSeeder extends Seeder
                 'updated_at' => Carbon::now()->subDay(1)
             ],
             [
-                'request_id' => 2,
+                'id' => 2,
                 'trade_id' => 1,
                 'trade_request_id' => 3,
                 'account_id' => 2,
@@ -38,7 +38,7 @@ class TradeRequestSeeder extends Seeder
                 'updated_at' => Carbon::now()->subDay(1)
             ],
             [
-                'request_id' => 3,
+                'id' => 3,
                 'trade_id' => 2,
                 'trade_request_id' => 4,
                 'account_id' => 2,
@@ -48,7 +48,7 @@ class TradeRequestSeeder extends Seeder
                 'updated_at' => Carbon::now()->subDay(1)
             ],
             [
-                'request_id' => 4,
+                'id' => 4,
                 'trade_id' => 1,
                 'trade_request_id' => 5,
                 'account_id' => 2,

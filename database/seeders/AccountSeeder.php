@@ -18,7 +18,7 @@ class AccountSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('account_clients')->truncate();
         \Illuminate\Support\Facades\DB::table('account_clients')->insert([
             [
-                'account_id' => 1,
+                'id' => 1,
                 'username' => 'huyphuc',
                 'password' => '2811',
                 'gmail' => 'dieuhuyphuc@gmail.com',
@@ -30,7 +30,7 @@ class AccountSeeder extends Seeder
                 'id_number' => '1244134324',
             ],
             [
-                'account_id' => 2,
+                'id' => 2,
                 'username' => 'tranduc',
                 'password' => '1234',
                 'gmail' => 'tranduc@gmail.com',
@@ -42,7 +42,7 @@ class AccountSeeder extends Seeder
                 'id_number' => '1244134324'
             ],
             [
-                'account_id' => 3,
+                'id' => 3,
                 'username' => 'minhtu',
                 'password' => '2321',
                 'gmail' => 'nguyenminhtu@gmail.com',
@@ -54,7 +54,7 @@ class AccountSeeder extends Seeder
                 'id_number' => '1244134324'
             ],
             [
-                'account_id' => 4,
+                'id' => 4,
                 'username' => 'quanghuy',
                 'password' => '2341',
                 'gmail' => 'nguyenquanghuy@gmail.com',
@@ -66,7 +66,7 @@ class AccountSeeder extends Seeder
                 'id_number' => '1244134324'
             ],
             [
-                'account_id' => 5,
+                'id' => 5,
                 'username' => 'manhtri',
                 'password' => '2321',
                 'gmail' => 'dinhmanhtri@gmail.com',

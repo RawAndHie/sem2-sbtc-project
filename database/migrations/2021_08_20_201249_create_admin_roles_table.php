@@ -14,9 +14,9 @@ class CreateAdminRolesTable extends Migration
     public function up()
     {
         Schema::create('admin_roles', function (Blueprint $table) {
-            $table->id('role_id');
+            $table->id('id');
             $table->bigInteger('admin_id')->unsigned();;
-            $table->foreign('admin_id')->references('admin_id')->on('admins');
+            $table->foreign('admin_id')->references('id')->on('admins');
             $table->string('name_role');
             $table->timestamps();
         });

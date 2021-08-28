@@ -14,7 +14,7 @@ class CreateTradesTable extends Migration
     public function up()
     {
         Schema::create('trades', function (Blueprint $table) {
-            $table->id('trade_id');
+            $table->id('id');
             $table->bigInteger('account_id')->unsigned();;
             $table->bigInteger('category_id')->unsigned();;
             $table->string('title');
@@ -23,8 +23,8 @@ class CreateTradesTable extends Migration
             $table->text('image');
             $table->string('address');
             $table->integer('status_trade')->default(1);
-            $table->foreign('account_id')->references('account_id')->on('account_clients');
-            $table->foreign('category_id')->references('category_id')->on('categories');
+            $table->foreign('account_id')->references('id')->on('account_clients');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
