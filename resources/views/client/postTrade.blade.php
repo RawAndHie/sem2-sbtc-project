@@ -58,7 +58,7 @@
                             <!-- Address-->
 {{--                            <div class="form-group row">--}}
 {{--                                <label class="col-md-12 control-label">Địa chỉ</label>--}}
-{{--                                <input type="hidden" name="address" id="addressTrade">--}}
+{{--                              git  <input type="hidden" name="address" id="addressTrade">--}}
 {{--                                <div class="col-md-4">--}}
 {{--                                    <label for="thanhpho"></label>--}}
 {{--                                    <select class="form-control" id="thanhpho" name="thanhpho" size="5">--}}
