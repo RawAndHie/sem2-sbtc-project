@@ -1,4 +1,10 @@
 @extends('client.layout.master')
 @section('content')
-    <h1> Nội dung about us</h1>
+    <main>
+        <div class="container">
+            <div class="row">
+                {{$list->aboutUsPage}}
+            </div>
+        </div>
+    </main>
 @endsection
