@@ -18,7 +18,7 @@ class CommentSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('comments')->truncate();
         \Illuminate\Support\Facades\DB::table('comments')->insert([
             [
-                'comment_id' => 1,
+                'id' => 1,
                 'trade_id' => 1,
                 'account_id' => 5,
                 'content' => 'Ông rảnh lúc mấy giờ ?',
@@ -26,7 +26,7 @@ class CommentSeeder extends Seeder
                 'updated_at' => Carbon::now()
             ],
             [
-                'comment_id' => 2,
+                'id' => 2,
                 'trade_id' => 3,
                 'account_id' => 5,
                 'content' => 'Đổi đồ khác được không bạn ?',
@@ -34,7 +34,7 @@ class CommentSeeder extends Seeder
                 'updated_at' => Carbon::now()
             ],
             [
-                'comment_id' => 3,
+                'id' => 3,
                 'trade_id' => 4,
                 'account_id' => 5,
                 'content' => 'Ông rảnh lúc mấy giờ ?',
@@ -42,7 +42,7 @@ class CommentSeeder extends Seeder
                 'updated_at' => Carbon::now()
             ],
             [
-                'comment_id' => 4,
+                'id' => 4,
                 'trade_id' => 2,
                 'account_id' => 5,
                 'content' => 'Ông rảnh lúc mấy giờ ?',
@@ -50,7 +50,7 @@ class CommentSeeder extends Seeder
                 'updated_at' => Carbon::now()
             ],
             [
-                'comment_id' => 5,
+                'id' => 5,
                 'trade_id' => 1,
                 'account_id' => 5,
                 'content' => 'Ông rảnh lúc mấy giờ ?',

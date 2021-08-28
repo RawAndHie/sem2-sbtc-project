@@ -18,7 +18,7 @@ class TradeSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('trades')->truncate();
         \Illuminate\Support\Facades\DB::table('trades')->insert([
             [
-                'trade_id' => 1,
+                'id' => 1,
                 'account_id' => 1,
                 'category_id' => 1,
                 'title' => 'Ví dụ : Cần đổi + tên sản phẩm',
@@ -35,7 +35,7 @@ class TradeSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'trade_id' => 2,
+                'id' => 2,
                 'account_id' => 2,
                 'category_id' => 2,
                 'title' => 'cần đổi sách',
@@ -48,7 +48,7 @@ class TradeSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'trade_id' => 3,
+                'id' => 3,
                 'account_id' => 3,
                 'category_id' => 3,
                 'title' => 'Cần đổi 1 cuốn sách khác về kỹ năng sống.',
@@ -61,7 +61,7 @@ class TradeSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'trade_id' => 4,
+                'id' => 4,
                 'account_id' => 4,
                 'category_id' => 1,
                 'title' => 'cần đổi sách',
@@ -74,7 +74,7 @@ class TradeSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'trade_id' => 5,
+                'id' => 5,
                 'account_id' => 5,
                 'category_id' => 2,
                 'title' => 'cần đổi sách',
@@ -87,7 +87,7 @@ class TradeSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'trade_id' => 6,
+                'id' => 6,
                 'account_id' => 3,
                 'category_id' => 1,
                 'title' => 'cần đổi sách',
@@ -100,7 +100,7 @@ class TradeSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'trade_id' => 7,
+                'id' => 7,
                 'account_id' => 4,
                 'category_id' => 3,
                 'title' => 'cần đổi sách',
@@ -113,7 +113,7 @@ class TradeSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'trade_id' => 8,
+                'id' => 8,
                 'account_id' => 5,
                 'category_id' => 1,
                 'title' => 'cần đổi sách',
@@ -126,7 +126,7 @@ class TradeSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'trade_id' => 9,
+                'id' => 9,
                 'account_id' => 2,
                 'category_id' => 2,
                 'title' => 'cần đổi sách',
@@ -139,7 +139,7 @@ class TradeSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'trade_id' => 10,
+                'id' => 10,
                 'account_id' => 1,
                 'category_id' => 3,
                 'title' => 'cần đổi sách',

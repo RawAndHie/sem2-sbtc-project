@@ -38,25 +38,32 @@
                                                 <td>{{ $item->phone }}</td>
                                                 <td>
                                                     <p>
-                                                        <a style="text-decoration:none" href="{{ $item->image_avatar }}" target="_blank">
+                                                        <a style="text-decoration:none" href="{{ $item->image_avatar }}"
+                                                           target="_blank">
                                                             Avatar Image
                                                         </a>
                                                     </p>
-                                                    <p>
-                                                        <a style="text-decoration:none" href="{{ $item->image_id_1 }}" target="_blank">
-                                                            ID Card Image
-                                                        </a>
-                                                    </p>
-                                                    <p>
-                                                        <a style="text-decoration:none" href="{{ $item->image_id_2 }}" target="_blank">
-                                                            ID Card Image
-                                                        </a>
-                                                    </p>
+                                                    @foreach($item->listPhoto as $url )
+                                                        <p>
+                                                            <a style="text-decoration:none" href="{{ $url }}"
+                                                               target="_blank">
+                                                                ID Card Image
+                                                            </a>
+                                                        </p>
+                                                    @endforeach
                                                 </td>
                                                 <td>{{ $item->id_number }}</td>
                                                 <td>
-                                                    <button type="button" st class="btn btn-success">Đồng ý</button>
-                                                    <button type="button" class="btn btn-danger">Từ chối</button>
+                                                    <form action="/admin/account-pending/{{$item->id}}" method="post">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-success">Đồng ý</button>
+                                                    </form>
+
+                                                    <form action="/admin/account-pending/{{$item->id}}" method="post">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger">Từ chối</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             @endforeach

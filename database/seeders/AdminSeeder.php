@@ -18,7 +18,7 @@ class AdminSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('admins')->truncate();
         \Illuminate\Support\Facades\DB::table('admins')->insert([
             [
-                'admin_id' => '1',
+                'id' => '1',
                 'username' => 'Huyphuc',
                 'password' => '123456',
                 'gmail' => 'phuc@gmail.com',
@@ -27,7 +27,7 @@ class AdminSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'admin_id' => '2',
+                'id' => '2',
                 'username' => 'Minhtu',
                 'password' => '654321',
                 'gmail' => 'tu@gmail.com',
@@ -36,7 +36,7 @@ class AdminSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'admin_id' => '3',
+                'id' => '3',
                 'username' => 'Quanghuy',
                 'password' => '123321',
                 'gmail' => 'huy@gmail.com',
@@ -45,7 +45,7 @@ class AdminSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'admin_id' => '4',
+                'id' => '4',
                 'username' => 'Tranduc',
                 'password' => '112233',
                 'gmail' => 'duc@gmail.com',
@@ -54,7 +54,7 @@ class AdminSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'admin_id' => '5',
+                'id' => '5',
                 'username' => 'Manhtri',
                 'password' => '001122',
                 'gmail' => 'tri@gmail.com',

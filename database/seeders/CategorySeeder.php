@@ -20,21 +20,21 @@ class CategorySeeder extends Seeder
 
         \Illuminate\Support\Facades\DB::table('categories')->insert([
             [
-                'category_id' => 1,
+                'id' => 1,
                 'category_name' => 'Đồ điện tử',
                 'create_by_id' => 1,
                 'created_at' => Carbon::now()->subDay(10),
                 'updated_at' => Carbon::now()->subDay(9),
             ],
             [
-                'category_id' => 2,
+                'id' => 2,
                 'category_name' => 'Trang sức cũ',
                 'create_by_id' => 1,
                 'created_at' => Carbon::now()->subDay(8),
                 'updated_at' => Carbon::now()->subDay(8),
             ],
             [
-                'category_id' => 3,
+                'id' => 3,
                 'category_name' => 'Các loại linh tinh',
                 'create_by_id' => 1,
                 'created_at' => Carbon::now()->subDay(7),
