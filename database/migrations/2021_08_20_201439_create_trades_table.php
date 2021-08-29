@@ -19,7 +19,7 @@ class CreateTradesTable extends Migration
             $table->bigInteger('category_id')->unsigned();;
             $table->string('title');
             $table->string('description');
-            $table->string('content');
+            $table->text('content');
             $table->text('image');
             $table->string('address');
             $table->integer('status_trade')->default(1);

@@ -28,10 +28,10 @@ use Illuminate\Support\Facades\Route;
 */
 //client
 Route::get('/',[IndexController::class,'index']);
+Route::get('/detail/{id}',[IndexController::class,'show']);
+
 
 Route::get('/personal',[PersonalController::class,'index']);
-
-Route::get('/detail',[DetailController::class,'index']);
 
 Route::get('/contact-us',[ContactUsController::class,'index']);
 
