@@ -15,8 +15,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $list = DB::table('trades');
-        return view('client.index',['list' => Trade::paginate(8)]);
+        $list = Trade::where('status',  2)->paginate(10);
+        return view('client.index',['list' => $list]);
     }
 
     /**

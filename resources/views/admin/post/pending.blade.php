@@ -9,7 +9,7 @@
                         <section class="management-history-area clearfix">
                             <div class="management-history-area-inner">
                                 <div class="box-title-area">
-                                    <h2 class="title-name">Quản lý bài đăng</h2>
+                                    <h2 class="title-name">Bài đăng đang chờ duyệt</h2>
                                 </div>
                                 <div class="card-header">
                                     <i class="fas fa-table me-1"></i>
@@ -40,8 +40,16 @@
                                                 <td>{{ $item->content }}</td>
                                                 <td>{{ $item->category->category_name }}</td>
                                                 <td>
-                                                        <button type="button" st class="btn btn-success">Đồng ý</button>
-                                                        <button type="button"  class="btn btn-danger">Từ chối</button>
+                                                    <form action="/admin/post-pending/{{$item->id}}" method="post">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-success">Đồng ý</button>
+                                                    </form>
+
+                                                    <form action="/admin/post-pending/{{$item->id}}" method="post">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger">Từ chối</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             @endforeach
