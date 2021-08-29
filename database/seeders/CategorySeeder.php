@@ -28,7 +28,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'category_name' => 'Trang sức cũ',
+                'category_name' => 'Sách, truyện',
                 'create_by_id' => 1,
                 'created_at' => Carbon::now()->subDay(8),
                 'updated_at' => Carbon::now()->subDay(8),

@@ -1,5 +1,10 @@
 @extends('client.layout.master')
 @section('content')
+    <style>
+        img {
+            max-width: 100%;
+        }
+    </style>
     <main>
         <div class="container">
             <div class="row">
@@ -9,7 +14,7 @@
                             <li class="breadcrumb-item">
                                 <a href="/">Trang chủ</a>
                             </li>
-                            <li class="breadcrumb-item active">Điện tử, công nghệ</li>
+                            <li class="breadcrumb-item active">{{$item->category->category_name}}</li>
                         </ol>
                     </div>
                 </div>
@@ -18,95 +23,42 @@
             <div class="row bg-white m-0" id="details">
                 <div class="col-lg-8 col-md-12 col-12 col-left pr-0">
                     <div class="main-left">
+
+{{--                        img--}}
                         <div class="image-post clearfix">
 
                             <div class="image-post-left">
+{{--                                @foreach($item->firstPhoto as $url )--}}
+{{--                                <div class="items-image-details">--}}
+{{--                                    <a href="#">--}}
+{{--                                        <img src="{{$url}}" alt="">--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                                @endforeach--}}
+                                @foreach($item->listPhoto as $url )
                                 <div class="items-image-details">
                                     <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/71fe43fa_1607046800.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=YtL-MuMTeJAwLLipmmra_A" alt="">
+                                        <img src="{{$url}}" alt="">
                                     </a>
                                 </div>
-                                <div class="items-image-details">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/de4472bc_1607046799.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=J37dCPnH3XPcY7QiR16Bqg" alt="">
-                                    </a>
-                                </div>
-                                <div class="items-image-details">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/71fe43fa_1607046800.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=YtL-MuMTeJAwLLipmmra_A" alt="">
-                                    </a>
-                                </div>
-                                <div class="items-image-details">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/de4472bc_1607046799.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=J37dCPnH3XPcY7QiR16Bqg" alt="">
-                                    </a>
-                                </div>
-                                <div class="items-image-details">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/71fe43fa_1607046800.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=YtL-MuMTeJAwLLipmmra_A" alt="">
-                                    </a>
-                                </div>
-                                <div class="items-image-details">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/de4472bc_1607046799.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=J37dCPnH3XPcY7QiR16Bqg" alt="">
-                                    </a>
-                                </div>
-                                <div class="items-image-details">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/71fe43fa_1607046800.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=YtL-MuMTeJAwLLipmmra_A" alt="">
-                                    </a>
-                                </div>
-                                <div class="items-image-details">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/de4472bc_1607046799.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=J37dCPnH3XPcY7QiR16Bqg" alt="">
-                                    </a>
-                                </div>
+                                @endforeach
                             </div>
-
                             <div class="image-post-right">
+
+                                @foreach($item->listPhoto as $url )
                                 <div class="">
                                     <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/71fe43fa_1607046800.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=YtL-MuMTeJAwLLipmmra_A" alt="">
+                                        <img src="{{$url}}" alt="">
                                     </a>
                                 </div>
-                                <div class="">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/de4472bc_1607046799.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=J37dCPnH3XPcY7QiR16Bqg" alt="">
-                                    </a>
-                                </div>
-                                <div class="">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/71fe43fa_1607046800.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=YtL-MuMTeJAwLLipmmra_A" alt="">
-                                    </a>
-                                </div>
-                                <div class="">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/de4472bc_1607046799.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=J37dCPnH3XPcY7QiR16Bqg" alt="">
-                                    </a>
-                                </div>
-                                <div class="">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/71fe43fa_1607046800.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=YtL-MuMTeJAwLLipmmra_A" alt="">
-                                    </a>
-                                </div>
-                                <div class="">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/de4472bc_1607046799.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=J37dCPnH3XPcY7QiR16Bqg" alt="">
-                                    </a>
-                                </div>
-                                <div class="">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/71fe43fa_1607046800.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=YtL-MuMTeJAwLLipmmra_A" alt="">
-                                    </a>
-                                </div>
-                                <div class="">
-                                    <a href="#">
-                                        <img src="https://i-raovat.vnecdn.net/2020/12/04/de4472bc_1607046799.jpg?w=1280&h=768&q=100&dpr=1&rt=fit&g=no&wmi=&wmg=ce&wmo=50&wms=30&wmx=0&wmy=0&s=J37dCPnH3XPcY7QiR16Bqg" alt="">
-                                    </a>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
+{{--                        img--}}
+
                         <div class="line-break"></div>
+
+{{--                         linh tinh--}}
                         <div class="row align-items-center">
                             <div class="col-lg-10 col-8">
                                 <div class="list-item-socail">
@@ -135,94 +87,37 @@
                                 </div>
                             </div>
                         </div>
+{{--                         linh tinh--}}
+
                         <div class="line-break"></div>
+
+{{--                        detail--}}
                         <div class="details-post">
-                            <h1>Lenovo Thinkpad x 1 carbon gen 2 i7 4600 ram 8g ssd 256g màn 2k</h1>
-                            <p class="info-posting-time">Thứ sáu, 27/11/2020, 14:28 (GMT+7)</p>
+                            <h1>{{$item->title}}</h1>
+                            <p class="info-posting-time">{{$item->created_at}}</p>
                             <div class="box-price clearfix">
-                                <p class="price-current">Giá:
-                                    <span class="price-current-value">7.500.000 VNĐ</span>
+                                <p class="price-current">Trạng thái:
+                                    <span class="price-current-value">{{$item->status_trade}}</span>
                                 </p>
                             </div>
                             <p class="info-location">
                                 <span>Địa chỉ: </span>
-                                2/18, lữ gia, Phường 15,  Quận 11, TP Hồ Chí Minh
+                                {{$item->address}}
                             </p>
                             <div class="line-break"></div>
                             <div class="info-post">
                                 <div class="box-title">
-                                    <h2 class="title">Thông tin chi tiết:</h2>
+                                    <h2 class="title">Yêu cầu:</h2>
                                 </div>
                                 <div class="box-information">
-                                    <ul>
-                                        <li>
-                                            <p>
-                                                <span class="item-attribute-label">Loại hình dịch vụ:</span>
-                                                <span>Bán</span>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <span class="item-attribute-label">Trạng thái sản phẩm:</span>
-                                                <span>Đã sử dụng</span>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <span class="item-attribute-label">Ổ cứng:</span>
-                                                <span>SSD</span>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <span class="item-attribute-label">Cpu:</span>
-                                                <span>Intel Core i7</span>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <span class="item-attribute-label">Hãng/ Model (Laptop):</span>
-                                                <span>Lenovo, ThinkPad</span>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <span class="item-attribute-label">Loại hình dịch vụ:</span>
-                                                <span>Bán</span>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <span class="item-attribute-label">Trạng thái sản phẩm:</span>
-                                                <span>Đã sử dụng</span>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <span class="item-attribute-label">Ổ cứng:</span>
-                                                <span>SSD</span>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <span class="item-attribute-label">Cpu:</span>
-                                                <span>Intel Core i7</span>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <span class="item-attribute-label">Hãng/ Model (Laptop):</span>
-                                                <span>Lenovo, ThinkPad</span>
-                                            </p>
-                                        </li>
-                                    </ul>
+                                    {{$item->description}}
                                 </div>
                                 <div class="line-break"></div>
                                 <div class="box-title">
                                     <h2 class="title">Thông tin chi tiết:</h2>
                                 </div>
                                 <div class="content-post">
-                                    <p>Lenovo Thinkpad x 1 carbon gen 2 xách tay Mỹ nguyên zin 100% mõng nhẹ dòng thiết kế dành cho doanh nhân&nbsp;<br>Cấu hình như sau:<br>Cpu i7 (4600u)&nbsp;<br>Ram 8g bus 1600ghz&nbsp;<br>Ổ cứng ssd 256g m2&nbsp;<br>Kích thước màn hình 14 inch 2k siêu nét&nbsp;<br>Thời lượng pin trên 3h&nbsp;<br>Giá bán 7tr5&nbsp;<br>Tất cả được bảo hành 3 tháng&nbsp;<br>Liên hệ 0968449447</p>
+                                    {{$item->content}}
                                 </div>
                             </div>
                             <div class="line-break"></div>
@@ -239,217 +134,92 @@
                                 <div class="box-body">
                                     <div class="box-img">
                                         <a href="" title="" class="box">
-                                            <img src="images/customer.gif">
+                                            <img src="{{$item->account->image_avatar}}">
                                         </a>
                                     </div>
                                     <div class="info-supplier">
                                         <p class="info-item">
                                             <span class="info-label">Người đăng: </span>
-                                            <a href="/personal" title="dstlaptop225">dstlaptop225</a>
+                                            <a href="/personal" >{{$item->account->full_name}}</a>
                                         </p>
                                         <div class="border-line"></div>
                                         <p class="info-item">
                                             <span class="info-label">Người liên hệ: </span>
-                                            <span>dstlaptop225</span>
+                                            <span></span>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+{{--                        detail--}}
+
+{{--                        lien quan--}}
                         <div class="related-post">
                             <div class="box-title">
                                 <h2 class="title">Gợi ý cho bạn:</h2>
                             </div>
                             <div class="row">
+                                @for($list = 0; $list < 6; $list ++ )
                                 <div class="col-lg-4 col-6">
                                     <div class="item-post-related">
-                                        <a href="#" class="item-image">
-                                            <img src="images/product-1.jpg" alt="">
+                                        <a href="/detail/{{$item->id}}" class="item-image">
+                                            <img src="{{ $item->firstImg }}" alt="">
                                         </a>
                                         <div class="item-info">
                                             <h3>
-                                                <a href="#">Chính chủ bán nhà có sẵn hợp đồng cho thuê 35 triệu</a>
+                                                <a href="/detail/{{$item->id}}">{{ $item->title }}</a>
                                             </h3>
                                             <div class="price">
                                                 <p>
-                                                    16.500 VNĐ
+                                                    {{ $item->trade_status }}
                                                 </p>
                                             </div>
                                             <p class="location">
-                                                Phường Linh Xuân, Quận Thủ Đức, TP Hồ Chí Minh
+                                                {{ $item->address }}
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="item-post-related">
-                                        <a href="#" class="item-image">
-                                            <img src="images/product-1.jpg" alt="">
-                                        </a>
-                                        <div class="item-info">
-                                            <h3>
-                                                <a href="#">Chính chủ bán nhà có sẵn hợp đồng cho thuê 35 triệu</a>
-                                            </h3>
-                                            <div class="price">
-                                                <p>
-                                                    16.500 VNĐ
-                                                </p>
-                                            </div>
-                                            <p class="location">
-                                                Phường Linh Xuân, Quận Thủ Đức, TP Hồ Chí Minh
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="item-post-related">
-                                        <a href="#" class="item-image">
-                                            <img src="images/product-1.jpg" alt="">
-                                        </a>
-                                        <div class="item-info">
-                                            <h3>
-                                                <a href="#">Chính chủ bán nhà có sẵn hợp đồng cho thuê 35 triệu</a>
-                                            </h3>
-                                            <div class="price">
-                                                <p>
-                                                    16.500 VNĐ
-                                                </p>
-                                            </div>
-                                            <p class="location">
-                                                Phường Linh Xuân, Quận Thủ Đức, TP Hồ Chí Minh
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="item-post-related">
-                                        <a href="#" class="item-image">
-                                            <img src="images/product-1.jpg" alt="">
-                                        </a>
-                                        <div class="item-info">
-                                            <h3>
-                                                <a href="#">Chính chủ bán nhà có sẵn hợp đồng cho thuê 35 triệu</a>
-                                            </h3>
-                                            <div class="price">
-                                                <p>
-                                                    16.500 VNĐ
-                                                </p>
-                                            </div>
-                                            <p class="location">
-                                                Phường Linh Xuân, Quận Thủ Đức, TP Hồ Chí Minh
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="item-post-related">
-                                        <a href="#" class="item-image">
-                                            <img src="images/product-1.jpg" alt="">
-                                        </a>
-                                        <div class="item-info">
-                                            <h3>
-                                                <a href="#">Chính chủ bán nhà có sẵn hợp đồng cho thuê 35 triệu</a>
-                                            </h3>
-                                            <div class="price">
-                                                <p>
-                                                    16.500 VNĐ
-                                                </p>
-                                            </div>
-                                            <p class="location">
-                                                Phường Linh Xuân, Quận Thủ Đức, TP Hồ Chí Minh
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="item-post-related">
-                                        <a href="#" class="item-image">
-                                            <img src="images/product-1.jpg" alt="">
-                                        </a>
-                                        <div class="item-info">
-                                            <h3>
-                                                <a href="#">Chính chủ bán nhà có sẵn hợp đồng cho thuê 35 triệu</a>
-                                            </h3>
-                                            <div class="price">
-                                                <p>
-                                                    16.500 VNĐ
-                                                </p>
-                                            </div>
-                                            <p class="location">
-                                                Phường Linh Xuân, Quận Thủ Đức, TP Hồ Chí Minh
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endfor
                             </div>
                         </div>
+{{--                        lien quan--}}
                     </div>
                 </div>
+
+{{--                right--}}
                 <div class="col-lg-4 col-md-4 d-none d-lg-block">
                     <div class="main-right">
                         <div class="sidebar">
                             <div class="box-title">
                                 <h2 class="title">Tin rao nổi bật</h2>
                             </div>
-                            <div class="list-item-sidebar">
+                            @for($list = 0; $list < 3; $list ++ )
                                 <div class="item-post">
-                                    <a href="#" class="item-image">
-                                        <img src="images/product-1.jpg" alt="">
+                                    <a href="/detail/{{$item->id}}" class="item-image">
+                                        <img src="{{ $item->firstImg }}" style="max-width: 30%" alt="">
                                     </a>
                                     <div class="item-info">
                                         <h3>
-                                            <a href="#">Chính chủ bán nhà có sẵn hợp đồng cho thuê 35 triệu</a>
+                                            <a href="/detail/{{$item->id}}"> {{ $item->title }} </a>
                                         </h3>
                                         <div class="price">
                                             <p>
-                                                16.500 VNĐ
+                                                {{ $item->description }}
                                             </p>
                                         </div>
                                         <p class="location">
-                                            Phường Linh Xuân, Quận Thủ Đức, TP Hồ Chí Minh
+                                            {{ $item->address }}
                                         </p>
                                     </div>
                                 </div>
-                                <div class="item-post">
-                                    <a href="#" class="item-image">
-                                        <img src="images/product-1.jpg" alt="">
-                                    </a>
-                                    <div class="item-info">
-                                        <h3>
-                                            <a href="#">Chính chủ bán nhà có sẵn hợp đồng cho thuê 35 triệu</a>
-                                        </h3>
-                                        <div class="price">
-                                            <p>
-                                                16.500 VNĐ
-                                            </p>
-                                        </div>
-                                        <p class="location">
-                                            Phường Linh Xuân, Quận Thủ Đức, TP Hồ Chí Minh
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="item-post">
-                                    <a href="#" class="item-image">
-                                        <img src="images/product-1.jpg" alt="">
-                                    </a>
-                                    <div class="item-info">
-                                        <h3>
-                                            <a href="#">Chính chủ bán nhà có sẵn hợp đồng cho thuê 35 triệu</a>
-                                        </h3>
-                                        <div class="price">
-                                            <p>
-                                                16.500 VNĐ
-                                            </p>
-                                        </div>
-                                        <p class="location">
-                                            Phường Linh Xuân, Quận Thủ Đức, TP Hồ Chí Minh
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endfor
                         </div>
                     </div>
                 </div>
+
+                {{--                right--}}
+
             </div>
         </div>
     </main>

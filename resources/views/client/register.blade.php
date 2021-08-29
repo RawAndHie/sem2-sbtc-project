@@ -1,5 +1,10 @@
 @extends('client.layout.master')
 @section('content')
+    <style>
+        img{
+            max-width: 20%;
+        }
+    </style>
     <div class="main-w3layouts wrapper">
         <h1>Đăng ký tài khoản</h1>
         <div class="main-agileinfo">
@@ -41,8 +46,8 @@
                         <input type="text" name="id_number" placeholder="ID">
                     </div>
                     <div class="form-group">
-                        <input type="hidden" name="imgUpload" id="imgUpload" placeholder="ID photo on the front">
-                        <div name="previewDiv">
+                        <input type="hidden" name="imgUpload" id="imgUpload">
+                        <div name="previewDiv" id="previewDiv">
 
                         </div>
                         <button type="button" id="upload_widget" class="btn btn-sm btn-primary">Upload files</button>

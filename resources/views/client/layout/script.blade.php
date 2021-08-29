@@ -19,7 +19,7 @@
 
                     imgUpload.value = currentImageValue;
                     previewDiv.src = result.info.secure_url;
-                    previewDiv.innerHTML += `<img src="${result.info.secure_url}"  class="img-rounded" alt="" width="100px">`;
+                    previewDiv.innerHTML += `<img src="${result.info.secure_url}"  class="img-rounded" alt="" width="100px" style="max-width: 20%">`;
                 }
             }
         }
@@ -30,7 +30,10 @@
     }, false);
 </script>
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
-
+<script>
+    CKEDITOR.replace('contentArea');
+    CKEDITOR.replace('content');
+</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw_u8OnhOyHsZJFkxjWC22-OBddFbFCks&libraries=places"></script>
 
 <script src="{{asset('js/jquery.min.js')}}"></script>

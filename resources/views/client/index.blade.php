@@ -12,16 +12,16 @@
                             <div class="list-item-post">
                                 @foreach($list as $item)
                                     <div class="item-post">
-                                        <a href="#" class="item-image">
-                                            <img src="{{ $item->image }}" alt="">
+                                        <a href="/detail/{{$item->id}}" class="item-image">
+                                            <img src="{{ $item->firstImg }}" style="max-width: 100%" alt="">
                                         </a>
                                         <div class="item-info">
                                             <h3>
-                                                <a href="#">{{ $item->title }}</a>
+                                                <a href="/detail/{{$item->id}}">{{ $item->title }}</a>
                                             </h3>
                                             <div class="price">
                                                 <p>
-                                                    {{ $item->content }}
+                                                    {{ $item->description }}
                                                 </p>
                                             </div>
                                             <p style="font-size: 15px">Đăng bởi : {{ $item->account->full_name }}  </p>
@@ -46,16 +46,16 @@
                             <div class="list-item-sidebar">
                                 @for($list = 0; $list <3 ; $list ++ )
                                     <div class="item-post">
-                                        <a href="#" class="item-image">
-                                            <img src="{{ $item->image }}" style="max-width: 30%" alt="">
+                                        <a href="/detail/{{$item->id}}" class="item-image">
+                                            <img src="{{ $item->firstImg }}" style="max-width: 30%" alt="">
                                         </a>
                                         <div class="item-info">
                                             <h3>
-                                                <a href="#"> {{ $item->title }} </a>
+                                                <a href="/detail/{{$item->id}}"> {{ $item->title }} </a>
                                             </h3>
                                             <div class="price">
                                                 <p>
-                                                    {{ $item->content }}
+                                                    {{ $item->description }}
                                                 </p>
                                             </div>
                                             <p class="location">
