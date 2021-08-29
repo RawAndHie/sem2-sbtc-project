@@ -7,7 +7,7 @@ use App\Models\Trade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class AccountPendingController extends Controller
+class AccountForAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,30 @@ class AccountPendingController extends Controller
     public function index()
     {
         $list = AccountClient::where('status',  1)->paginate(10);
-        return view('admin.account.accountPending',['list' => $list]);
+        return view('admin.account.pending',['list' => $list]);
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
+    public function list()
+    {
+        $list = AccountClient::where('status',  2)->paginate(10);
+        return view('admin.account.list',['list' =>$list]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
+    public function listDelete()
+    {
+        $list = AccountClient::where('status',  3)->paginate(10);
+        return view('admin.account.cancel',['list' =>$list]);
+    }
     /**
      * Show the form for creating a new resource.
      *

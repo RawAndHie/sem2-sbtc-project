@@ -6,7 +6,7 @@ use App\Models\Trade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class PostPendingController extends Controller
+class PostForAdmin extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,30 @@ class PostPendingController extends Controller
      */
     public function index()
     {
-        $list = DB::table('trades');
-        return view('admin.post.tradePost',['list' => Trade::paginate(10)]);
+        $list = Trade::where('status',  1)->paginate(10);
+        return view('admin.post.pending',['list' =>$list]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
+    public function list()
+    {
+        $list = Trade::where('status',  2)->paginate(10);
+        return view('admin.post.list',['list' =>$list]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
+    public function listDelete()
+    {
+        $list = Trade::where('status',  3)->paginate(10);
+        return view('admin.post.cancel',['list' =>$list]);
     }
 
     /**
@@ -66,21 +88,27 @@ class PostPendingController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
-        //
+        $obj = Trade::find($id);
+        $obj->status = 2;
+        $obj->save();
+        return redirect('admin/post-pending');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function destroy($id)
     {
-        //
+        $obj = Trade::find($id);
+        $obj->status = 3;
+        $obj->save();
+        return redirect('admin/post-pending');
     }
 }

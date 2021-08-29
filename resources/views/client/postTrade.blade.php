@@ -37,9 +37,9 @@
                             <div class="col-md-4" id="div_parent_id">
                                 <select required id="parent_id" name="parent_id" class="form-control">
                                     <option value="" hidden disabled selected>Chọn danh mục</option>
-                                    <option value="74">Đồ điện tử</option>
-                                    <option value="73">Trang sức cũ</option>
-                                    <option value="59">Các loại linh tinh</option>
+                                    @foreach($category as $item)
+                                        <option value="{{$item->id}}">{{$item->category_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col-md-4" id="div_child_group_id" style="display: none">
@@ -109,37 +109,16 @@
 
 
                         <!-- File Button Upload Images -->
-                        <div class="form-group row" id="div__upload__images">
-                            <label class="col-md-12 control-label">Hình ảnh:</label>
-                            <div class="col-md-12">
-                                <div class="wrap-upload-file">
-                                    <div id="fileList">
-                                        <ul id="list-images">
-                                            <!-- Upload image -->
-                                        </ul>
-                                    </div>
-                                    <!-- Upload image -->
-                                    <label class="input-file-label" for="uploadcomment" style="position: relative">
-                                    <span>
-                                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M25 0.000732422L3.125 25.0007H15.625V37.5008H34.375V25.0007H46.875L25 0.000732422Z"
-                                                  fill="#F2F5F8"/>
-                                            <path d="M47 44H3V50H47V44Z" fill="#F2F5F8"/>
-                                        </svg>
-                                    </span>
-                                        <span>Chọn ảnh để tải lên</span>
-                                        <span>Lưu ý: Số lượng tối đa là 6 ảnh, dung lượng tối đa là <span>5MB/ 1 ảnh</span>, định dạng ảnh hỗ trợ là: JPG, JPEG, PNG</span>
-                                        <input id="uploadcomment" name="fileupload" class="input-file-upload"
-                                               type="file" accept="image/png,image/x-png,image/gif,image/jpeg"
-                                               style="position: absolute;display: block;width: 100%;height: 100%;opacity: 0;">
-                                    </label>
-                                </div>
+                        <div class="form-group">
+                            <input type="hidden" name="imgUpload" id="imgUpload" placeholder="ID photo on the front">
+                            <div name="previewDiv">
+
                             </div>
+                            <button type="button" id="upload_widget" class="btn btn-sm btn-primary">Upload files</button>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-12 text-center">
-                                <button type="submit" id="singlebutton" class="btn-post-information">Đăng tin</button>
+                                <button type="submit" class="btn-post-information">Đăng tin</button>
                             </div>
                         </div>
                     </fieldset>
