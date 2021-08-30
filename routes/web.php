@@ -76,7 +76,8 @@ Route::post('/admin/edit-contact-us',[ConfigController::class,'contactUsStore'])
 Route::post('/admin/edit-policy',[ConfigController::class,'policyStore']);
 
 Route::get('/admin/list-category',[CategoryController::class,'index']);
-//Route::post('/admin/add-category',[CategoryController::class,'index']);
-
 Route::get('/admin/add-category',[CategoryController::class,'create']);
 Route::post('/admin/add-category',[CategoryController::class,'store']);
+Route::get('/admin/category/{id}/edit',[CategoryController::class,'edit']);
+Route::post('/admin/category/{id}',[CategoryController::class,'update']);
+Route::delete('/admin/category/{id}',[CategoryController::class,'destroy']);

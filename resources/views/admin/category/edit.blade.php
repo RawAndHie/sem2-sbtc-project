@@ -4,25 +4,25 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h2 class="mt-4">Config</h2>
+                <h2 class="mt-4">Thêm Danh Mục</h2>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-angle-right"></i>
-                        Chỉnh sửa trang about us
+                        Vui lòng nhập đầy đủ thông tin
                     </div>
 
                     <div class="card-body">
-                        <form action="/admin/edit-about-us/" method="POST">
+                        <form action="/admin/category/{{$item->id}}" method="POST">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="">Chỉnh sửa</label>
+                                    <label for="">Sửa danh mục</label>
                                     <div class="row">
-                                        <div class="col-md-9">
-                                                <textarea name="aboutUsPage" id="ckeditorAboutUs" cols="100" rows="8">
-                                                    {{$list->aboutUsPage}}
-                                                </textarea>
-                                        </div>
+                                        <input type="text" name="name" class="form-control"
+                                               value="{{$item->category_name}}">
+                                        @error('name')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>

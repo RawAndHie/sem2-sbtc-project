@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Config;
 use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
@@ -13,7 +14,8 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        return view('client.contact-us');
+        $list = Config::find(1);
+        return view('client.contact-us', ['list' => $list]);
     }
 
     /**
