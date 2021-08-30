@@ -3,7 +3,7 @@
     <main>
         <div class="container">
             <div class="row">
-                {{$list->aboutUsPage}}
+                {!! $list->aboutUsPage !!}
             </div>
         </div>
     </main>
