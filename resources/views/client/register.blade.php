@@ -9,50 +9,50 @@
                         @csrf
                         <div class="user-details">
                             <div class="input-box">
-                                <span class="details">Full Name</span>
-                                <input type="text" name="fullName" placeholder="Enter your name">
+                                <span class="details">Họ và tên</span>
+                                <input type="text" name="fullName" placeholder="Nhập tên của bạn">
                                 @error('fullName')
                                 <div class="alert alert-danger">* {{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-box">
-                                <span class="details">Username</span>
-                                <input type="text" name="username" placeholder="Enter your username">
+                                <span class="details">Tên tài khoản</span>
+                                    <input type="text" name="username" placeholder="Nhập tên tài khoản">
                                 @error('username')
                                 <div class="alert alert-danger">* {{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-box">
                                 <span class="details">Email</span>
-                                <input type="text" name="email" placeholder="Enter your email">
+                                <input type="text" name="email" placeholder="Nhập email của bạn">
                                 @error('email')
                                 <div class="alert alert-danger">* {{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-box">
-                                <span class="details">Phone Number</span>
-                                <input type="text" name="phone" placeholder="Enter your number">
+                                <span class="details">Số điện thoại</span>
+                                <input type="text" name="phone" placeholder="Nhập số điện thoại">
                                 @error('phone')
                                 <div class="alert alert-danger">* {{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-box">
-                                <span class="details">Password</span>
-                                <input type="password" name="password" placeholder="Enter your password">
+                                <span class="details">Mật khẩu</span>
+                                <input type="password" name="password" placeholder="Nhập mật khẩu">
                                 @error('password')
                                 <div class="alert alert-danger">* {{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-box">
-                                <span class="details">Confirm Password</span>
-                                <input type="password" name="password_confirmation"  placeholder="Confirm your password">
+                                <span class="details">Xác nhận mật khẩu</span>
+                                <input type="password" name="password_confirmation"  placeholder="Xác nhận mật khẩu">
                                 @error('password_confirmation')
                                 <div class="alert alert-danger">* {{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-box">
-                                <span class="details">ID number</span>
-                                <input type="text" name="id_number" placeholder="Enter your id">
+                                <span class="details">Số cccd</span>
+                                <input type="text" name="id_number" placeholder="Nhập số cccd">
                                 @error('id_number')
                                 <div class="alert alert-danger">* {{ $message }}</div>
                                 @enderror
@@ -63,7 +63,7 @@
                                 <div name="previewDiv" id="previewDiv">
 
                                 </div>
-                                <button type="button" id="upload_widget" class="btn btn-sm btn-primary">Upload files</button>
+                                <button type="button" id="upload_widget" class="btn btn-sm btn-primary">Tải ảnh lên</button>
                                 @error('imgUpload')
                                 <div class="alert alert-danger">* {{ $message }}</div>
                                 @enderror
@@ -74,9 +74,9 @@
                             <span>Tôi đồng ý với điều khoản và dịch vụ</span>
                         </div>
                         <div class="button">
-                            <input type="submit" value="REGISTER">
+                            <input type="submit" value="Đăng ký">
                         </div>
-                        <p class="link-login" >Đã có tài khoản? <a href="#"> Đăng nhập ngay!</a></p>
+                        <p class="link-login" >Đã có tài khoản? <a href="/login"> Đăng nhập ngay!</a></p>
                     </form>
                 </div>
             </div>
