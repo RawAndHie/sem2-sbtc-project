@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Trade;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +16,7 @@ class PostForAdmin extends Controller
      */
     public function index()
     {
-        $list = Trade::where('status',  1)->paginate(10);
+        $list = Trade::where('status',  1)->orderBy('created_at', 'asc')->paginate(10);
         return view('admin.post.pending',['list' =>$list]);
     }
 
@@ -94,6 +95,7 @@ class PostForAdmin extends Controller
     {
         $obj = Trade::find($id);
         $obj->status = 2;
+        $obj->updated_at = Carbon::now();
         $obj->save();
         return redirect('admin/post-pending');
     }
@@ -108,6 +110,7 @@ class PostForAdmin extends Controller
     {
         $obj = Trade::find($id);
         $obj->status = 3;
+        $obj->updated_at =  Carbon::now();
         $obj->save();
         return redirect('admin/post-pending');
     }

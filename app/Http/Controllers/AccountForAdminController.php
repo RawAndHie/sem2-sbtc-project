@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AccountClient;
 use App\Models\Trade;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +17,7 @@ class AccountForAdminController extends Controller
      */
     public function index()
     {
-        $list = AccountClient::where('status',  1)->paginate(10);
+        $list = AccountClient::where('status',  1)->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.account.pending',['list' => $list]);
     }
 
@@ -27,7 +28,7 @@ class AccountForAdminController extends Controller
      */
     public function list()
     {
-        $list = AccountClient::where('status',  2)->paginate(10);
+        $list = AccountClient::where('status',  2)->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.account.list',['list' =>$list]);
     }
 
@@ -95,6 +96,7 @@ class AccountForAdminController extends Controller
     {
         $obj = AccountClient::find($id);
         $obj->status = 2;
+        $obj->updated_at = Carbon::now();
         $obj->save();
         return redirect('admin/account-pending');
 
@@ -110,6 +112,7 @@ class AccountForAdminController extends Controller
     {
         $obj = AccountClient::find($id);
         $obj->status = 3;
+        $obj->updated_at = Carbon::now();
         $obj->save();
         return redirect('admin/account-pending');
     }

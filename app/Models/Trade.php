@@ -55,4 +55,15 @@ class Trade extends Model
             }
     }
 
+    public function getCountStringAttribute(){
+
+        $countString = strlen($this->content);
+        if($countString > 100 ){
+            return substr($this->content, 0, 5);
+        }
+        else{
+            return $this->content;
+        }
+    }
+
 }

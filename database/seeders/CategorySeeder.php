@@ -40,6 +40,21 @@ class CategorySeeder extends Seeder
                 'created_at' => Carbon::now()->subDay(7),
                 'updated_at' => Carbon::now()->subDay(6),
             ],
+
+            [
+                'id' => 4,
+                'category_name' => 'Xe cộ',
+                'create_by_id' => 1,
+                'created_at' => Carbon::now()->subDay(7),
+                'updated_at' => Carbon::now()->subDay(6),
+            ],
+            [
+                'id' => 5,
+                'category_name' => 'Đồng hồ',
+                'create_by_id' => 1,
+                'created_at' => Carbon::now()->subDay(7),
+                'updated_at' => Carbon::now()->subDay(6),
+            ],
         ]);
     }
 }
