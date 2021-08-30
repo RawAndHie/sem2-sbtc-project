@@ -96,8 +96,8 @@
                             <h1>{{$item->title}}</h1>
                             <p class="info-posting-time">{{$item->created_at}}</p>
                             <div class="box-price clearfix">
-                                <p class="price-current">Trạng thái:
-                                    <span class="price-current-value">{{$item->status_trade}}</span>
+                                <p class="price-current" id="statusName">Trạng thái:
+                                    <span class="{{$item->statusColor}}">{{$item->statusName}}</span>
                                 </p>
                             </div>
                             <p class="info-location">
