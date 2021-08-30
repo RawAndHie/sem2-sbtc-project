@@ -33,8 +33,12 @@
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->category_name }}</td>
                                                 <td>
-                                                    <button type="button" st class="btn btn-success">Sửa</button>
-                                                    <button type="button"  class="btn btn-danger">Xóa</button>
+                                                    <a href="/admin/category/{{ $item->id }}/edit" class="btn btn-success">Sửa</a>
+                                                    <form style="display: inline" action="/admin/category/{{ $item->id }}" method="post">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="btn btn-danger">Xóa</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             @endforeach

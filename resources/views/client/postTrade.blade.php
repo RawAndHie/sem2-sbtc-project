@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi" xmlns="http://www.w3.org/1999/xhtml">
 
-                            <!-- Address-->
+<!-- Address-->
 {{--                            <div class="form-group row">--}}
 {{--                                <label class="col-md-12 control-label">Địa chỉ</label>--}}
 {{--                              git  <input type="hidden" name="address" id="addressTrade">--}}
@@ -15,12 +15,12 @@
 {{--                                    </select>--}}
 {{--                                </div>--}}
 <head>
-@include('client.layout.style-post')
+    @include('client.layout.style-post')
 </head>
 
 <body class="raovat-body" id="raovat_body" itemscope itemtype="http://schema.org/WebPage">
 <style>
-    img{
+    img {
         max-width: 20%;
     }
 </style>
@@ -28,7 +28,7 @@
 
     <section class="post-information-area">
         <div class="area-inner">
-            <h1 class="title-page">Đăng tin</h1>
+            <h1 class="title-page"><a href="/">Trang chủ</a></h1>
             <div class="form-posting-area">
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -109,28 +109,30 @@
                         </div>
 
                         <!-- Textarea -->
-                        <div class="form-group row" id="div__content__cke">
-                            <label class="col-md-12 control-label" for="content">Mô tả chi tiết (<span
-                                    style="color: red">*</span>):
-                                <div class="word-count-cke">
-                                    (
-                                    <div id="myCounter"></div>
-                                    /1000)
+{{--                        <div class="form-group row">--}}
+{{--                            <label for="">Thông tin chi tiết</label>--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-9">--}}
+{{--                                    <textarea name="content" id="ckeditorContent" cols="100" rows="8"></textarea>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+                        <div class="form-group">
+                            <label for="">Chỉnh sửa</label>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <textarea name="content" id="ckeditorContent" cols="100" rows="8"></textarea>
                                 </div>
-                            </label>
-                            <div class="col-md-12" id="div-content-cke">
-                            <textarea class="form-control" id="content" name="content"
-                                      placeholder="Nhập mô tả bằng tiếng Việt có dấu"> </textarea>
                             </div>
                         </div>
-
                         <!-- File Button Upload Images -->
                         <div class="form-group">
                             <input type="hidden" name="imgUpload" id="imgUpload">
                             <div name="previewDiv" id="previewDiv">
 
                             </div>
-                            <button type="button" id="upload_widget" class="btn btn-sm btn-primary">Upload files</button>
+                            <button type="button" id="upload_widget" class="btn btn-sm btn-primary">Upload files
+                            </button>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-12 text-center">
