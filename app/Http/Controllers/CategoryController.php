@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 
 use App\Models\Trade;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -66,7 +67,6 @@ class CategoryController extends Controller
      */
      public function show()
     {
-//        $list = DB::table('categories');
 
 
     }
@@ -75,12 +75,12 @@ class CategoryController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-
-     * @return \Illuminate\Http\Response
+ * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $item = Category::find($id);
+        return view('admin.category.edit',['item'=> $item]);
     }
 
     /**
@@ -88,23 +88,27 @@ class CategoryController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-
-     * @return \Illuminate\Http\Response
+ * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
-        //
+        $obj = Category::find($id);
+        $obj->category_name = $request->get('name');
+        $obj->updated_at = Carbon::now();
+        $obj->save();
+        return redirect('/admin/list-category');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param int $id
-
-     * @return \Illuminate\Http\Response
+ * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function destroy($id)
     {
-        //
+        $obj = Category::find($id);
+        $obj->delete();
+        return redirect('/admin/list-category');
     }
 }

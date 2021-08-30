@@ -3,7 +3,11 @@
     <main>
         <div class="container">
             <div class="row">
-                {!! $list->aboutUsPage !!}
+                <div class="col-lg-8 col-md-8 col-12 col-left pr-0">
+                    <div class="main-left">
+                        {!! $list->aboutUsPage !!}
+                    </div>
+                </div>
             </div>
         </div>
     </main>
