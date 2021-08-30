@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\AccountClient;
 use App\Models\Trade;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class AccountPendingController extends Controller
+class AccountForAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +17,31 @@ class AccountPendingController extends Controller
      */
     public function index()
     {
-        $list = AccountClient::where('status',  1)->paginate(10);
-        return view('admin.account.accountPending',['list' => $list]);
+        $list = AccountClient::where('status',  1)->orderBy('created_at', 'desc')->paginate(10);
+        return view('admin.account.pending',['list' => $list]);
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
+    public function list()
+    {
+        $list = AccountClient::where('status',  2)->orderBy('created_at', 'desc')->paginate(10);
+        return view('admin.account.list',['list' =>$list]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
+    public function listDelete()
+    {
+        $list = AccountClient::where('status',  3)->paginate(10);
+        return view('admin.account.cancel',['list' =>$list]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -74,6 +96,7 @@ class AccountPendingController extends Controller
     {
         $obj = AccountClient::find($id);
         $obj->status = 2;
+        $obj->updated_at = Carbon::now();
         $obj->save();
         return redirect('admin/account-pending');
 
@@ -89,6 +112,7 @@ class AccountPendingController extends Controller
     {
         $obj = AccountClient::find($id);
         $obj->status = 3;
+        $obj->updated_at = Carbon::now();
         $obj->save();
         return redirect('admin/account-pending');
     }

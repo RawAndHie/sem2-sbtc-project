@@ -80,13 +80,12 @@ class TradeController extends Controller
         $obj->title = $request->get('title');
         $obj->category_id = $request->get('category_id');
         $obj->address = $request->get('address');
-        $obj->address = $request->get('address');
         $obj->description = $request->get('description');
         $obj->account_id = 1;
         $obj->content = $request->get('content');
         $obj->image = $request->get('imgUpload');
         $obj->save();
-        return redirect('/post');
+        return redirect('/');
     }
 
     /**

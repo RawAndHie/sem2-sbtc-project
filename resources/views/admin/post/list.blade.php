@@ -9,19 +9,23 @@
                         <section class="management-history-area clearfix">
                             <div class="management-history-area-inner">
                                 <div class="box-title-area">
-                                    <h2 class="title-name">Danh sách danh mục</h2>
+                                    <h2 class="title-name">Bài đăng đã duyệt</h2>
                                 </div>
                                 <div class="card-header">
                                     <i class="fas fa-table me-1"></i>
-                                    Danh mục
+                                    DataTable Example
                                 </div>
                                 <div class="card-body table-responsive">
                                     <table  class="table table-striped table-bordered" id="">
                                         <thead style="text-align: center">
                                         <tr>
                                             <th style="width: 3.85195%;"><input type="checkbox" value=""/></th>
-                                            <th style="width: 16.5801%;">Mã số danh mục</th>
-                                            <th style="width: 10.551%;">Tên danh mục</th>
+                                            <th style="width: 16.5801%;">Tiêu đề bài viết</th>
+                                            <th style="width: 10.551%;">Nguời đăng</th>
+                                            <th style="width: 25.4309%;">Ảnh sản phẩm</th>
+                                            <th style="width: 17.9199%;">Giới thiệu sản phẩm</th>
+                                            <th style="width: 7.87138%;">Category</th>
+                                            <th style="width: 7.87138%;">Status</th>
                                             <th style="width: 15.86166%;">Xác nhận</th>
 
                                         </tr>
@@ -30,11 +34,19 @@
                                             <tbody style="text-align: center">
                                             <tr style="align-content: center">
                                                 <td ><input type="checkbox" value=""/></td>
-                                                <td>{{ $item->id }}</td>
-                                                <td>{{ $item->category_name }}</td>
+                                                <td>{{ $item->title }}</td>
+                                                <td>{{ $item->account->full_name }}</td>
+                                                <td><img class="img-responsive" src="{{ $item->firstImg }}"
+                                                         style="width: 120px; height: 120px" alt=""></td>
+                                                <td>{{ $item->content }}</td>
+                                                <td>{{ $item->category->category_name }}</td>
+                                                <td>{{ $item->status_trade }}</td>
                                                 <td>
-                                                    <button type="button" st class="btn btn-success">Sửa</button>
-                                                    <button type="button"  class="btn btn-danger">Xóa</button>
+                                                    <form action="/admin/post-list/{{$item->id}}" method="post">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             @endforeach

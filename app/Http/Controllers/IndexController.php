@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Category;
 use App\Models\Trade;
 use App\Models\AccountClient;
 use Illuminate\Http\Request;
@@ -15,8 +16,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $list = DB::table('trades');
-        return view('client.index',['list' => Trade::paginate(8)]);
+        $list = Trade::where('status',  2)->orderBy('updated_at', 'desc')->paginate(10);
+        return view('client.index',['list' => $list]);
     }
 
     /**
@@ -44,11 +45,15 @@ class IndexController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $item = Trade::find($id);
+        $account = AccountClient::where('id',$item->account_id);
+        $list = Trade::where('status', 2);
+        $category = Category::where('id',$item->category_id);
+        return view('client.detail',['item' =>$item, 'list' => $list]);
     }
 
     /**

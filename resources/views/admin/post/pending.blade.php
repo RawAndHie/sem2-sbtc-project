@@ -9,7 +9,7 @@
                         <section class="management-history-area clearfix">
                             <div class="management-history-area-inner">
                                 <div class="box-title-area">
-                                    <h2 class="title-name">Quản lý bài đăng</h2>
+                                    <h2 class="title-name">Bài đăng đã duyệt</h2>
                                 </div>
                                 <div class="card-header">
                                     <i class="fas fa-table me-1"></i>
@@ -22,9 +22,10 @@
                                             <th style="width: 3.85195%;"><input type="checkbox" value=""/></th>
                                             <th style="width: 16.5801%;">Tiêu đề bài viết</th>
                                             <th style="width: 10.551%;">Nguời đăng</th>
-                                            <th style="width: 25.4309%;">Ảnh sản phẩm</th>
-                                            <th style="width: 17.9199%;">Giới thiệu sản phẩm</th>
+                                            <th style="width: 15.4309%;">Ảnh sản phẩm</th>
+                                            <th style="width: 27.9199%;">Giới thiệu sản phẩm</th>
                                             <th style="width: 7.87138%;">Category</th>
+                                            <th style="width: 7.87138%;">Status</th>
                                             <th style="width: 15.86166%;">Xác nhận</th>
 
                                         </tr>
@@ -35,13 +36,22 @@
                                                 <td ><input type="checkbox" value=""/></td>
                                                 <td>{{ $item->title }}</td>
                                                 <td>{{ $item->account->full_name }}</td>
-                                                <td><img class="img-responsive" src="{{ $item->image }}"
-                                                                            style="width: 120px; height: 120px" alt=""></td>
+                                                <td><img class="img-responsive" src="{{ $item->firstImg }}"
+                                                         style="width: 120px; height: 120px" alt=""></td>
                                                 <td>{{ $item->content }}</td>
                                                 <td>{{ $item->category->category_name }}</td>
+                                                <td>{{ $item->status_trade }}</td>
                                                 <td>
-                                                        <button type="button" st class="btn btn-success">Đồng ý</button>
-                                                        <button type="button"  class="btn btn-danger">Từ chối</button>
+                                                    <form action="/admin/post-pending/{{$item->id}}" method="post">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-success">Đồng ý</button>
+                                                    </form>
+
+                                                    <form action="/admin/post-pending/{{$item->id}}" method="post">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger">Từ chối</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             @endforeach

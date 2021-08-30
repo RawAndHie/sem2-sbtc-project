@@ -19,10 +19,11 @@ class CreateTradesTable extends Migration
             $table->bigInteger('category_id')->unsigned();;
             $table->string('title');
             $table->string('description');
-            $table->string('content');
+            $table->text('content');
             $table->text('image');
             $table->string('address');
             $table->integer('status_trade')->default(1);
+            $table->integer('status')->default(1);
             $table->foreign('account_id')->references('id')->on('account_clients');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();

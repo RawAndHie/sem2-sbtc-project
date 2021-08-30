@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AccountClient;
+use App\Models\Trade;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -13,7 +15,9 @@ class DetailController extends Controller
      */
     public function index()
     {
-        return view('client.detail');
+//        $item = Trade::find($id);
+//        $account = AccountClient::where('account_id',$id);,['item' =>$item, 'account' => $account]
+//        return view('client.detail');
     }
 
     /**
