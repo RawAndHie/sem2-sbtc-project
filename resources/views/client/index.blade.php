@@ -29,6 +29,11 @@
                                             <p class="location">
                                                 {{ $item->address }}
                                             </p>
+                                            <div class="box-price clearfix">
+                                                <p class="price-current" id="statusName">Trạng thái:
+                                                    <span class="{{$item->statusColor}}">{{$item->statusName}}</span>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
@@ -61,6 +66,11 @@
                                             <p class="location">
                                                 {{ $item->address }}
                                             </p>
+                                            <div class="box-price clearfix">
+                                                <p class="price-current" id="statusName">Trạng thái:
+                                                    <span class="{{$item->statusColor}}">{{$item->statusName}}</span>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 @endfor

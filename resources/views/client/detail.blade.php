@@ -124,9 +124,7 @@
                             <div class="wrap-tags clearfix">
                                 <div class="list-tags">
                                     <span class="tag-label">Tags: </span>
-                                    <a class="item-tag" href="" title="TP Hồ Chí Minh">TP Hồ Chí Minh</a>
-                                    <a class="item-tag" href="" title=" Quận 11"> Quận 11</a>
-                                    <a class="item-tag" href="" title="Laptop">Laptop</a>
+                                    <a class="item-tag" href=""> {{$item->category->category_name}}</a>
                                 </div>
                             </div>
                             <div class="line-break"></div>

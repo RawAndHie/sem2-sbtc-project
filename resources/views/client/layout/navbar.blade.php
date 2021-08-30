@@ -4,7 +4,7 @@
             <div class="col-lg-1 col-md-3 col-6">
                 <div class="logo-header">
                     <a href="/">
-                        <img src="images/logo.png" alt="" height="140" width="10%"  >
+                        <img src="{{asset('images/logo.png')}}" alt="" height="140" style="max-width: 130%"  >
                     </a>
                 </div>
             </div>

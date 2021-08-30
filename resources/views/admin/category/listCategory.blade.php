@@ -30,7 +30,7 @@
                                             <tbody style="text-align: center">
                                             <tr style="align-content: center">
                                                 <td ><input type="checkbox" value=""/></td>
-                                                <td>{{ $item->category_id }}</td>
+                                                <td>{{ $item->id }}</td>
                                                 <td>{{ $item->category_name }}</td>
                                                 <td>
                                                     <button type="button" st class="btn btn-success">Sửa</button>
