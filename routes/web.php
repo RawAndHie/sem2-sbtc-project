@@ -10,6 +10,7 @@ use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\PostForAdmin;
 use App\Http\Controllers\RegisterController;
@@ -39,6 +40,9 @@ Route::get('/about-us',[AboutUsController::class,'index']);
 
 Route::get('/register',[RegisterController::class,'index']);
 Route::post('/register',[RegisterController::class,'store']);
+
+Route::get('/login',[LoginController::class,'index']);
+Route::post('/login',[LoginController::class,'store']);
 
 Route::get('/post',[TradeController::class,'index']);
 Route::post('/post',[TradeController::class,'store']);

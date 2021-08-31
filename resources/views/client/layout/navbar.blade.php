@@ -20,7 +20,7 @@
                 <div class="btn-action">
                     <ul>
                         <li class="btn-login">
-                                <a href="#">
+                                <a href="/login">
                                     Đăng nhập
                                 </a>
                         </li>
