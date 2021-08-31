@@ -12,7 +12,7 @@
                                     <h2 class="title-name">Bài đăng đã duyệt</h2>
                                 </div>
                                 <div class="card-header">
-                                    <form class="form-horizontal form-bordered" name="filter-form" action="/admin/post-list" method="get">
+                                    <form class="form-horizontal form-bordered" name="filter-form" action="admin/account-list" method="get">
                                         <div class="form-group">
                                             <label class="col-md-6 control-label">Trạng thái bài đăng</label>
                                             <div class="col-md-6">

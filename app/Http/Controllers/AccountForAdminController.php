@@ -26,9 +26,12 @@ class AccountForAdminController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function list()
+    public function list(Request $request)
     {
-        $list = AccountClient::where('status',  2)->orderBy('created_at', 'desc')->paginate(10);
+        $status = $request->get('status');
+        $list = AccountClient::where('id', '!=', 0);
+        $list = $list->where('status', $status);
+        $list = $list->paginate(10);
         return view('admin.account.list',['list' =>$list]);
     }
 

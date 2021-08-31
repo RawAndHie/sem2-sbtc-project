@@ -12,8 +12,6 @@
                                     <h2 class="title-name">Tài khoản đăng ký</h2>
                                 </div>
                                 <div class="card-header">
-                                    <i class="fas fa-table me-1"></i>
-                                    Dashboard
                                 </div>
                                 <div class="card-body table-responsive">
                                     <table class="table table-striped table-bordered" id="">
