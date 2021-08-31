@@ -28,6 +28,6 @@ class ConfigSeeder extends Seeder
                 'created_at' => Carbon::create(2021, 8, 21, 21, 40, 16), //->diffForHumans(Carbon::now()),
                 'updated_at' => Carbon::now()
             ]
-    ]);
+        ]);
     }
 }
