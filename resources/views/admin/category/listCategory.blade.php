@@ -12,6 +12,7 @@
                                     <h2 class="title-name">Danh sách danh mục</h2>
                                 </div>
                                 <div class="card-header">
+
                                     <i class="fas fa-table me-1"></i>
                                     Danh mục
                                 </div>
