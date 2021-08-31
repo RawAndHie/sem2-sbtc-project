@@ -12,8 +12,19 @@
                                     <h2 class="title-name">Bài đăng đã duyệt</h2>
                                 </div>
                                 <div class="card-header">
-                                    <i class="fas fa-table me-1"></i>
-                                    DataTable Example
+                                    <form class="form-horizontal form-bordered" name="filter-form" action="/admin/post-list" method="get">
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label">Trạng thái bài đăng</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control mb-md" name="status">
+                                                    <option value="0">Tất cả</option>
+                                                    <option value="1">Đang chờ duyệt</option>
+                                                    <option value="2">Đã duyệt</option>
+                                                    <option value="3">Từ chối duyệt</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                                 <div class="card-body table-responsive">
                                     <table  class="table table-striped table-bordered" id="">
@@ -73,4 +84,10 @@
             </div>
         </footer>
     </div>
+    <script>
+        var selectCate =document.forms['filter-form']['status'];
+        selectCate.onchange = function (){
+            document.forms['filter-form'].submit()    ;
+        }
+    </script>
 @endsection

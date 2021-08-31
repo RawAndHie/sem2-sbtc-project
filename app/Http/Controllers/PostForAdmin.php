@@ -25,9 +25,14 @@ class PostForAdmin extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function list()
+    public function list(Request $request)
     {
-        $list = Trade::where('status',  2)->paginate(10);
+        $status = $request->get('status');
+        // 1 : đang chờ duyệt, 2 là đòng
+        // ý, 3 là từ chối
+        $list = Trade::where('id', '!=', 0);
+        $list = $list->where('status', $status);
+        $list = $list->paginate(10);
         return view('admin.post.list',['list' =>$list]);
     }
 
