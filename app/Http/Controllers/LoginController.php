@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Config;
 use Illuminate\Http\Request;
 
-class ContactUsController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        $list = Config::find(1);
-        return view('client.contact-us', ['list' => $list]);
+        return view('client.login');
     }
 
     /**
@@ -23,7 +21,7 @@ class ContactUsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
     }
@@ -31,18 +29,29 @@ class ContactUsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate(
+            [
+                'email' => 'required|email',
+                'password' => 'required|confirmed|min:6',
+            ],
+            [
+                'email.required' => 'Email không được để trống',
+                'email.email' => 'Email không đúng định dạng',
+                'password.required' => 'Mật khẩu không được để trống',
+                'password.min' => 'Mật khẩu tối thiểu 6 ký tự',
+            ]
+        );
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -53,7 +62,7 @@ class ContactUsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -64,8 +73,8 @@ class ContactUsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -76,7 +85,7 @@ class ContactUsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
