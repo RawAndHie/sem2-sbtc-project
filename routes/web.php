@@ -12,6 +12,7 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PersonalController;
+use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\PostForAdmin;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TradeController;
@@ -35,8 +36,8 @@ Route::get('/detail/{id}',[IndexController::class,'show']);
 Route::get('/personal',[PersonalController::class,'index']);
 
 Route::get('/contact-us',[ContactUsController::class,'index']);
-
 Route::get('/about-us',[AboutUsController::class,'index']);
+Route::get('/policy',[PolicyController::class,'index']);
 
 Route::get('/register',[RegisterController::class,'index']);
 Route::post('/register',[RegisterController::class,'store']);

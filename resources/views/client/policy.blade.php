@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-12 col-left pr-0">
                     <div class="main-left">
-                        {!!html_entity_decode($list->aboutUsPage) !!}
+                        {!! $list->policyPage !!}
                     </div>
                 </div>
             </div>
