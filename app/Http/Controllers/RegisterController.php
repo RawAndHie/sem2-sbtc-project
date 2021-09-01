@@ -55,7 +55,7 @@ class RegisterController extends Controller
                 'email.email' => 'Email không đúng định dạng',
                 'password.required' => 'Mật khẩu không được để trống',
                 'password.confirmed' => 'Mật khẩu không trùng khớp',
-                'password_confirmation.required' => 'Không được để trống xác nhận mật khẩu',
+                'password_confirmation.required' => 'Xác nhận không được để trống',
                 'password.min' => 'Mật khẩu tối thiểu 6 ký tự',
                 'confirmPassword.min' => 'Mật khẩu tối thiểu 6 ký tự',
                 'phone.required' => 'Tên không được để trống',
