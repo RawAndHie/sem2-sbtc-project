@@ -120,7 +120,7 @@
                         <div class="form-group">
                             <label for="">Chỉnh sửa</label>
                             <div class="row">
-                                <div class="col-md-9">
+                                <div class="col-md-10">
                                     <textarea name="content" id="ckeditorContent" cols="100" rows="8"></textarea>
                                 </div>
                             </div>
@@ -147,5 +147,6 @@
 </main>
 </div>
 
+@include('client.layout.script')
 @include('client.layout.script-post')
 </body>

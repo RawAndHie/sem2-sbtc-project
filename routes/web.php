@@ -11,6 +11,7 @@ use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\PolicyController;
@@ -96,3 +97,12 @@ Route::post('/admin/add-category',[CategoryController::class,'store']);
 Route::get('/admin/category/{id}/edit',[CategoryController::class,'edit']);
 Route::post('/admin/category/{id}',[CategoryController::class,'update']);
 Route::delete('/admin/category/{id}',[CategoryController::class,'destroy']);
+
+
+Route::get('/location/form',[LocationController::class,'getForm']);
+Route::get('/location/city',[LocationController::class,'getCity']);
+Route::get('/location/district',[LocationController::class,'getDistrict']);
+Route::get('/location/ward',[LocationController::class,'getWard']);
+
+
+
