@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AccountForAdminController;
+use App\Http\Controllers\AccountSettingsController;
 use App\Http\Controllers\AccountTable;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AdminController;
@@ -44,6 +45,9 @@ Route::post('/register',[RegisterController::class,'store']);
 
 Route::get('/login',[LoginController::class,'index']);
 Route::post('/login',[LoginController::class,'store']);
+
+Route::get('/account-settings',[AccountSettingsController::class,'index']);
+Route::post('/account-settings',[AccountSettingsController::class,'store']);
 
 Route::get('/post',[TradeController::class,'index']);
 Route::post('/post',[TradeController::class,'store']);
