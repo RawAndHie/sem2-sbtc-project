@@ -18,9 +18,9 @@
                                             <div class="col-md-6">
                                                 <select class="form-control mb-md" name="status">
                                                     <option value="0">Tất cả</option>
-                                                    <option value="1">Đang chờ duyệt</option>
-                                                    <option value="2">Đã duyệt</option>
-                                                    <option value="3">Từ chối duyệt</option>
+                                                    <option {{$checkedStatus == 1 ? 'selected': ''}} value="1">Đang chờ duyệt</option>
+                                                    <option {{$checkedStatus == 2 ? 'selected': ''}} value="2">Đã duyệt</option>
+                                                    <option {{$checkedStatus == 3 ? 'selected': ''}} value="3">Từ chối duyệt</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -66,9 +66,14 @@
                                                 <td>{{ $item->id_number }}</td>
                                                 <td>
                                                     <form action="/admin/account-list/{{$item->id}}" method="post">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-success" {{$item->acceptButton}}>Đồng ý</button>
+                                                    </form>
+
+                                                    <form action="/admin/account-list/{{$item->id}}" method="post">
                                                         @method('delete')
                                                         @csrf
-                                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                                        <button type="submit" class="btn btn-danger" {{$item->cancelButton}}>Từ chối</button>
                                                     </form>
                                                 </td>
                                             </tr>

@@ -30,10 +30,12 @@ class PostForAdmin extends Controller
         $status = $request->get('status');
         // 1 : đang chờ duyệt, 2 là đòng
         // ý, 3 là từ chối
-        $list = Trade::where('id', '!=', 0);
-        $list = $list->where('status', $status);
+        $list = Trade::where('id', '!=', 0)->orderBy('updated_at', 'desc');
+        if ($status != 0 ){
+            $list = $list->where('status', $status);
+        };
         $list = $list->paginate(10);
-        return view('admin.post.list',['list' =>$list]);
+        return view('admin.post.list',['list' =>$list, 'checkedStatus' => $status]);
     }
 
     /**
@@ -102,7 +104,7 @@ class PostForAdmin extends Controller
         $obj->status = 2;
         $obj->updated_at = Carbon::now();
         $obj->save();
-        return redirect('admin/post-pending');
+        return redirect('admin/post-list');
     }
 
     /**
@@ -117,6 +119,6 @@ class PostForAdmin extends Controller
         $obj->status = 3;
         $obj->updated_at =  Carbon::now();
         $obj->save();
-        return redirect('admin/post-pending');
+        return redirect('admin/post-list');
     }
 }

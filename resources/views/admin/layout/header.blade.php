@@ -24,9 +24,9 @@
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link" href="/admin/post-pending">Chờ kiểm duyệt</a>
                         <a class="nav-link" href="/admin/post-list">Danh sách bài đăng</a>
-                        <a class="nav-link" href="/admin/delete-post">Đã từ chối</a>
+                        <a class="nav-link" href="">Text</a>
+                        <a class="nav-link" href="">Text</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMembers" aria-expanded="false" aria-controls="collapseMembers">
@@ -36,9 +36,9 @@
                 </a>
                 <div class="collapse" id="collapseMembers" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="/admin/account-pending">Chờ kiểm duyệt</a>
                         <a class="nav-link" href="/admin/account-list">Danh sách thành viên</a>
-                        <a class="nav-link" href="/admin/delete-account">Đã từ chối</a>
+                        <a class="nav-link" href="">Text</a>
+                        <a class="nav-link" href="">Text</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePage" aria-expanded="false" aria-controls="collapsePage">
@@ -48,10 +48,9 @@
                 </a>
                 <div class="collapse" id="collapsePage" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="/admin/edit-about-us">Chỉnh sửa trang about us</a>
-                        <a class="nav-link" href="/admin/edit-contact-us">Chỉnh sửa trang contact us</a>
-                        <a class="nav-link" href="/admin/edit-policy">Chỉnh sửa trang policy</a>
-
+                        <a class="nav-link" href="/admin/edit-about-us">About Us</a>
+                        <a class="nav-link" href="/admin/edit-contact-us">Contact Us</a>
+                        <a class="nav-link" href="/admin/edit-policy">Policy</a>
                     </nav>
                 </div>
             </div>

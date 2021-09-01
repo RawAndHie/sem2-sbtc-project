@@ -44,6 +44,9 @@
             <div class="container">
                 <ul>
                     <li class="">
+                        <a class="nav-link" href="/"><i class="fas fa-home"></i>Trang chủ</a>
+                    </li>
+                    <li class="">
                         <a class="nav-link" href="#"><i class="fas fa-desktop"></i> Điện tử, công nghệ</a>
                     </li>
                     <li class="">
