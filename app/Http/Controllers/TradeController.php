@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Address;
 use App\Models\Category;
+use App\Models\City;
 use App\Models\DiaGioiHanhChinh;
 use App\Models\PhuongXa;
 use App\Models\QuanHuyen;
@@ -24,7 +25,7 @@ class TradeController extends Controller
     {
 //        $address = DB::table('tinhthanhpho')->get();
 //        $quanhuyen = QuanHuyen::all()->where('matp','01');
-        $thanhpho = ThanhPho::all();
+        $thanhpho = City::all();
 //        $phuongxa = PhuongXa::all();
         $category = Category::all();
         return view('client.postTrade', ['thanhpho' => $thanhpho, 'category' => $category]);
