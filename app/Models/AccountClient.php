@@ -17,4 +17,21 @@ class AccountClient extends Model
         }
         return $array_image;
     }
+
+    public function getAcceptButtonAttribute(){
+        $disabled = $this->status;
+        if ($disabled == 1 or $disabled == 3){
+            return '';
+        } else {
+            return 'disabled';
+        }
+    }
+    public function getCancelButtonAttribute(){
+        $disabled = $this->status;
+        if ($disabled == 1 or $disabled == 2){
+            return '';
+        } else {
+            return 'disabled';
+        }
+    }
 }

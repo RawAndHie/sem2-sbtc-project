@@ -29,10 +29,12 @@ class AccountForAdminController extends Controller
     public function list(Request $request)
     {
         $status = $request->get('status');
-        $list = AccountClient::where('id', '!=', 0);
-        $list = $list->where('status', $status);
+        $list = AccountClient::where('id', '!=', 0)->orderBy('updated_at', 'desc');
+        if ($status != 0 ){
+            $list = $list->where('status', $status);
+        };
         $list = $list->paginate(10);
-        return view('admin.account.list',['list' =>$list]);
+        return view('admin.account.list',['list' =>$list, 'checkedStatus' => $status]);
     }
 
     /**
@@ -101,7 +103,7 @@ class AccountForAdminController extends Controller
         $obj->status = 2;
         $obj->updated_at = Carbon::now();
         $obj->save();
-        return redirect('admin/account-pending');
+        return redirect('admin/account-list');
 
     }
 
@@ -117,6 +119,6 @@ class AccountForAdminController extends Controller
         $obj->status = 3;
         $obj->updated_at = Carbon::now();
         $obj->save();
-        return redirect('admin/account-pending');
+        return redirect('admin/account-list');
     }
 }

@@ -60,21 +60,27 @@ Route::post('/post',[TradeController::class,'store']);
 
 Route::get('/admin/index',[AdminController::class,'index']);
 
-Route::get('/admin/account-pending',[AccountForAdminController::class,'index']);
 Route::get('/admin/account-list',[AccountForAdminController::class,'list']);
-Route::get('/admin/delete-account',[AccountForAdminController::class,'listDelete']);
-Route::post('/admin/account-pending/{id}',[AccountForAdminController::class,'update']);
-Route::post('/admin/delete-account/{id}',[AccountForAdminController::class,'update']);
-Route::delete('/admin/account-pending/{id}',[AccountForAdminController::class,'destroy']);
+Route::post('/admin/account-list/{id}',[AccountForAdminController::class,'update']);
 Route::delete('/admin/account-list/{id}',[AccountForAdminController::class,'destroy']);
 
-Route::get('/admin/post-pending',[PostForAdmin::class,'index']);
+//Route::get('/admin/delete-account',[AccountForAdminController::class,'listDelete']);
+//Route::post('/admin/account-pending/{id}',[AccountForAdminController::class,'update']);
+//Route::post('/admin/delete-account/{id}',[AccountForAdminController::class,'update']);
+//Route::delete('/admin/account-pending/{id}',[AccountForAdminController::class,'destroy']);
+//Route::delete('/admin/account-list/{id}',[AccountForAdminController::class,'destroy']);
+//Route::get('/admin/account-pending',[AccountForAdminController::class,'index']);
+
 Route::get('/admin/post-list',[PostForAdmin::class,'list']);
-Route::get('/admin/delete-post',[PostForAdmin::class,'listDelete']);
-Route::post('/admin/delete-post/{id}',[PostForAdmin::class,'update']);
-Route::post('/admin/post-pending/{id}',[PostForAdmin::class,'update']);
-Route::delete('/admin/post-pending/{id}',[PostForAdmin::class,'destroy']);
+Route::post('/admin/post-list/{id}',[PostForAdmin::class,'update']);
 Route::delete('/admin/post-list/{id}',[PostForAdmin::class,'destroy']);
+//Route::get('/admin/post-pending',[PostForAdmin::class,'index']);
+//Route::get('/admin/post-list',[PostForAdmin::class,'list']);
+//Route::get('/admin/delete-post',[PostForAdmin::class,'listDelete']);
+//Route::post('/admin/delete-post/{id}',[PostForAdmin::class,'update']);
+//Route::post('/admin/post-pending/{id}',[PostForAdmin::class,'update']);
+//Route::delete('/admin/post-pending/{id}',[PostForAdmin::class,'destroy']);
+//Route::delete('/admin/post-list/{id}',[PostForAdmin::class,'destroy']);
 
 Route::get('/admin/edit-about-us',[ConfigController::class,'aboutUsPage']);
 Route::get('/admin/edit-contact-us',[ConfigController::class,'contactUsPage']);
