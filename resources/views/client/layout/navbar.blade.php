@@ -30,7 +30,7 @@
                             </a>
                         </li>
                         <li class="btn-post">
-                            <a href="{{URL::asset('/post')}}">
+                            <a href="{{URL::asset('/post/upload')}}">
                                 <i class="fas fa-plus-square"></i> Đăng tin
                             </a>
                         </li>

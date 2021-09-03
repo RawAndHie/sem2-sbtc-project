@@ -91,7 +91,6 @@
             xhr.open('GET', '/location/city', false);
             xhr.send();
         }
-
     })
 </script>
 </body>

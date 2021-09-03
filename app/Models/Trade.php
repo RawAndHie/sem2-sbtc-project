@@ -15,6 +15,15 @@ class Trade extends Model
     public function category(){
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
+    public function cityName(){
+        return $this->hasOne(City::class, 'matp', 'city');
+    }
+    public function districtName(){
+        return $this->hasOne(District::class, 'maqh', 'district');
+    }
+    public function wardName(){
+        return $this->hasOne(Ward::class, 'xaid', 'ward');
+    }
 
     public function getListPhotoAttribute(){
         $array_image = [];

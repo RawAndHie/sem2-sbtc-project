@@ -27,7 +27,7 @@
                                             <p style="font-size: 15px">Đăng bởi : {{ $item->account->full_name }}  </p>
 
                                             <p class="location">
-                                                {{ $item->address }}
+                                                {{ $item->address }}, {{ $item->wardName->name }},{{ $item->districtName->name }},{{ $item->cityName->name }}
                                             </p>
                                             <div class="box-price clearfix">
                                                 <p class="price-current" id="statusName">Trạng thái:

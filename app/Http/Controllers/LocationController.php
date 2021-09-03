@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 class LocationController extends Controller
 {
     public function getCity (){
-
         return City::all();
     }
 

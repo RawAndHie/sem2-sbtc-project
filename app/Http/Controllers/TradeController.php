@@ -6,10 +6,12 @@ use App\Models\Address;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\DiaGioiHanhChinh;
+use App\Models\District;
 use App\Models\PhuongXa;
 use App\Models\QuanHuyen;
 use App\Models\ThanhPho;
 use App\Models\Trade;
+use App\Models\Ward;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -49,38 +51,40 @@ class TradeController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate(
-            [
-                'title' => 'required|min:5',
-                'category_id' => 'required',
-                'address' => 'required',
-//                'thanhpho' => 'required',
-//                'quanhuyen' => 'required',
-//                'phuongxa' => 'required',
-//                'diachi' => 'required',
-                'description' => 'required',
-                'content' => 'required',
-
-            ],
-            [
-                'title.required' => 'Tiêu đề không được để trống',
-                'title.min' => 'Tiêu đề tối thiểu 4 ký tự',
-                'category_id.required' => 'Vui lòng chọn danh mục bài viết',
-                'address.required' => 'Vui lòng nhập địa chỉ',
-//                'thanhpho.required' => 'Vui lòng chọn thành phố',
-//                'quanhuyen.required' => 'Vui lòng chọn quận, huyện',
-//                'phuongxa.required' => 'Vui lòng chọn phường',
-//                'diachi.required' => 'Địa chỉ không được để trống',
-                'description.required' => 'Vui lòng giới thiệu về sản phẩm',
-                'content.required' => 'Nhập chi tiết về sản phẩm',
-            ]
-        );
+//        $validated = $request->validate(
+//            [
+//                'title' => 'required|min:5',
+//                'category_id' => 'required',
+//                'address' => 'required',
+//                'city' => 'required',
+//                'district' => 'required',
+//                'ward' => 'required',
+//                'description' => 'required',
+//                'content' => 'required',
+//
+//            ],
+//            [
+//                'title.required' => 'Tiêu đề không được để trống',
+//                'title.min' => 'Tiêu đề tối thiểu 4 ký tự',
+//                'category_id.required' => 'Vui lòng chọn danh mục bài viết',
+//                'address.required' => 'Vui lòng nhập địa chỉ',
+//                'city.required' => 'Vui lòng chọn thành phố',
+//                'district.required' => 'Vui lòng chọn quận, huyện',
+//                'ward.required' => 'Vui lòng chọn phường',
+////                'address.required' => 'Địa chỉ không được để trống',
+//                'description.required' => 'Vui lòng giới thiệu về sản phẩm',
+//                'content.required' => 'Nhập chi tiết về sản phẩm',
+//            ]
+//        );
         //db
         $obj = new Trade();
 
         $obj->title = $request->get('title');
         $obj->category_id = $request->get('category_id');
         $obj->address = $request->get('address');
+        $obj->city = $request->get('city');
+        $obj->district = $request->get('district');
+        $obj->ward = $request->get('ward');
         $obj->description = $request->get('description');
         $obj->account_id = 1;
         $obj->content = $request->get('content');
@@ -132,5 +136,19 @@ class TradeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getCity (){
+        return City::all();
+    }
+
+    public function getDistrict (Request  $request){
+        $cityId = $request->cityId;
+        return District::where('matp', $cityId)->get();
+    }
+
+    public function getWard (Request  $request){
+        $districtId = $request->districtId;
+        return Ward::where('maqh', $districtId)->get();
     }
 }
