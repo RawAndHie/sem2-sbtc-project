@@ -9,4 +9,7 @@ class Category extends Model
 {
     use HasFactory;
     protected $table = 'categories';
+    public function productCount(){
+        return $this->hasMany(Trade::class,'category_id','id');
+    }
 }

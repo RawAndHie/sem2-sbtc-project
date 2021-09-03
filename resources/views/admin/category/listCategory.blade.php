@@ -22,6 +22,7 @@
                                         <tr>
                                             <th style="width: 3.85195%;"><input type="checkbox" value=""/></th>
                                             <th style="width: 16.5801%;">Mã số danh mục</th>
+                                            <th style="width: 16.5801%;">Tổng số bài viết</th>
                                             <th style="width: 10.551%;">Tên danh mục</th>
                                             <th style="width: 15.86166%;">Xác nhận</th>
 
@@ -32,6 +33,7 @@
                                             <tr style="align-content: center">
                                                 <td ><input type="checkbox" value=""/></td>
                                                 <td>{{ $item->id }}</td>
+                                                <td>{{ $item->productCount->count()  }}</td>
                                                 <td>{{ $item->category_name }}</td>
                                                 <td>
                                                     <a href="/admin/category/{{ $item->id }}/edit" class="btn btn-success">Sửa</a>
