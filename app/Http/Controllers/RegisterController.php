@@ -69,7 +69,6 @@ class RegisterController extends Controller
         );
         //db
         $obj = new AccountClient();
-
         $obj->username = $request->get('username');
         $obj->gmail = $request->get('email');
         $obj->password = $request->get('password');
@@ -82,7 +81,7 @@ class RegisterController extends Controller
         Mail::send('emails.send', $data, function($message) use ($obj) {
             $message->to($obj->gmail, 'Tutorials Point')->subject
             ('Laravel HTML Testing Mail');
-            $message->from('sbtctraodoi@gmail.com','Xuan Hung');
+            $message->from('sbtctraodoi@gmail.com','TraoDoi Sbtc');
         });
         return redirect('/');
     }

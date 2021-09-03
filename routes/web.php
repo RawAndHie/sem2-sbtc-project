@@ -50,9 +50,11 @@ Route::post('/login',[LoginController::class,'store']);
 Route::get('/account-settings',[AccountSettingsController::class,'index']);
 Route::post('/account-settings',[AccountSettingsController::class,'store']);
 
-Route::get('/post',[TradeController::class,'index']);
-Route::post('/post',[TradeController::class,'store']);
-
+Route::get('/post/upload',[TradeController::class,'index']);
+Route::post('/post/upload',[TradeController::class,'store']);
+Route::get('/post/city',[TradeController::class,'getCity']);
+Route::get('/post/district',[TradeController::class,'getDistrict']);
+Route::get('/post/ward',[TradeController::class,'getWard']);
 //Route::post('/quanhuyen/{id}', [TradeController::class, 'getQuanHuyen'])->name('get.qh');
 //Route::post('/phuongxa/{id}', [TradeController::class, 'getPhuongXa']);
 

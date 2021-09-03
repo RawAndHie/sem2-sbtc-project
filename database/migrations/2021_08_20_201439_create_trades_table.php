@@ -21,6 +21,9 @@ class CreateTradesTable extends Migration
             $table->string('description');
             $table->text('content');
             $table->text('image');
+            $table->string('city');
+            $table->string('district');
+            $table->string('ward');
             $table->string('address');
             $table->integer('status_trade')->default(1);
             $table->integer('status')->default(1);
