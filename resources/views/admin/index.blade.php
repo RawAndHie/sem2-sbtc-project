@@ -2,12 +2,20 @@
 
 @section('content')
     <div id="layoutSidenav_content">
-        <main>
-            <div class="container-fluid px-4">
-                <h1 class="mt-4">Bảng điều khiển</h1>
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Bảng điều khiển</li>
-                </ol>
+        <main class="main container">
+            <div class="page-seller-management-area">
+                <div class="col-primary">
+                    <div class="col-primary-inner">
+                        <section class="management-history-area clearfix">
+                            <div class="management-history-area-inner">
+                                <div class="box-title-area">
+                                    <h2 class="title-name">Bảng điều khiển</h2>
+
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
         </main>
         <footer class="py-4 bg-light mt-auto">

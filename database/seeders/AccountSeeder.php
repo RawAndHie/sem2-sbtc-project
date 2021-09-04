@@ -20,7 +20,8 @@ class AccountSeeder extends Seeder
             [
                 'id' => 1,
                 'username' => 'huyphuc',
-                'password' => '2811',
+                'password_salt' => '4fIQTyOqjzFI5JByx3ck31dmvXkUr9RtcDzmbwXsWb2NkNC6NeDgwn9x3p6GkAfW',
+                'password_hash' => '$2y$10$OOCM3XX6MGEZ6dlnP6WhAOpflPo0JJ4whiYS9ch3U3xOFON8bz92u',
                 'gmail' => 'dieuhuyphuc@gmail.com',
                 'gender' => 1,
                 'full_name' => 'Huy Phúc',
@@ -31,8 +32,9 @@ class AccountSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'username' => 'tranduc',
-                'password' => '1234',
+                'username' => 'iamraw',
+                'password_salt' => '4fIQTyOqjzFI5JByx3ck31dmvXkUr9RtcDzmbwXsWb2NkNC6NeDgwn9x3p6GkAfW',
+                'password_hash' => '$2y$10$OOCM3XX6MGEZ6dlnP6WhAOpflPo0JJ4whiYS9ch3U3xOFON8bz92u',
                 'gmail' => 'tranduc@gmail.com',
                 'gender' => 1,
                 'full_name' => 'Trần Đức',
@@ -44,7 +46,8 @@ class AccountSeeder extends Seeder
             [
                 'id' => 3,
                 'username' => 'minhtu',
-                'password' => '2321',
+                'password_salt' => '4fIQTyOqjzFI5JByx3ck31dmvXkUr9RtcDzmbwXsWb2NkNC6NeDgwn9x3p6GkAfW',
+                'password_hash' => '$2y$10$OOCM3XX6MGEZ6dlnP6WhAOpflPo0JJ4whiYS9ch3U3xOFON8bz92u',
                 'gmail' => 'nguyenminhtu@gmail.com',
                 'gender' => 1,
                 'full_name' => 'Minh Tú',
@@ -56,7 +59,8 @@ class AccountSeeder extends Seeder
             [
                 'id' => 4,
                 'username' => 'quanghuy',
-                'password' => '2341',
+                'password_salt' => '4fIQTyOqjzFI5JByx3ck31dmvXkUr9RtcDzmbwXsWb2NkNC6NeDgwn9x3p6GkAfW',
+                'password_hash' => '$2y$10$OOCM3XX6MGEZ6dlnP6WhAOpflPo0JJ4whiYS9ch3U3xOFON8bz92u',
                 'gmail' => 'nguyenquanghuy@gmail.com',
                 'gender' => 1,
                 'full_name' => 'Quang Huy',
@@ -68,7 +72,8 @@ class AccountSeeder extends Seeder
             [
                 'id' => 5,
                 'username' => 'manhtri',
-                'password' => '2321',
+                'password_salt' => '4fIQTyOqjzFI5JByx3ck31dmvXkUr9RtcDzmbwXsWb2NkNC6NeDgwn9x3p6GkAfW',
+                'password_hash' => '$2y$10$OOCM3XX6MGEZ6dlnP6WhAOpflPo0JJ4whiYS9ch3U3xOFON8bz92u',
                 'gmail' => 'dinhmanhtri@gmail.com',
                 'gender' => 1,
                 'full_name' => 'Mạnh Trí',

@@ -6,7 +6,9 @@ use App\Models\AccountClient;
 use App\Models\DiaGioiHanhChinh;
 use App\Models\Trade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Keygen\Keygen;
 
 class RegisterController extends Controller
 {
@@ -39,8 +41,8 @@ class RegisterController extends Controller
     {
         $validated = $request->validate(
             [
-                'username' => 'required|min:4',
-                'email' => 'required|email',
+                'username' => 'required|min:4|unique:account_clients,username',
+                'email' => 'required|email|unique:account_clients,gmail',
                 'password' => 'required|confirmed|min:6',
                 'password_confirmation' => 'required',
                 'fullName' => 'required|min:5',
@@ -52,8 +54,10 @@ class RegisterController extends Controller
             [
                 'username.required' => 'Tên đăng nhập không được để trống',
                 'username.min' => 'Tên đăng nhập tối thiểu 4 ký tự',
+                'username.unique' => 'Tên đăng nhập đã tồn tại',
                 'email.required' => 'Email không được để trống',
                 'email.email' => 'Email không đúng định dạng',
+                'email.unique' => 'Email đã được đăng ký',
                 'password.required' => 'Mật khẩu không được để trống',
                 'password.confirmed' => 'Mật khẩu không trùng khớp',
                 'password_confirmation.required' => 'Xác nhận không được để trống',
@@ -68,10 +72,13 @@ class RegisterController extends Controller
             ]
         );
         //db
+        $salt = Keygen::token(64)->generate();
+        $password = $request->get('password');
         $obj = new AccountClient();
         $obj->username = $request->get('username');
         $obj->gmail = $request->get('email');
-        $obj->password = $request->get('password');
+        $obj->password_salt = $salt;
+        $obj->password_hash = Hash::make($password . $salt);
         $obj->phone = $request->get('phone');
         $obj->full_name = $request->get('fullName');
         $obj->id_number = $request->get('id_number');
