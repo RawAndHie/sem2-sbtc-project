@@ -16,7 +16,8 @@ class CreateAccountClientsTable extends Migration
         Schema::create('account_clients', function (Blueprint $table) {
             $table->id('id');
             $table->string('username');
-            $table->string('password');
+            $table->string('password_salt');
+            $table->string('password_hash');
             $table->string('gmail');
             $table->integer('gender')->default(1); //1 = nam , 2 = nữ
             $table->string('full_name');
