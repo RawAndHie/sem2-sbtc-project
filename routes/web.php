@@ -6,6 +6,7 @@ use App\Http\Controllers\AccountSettingsController;
 use App\Http\Controllers\AccountTable;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryClientController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\ContactUsController;
@@ -31,9 +32,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //client
+
 Route::get('/',[IndexController::class,'index']);
 Route::get('/detail/{id}',[IndexController::class,'show']);
 
+Route::get('/category', [CategoryClientController::class, 'index']);
 
 Route::get('/personal',[PersonalController::class,'index']);
 
