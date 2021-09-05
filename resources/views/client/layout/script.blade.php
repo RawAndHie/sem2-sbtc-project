@@ -29,11 +29,11 @@
         myWidget.open();
     }, false);
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw_u8OnhOyHsZJFkxjWC22-OBddFbFCks&libraries=places"></script>
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <script>
     CKEDITOR.replace('ckeditorContent');
 </script>
+<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 
 <script src="{{asset('js/jquery.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
@@ -42,5 +42,3 @@
 <script src="{{asset('js/slick.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
 <script src="{{URL::asset('js/alert-error.js')}}"></script>
-{{--<script src="{{URL::asset('js/raovat.min.js')}}"></script>--}}
-{{--<script src="{{URL::asset('js/ckeditor.js')}}"></script>--}}

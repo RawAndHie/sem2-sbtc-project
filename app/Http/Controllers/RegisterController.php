@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\AccountClient;
-use App\Models\DiaGioiHanhChinh;
 use App\Models\Trade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -49,7 +48,6 @@ class RegisterController extends Controller
                 'phone' => 'required|min:10|max:11',
                 'id_number' => 'required',
                 'imgUpload' => 'required'
-
             ],
             [
                 'username.required' => 'Tên đăng nhập không được để trống',
@@ -71,7 +69,7 @@ class RegisterController extends Controller
                 'imgUpload.required' => 'Vui lòng thêm ảnh giấy tờ tùy thân'
             ]
         );
-        //db
+//        db
         $salt = Keygen::token(64)->generate();
         $password = $request->get('password');
         $obj = new AccountClient();
@@ -90,7 +88,8 @@ class RegisterController extends Controller
             ('Laravel HTML Testing Mail');
             $message->from('sbtctraodoi@gmail.com','TraoDoi Sbtc');
         });
-        return redirect('/');
+        alert()->success('Success','Đã đăng ký thành công tài khoản hãy kiểm tra gmail');
+        return redirect('/',);
     }
 
     /**
