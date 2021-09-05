@@ -1,5 +1,5 @@
 <?php
-
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AccountForAdminController;
 use App\Http\Controllers\AccountSettingsController;
