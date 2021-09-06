@@ -51,7 +51,9 @@ Route::get('/register',[RegisterController::class,'index']);
 Route::post('/register',[RegisterController::class,'store']);
 
 Route::get('/login',[LoginController::class,'index']);
+Route::get('/logout',[LoginController::class,'logout']);
 Route::post('/login',[LoginController::class,'store']);
+
 
 Route::get('/account-settings',[AccountSettingsController::class,'index']);
 Route::post('/account-settings',[AccountSettingsController::class,'store']);

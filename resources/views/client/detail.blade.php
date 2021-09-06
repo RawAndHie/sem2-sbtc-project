@@ -24,41 +24,41 @@
                 <div class="col-lg-8 col-md-12 col-12 col-left pr-0">
                     <div class="main-left">
 
-{{--                        img--}}
+                        {{--                        img--}}
                         <div class="image-post clearfix">
 
                             <div class="image-post-left">
-{{--                                @foreach($item->firstPhoto as $url )--}}
-{{--                                <div class="items-image-details">--}}
-{{--                                    <a href="#">--}}
-{{--                                        <img src="{{$url}}" alt="">--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                                @endforeach--}}
+                                {{--                                @foreach($item->firstPhoto as $url )--}}
+                                {{--                                <div class="items-image-details">--}}
+                                {{--                                    <a href="#">--}}
+                                {{--                                        <img src="{{$url}}" alt="">--}}
+                                {{--                                    </a>--}}
+                                {{--                                </div>--}}
+                                {{--                                @endforeach--}}
                                 @foreach($item->listPhoto as $url )
-                                <div class="items-image-details">
-                                    <a href="#">
-                                        <img src="{{$url}}" alt="">
-                                    </a>
-                                </div>
+                                    <div class="items-image-details">
+                                        <a href="#">
+                                            <img src="{{$url}}" alt="">
+                                        </a>
+                                    </div>
                                 @endforeach
                             </div>
                             <div class="image-post-right">
 
                                 @foreach($item->listPhoto as $url )
-                                <div class="">
-                                    <a href="#">
-                                        <img src="{{$url}}" alt="">
-                                    </a>
-                                </div>
+                                    <div class="">
+                                        <a href="#">
+                                            <img src="{{$url}}" alt="">
+                                        </a>
+                                    </div>
                                 @endforeach
                             </div>
                         </div>
-{{--                        img--}}
+                        {{--                        img--}}
 
                         <div class="line-break"></div>
 
-{{--                         linh tinh--}}
+                        {{--                         linh tinh--}}
                         <div class="row align-items-center">
                             <div class="col-lg-10 col-8">
                                 <div class="list-item-socail">
@@ -87,11 +87,11 @@
                                 </div>
                             </div>
                         </div>
-{{--                         linh tinh--}}
+                        {{--                         linh tinh--}}
 
                         <div class="line-break"></div>
 
-{{--                        detail--}}
+                        {{--                        detail--}}
                         <div class="details-post">
                             <h1>{{$item->title}}</h1>
                             <p class="info-posting-time">{{$item->created_at}}</p>
@@ -102,7 +102,8 @@
                             </div>
                             <p class="info-location">
                                 <span>Địa chỉ: </span>
-                                {{$item->address}}
+                                {{ $item->address }}, {{ $item->wardName->name }},{{ $item->districtName->name }}
+                                ,{{ $item->cityName->name }}
                             </p>
                             <div class="line-break"></div>
                             <div class="info-post">
@@ -138,54 +139,56 @@
                                     <div class="info-supplier">
                                         <p class="info-item">
                                             <span class="info-label">Người đăng: </span>
-                                            <a href="/personal" >{{$item->account->full_name}}</a>
+                                            <a href="/personal">{{$item->account->full_name}}</a>
                                         </p>
                                         <div class="border-line"></div>
                                         <p class="info-item">
-                                            <span class="info-label">Người liên hệ: </span>
-                                            <span></span>
+                                            <span class="info-label">Yêu cầu trao đổi: </span>
+                                            <span>
+                                                <a href="/trade-request/{{$item->id}}" class="btn btn-success"><i class="fas fa-plus-square"></i> Tạo yêu cầu</a>
+                                            </span>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-{{--                        detail--}}
+                        {{--                        detail--}}
 
-{{--                        lien quan--}}
+                        {{--                        lien quan--}}
                         <div class="related-post">
                             <div class="box-title">
                                 <h2 class="title">Gợi ý cho bạn:</h2>
                             </div>
                             <div class="row">
                                 @for($list = 0; $list < 6; $list ++ )
-                                <div class="col-lg-4 col-6">
-                                    <div class="item-post-related">
-                                        <a href="/detail/{{$item->id}}" class="item-image">
-                                            <img src="{{ $item->firstImg }}" alt="">
-                                        </a>
-                                        <div class="item-info">
-                                            <h3>
-                                                <a href="/detail/{{$item->id}}">{{ $item->title }}</a>
-                                            </h3>
-                                            <div class="price">
-                                                <p>
-                                                    {{ $item->trade_status }}
+                                    <div class="col-lg-4 col-6">
+                                        <div class="item-post-related">
+                                            <a href="/detail/{{$item->id}}" class="item-image">
+                                                <img src="{{ $item->firstImg }}" alt="">
+                                            </a>
+                                            <div class="item-info">
+                                                <h3>
+                                                    <a href="/detail/{{$item->id}}">{{ $item->title }}</a>
+                                                </h3>
+                                                <div class="price">
+                                                    <p>
+                                                        {{ $item->trade_status }}
+                                                    </p>
+                                                </div>
+                                                <p class="location">
+                                                    {{ $item->address }}
                                                 </p>
                                             </div>
-                                            <p class="location">
-                                                {{ $item->address }}
-                                            </p>
                                         </div>
                                     </div>
-                                </div>
                                 @endfor
                             </div>
                         </div>
-{{--                        lien quan--}}
+                        {{--                        lien quan--}}
                     </div>
                 </div>
 
-{{--                right--}}
+                {{--                right--}}
                 <div class="col-lg-4 col-md-4 d-none d-lg-block">
                     <div class="main-right">
                         <div class="sidebar">
