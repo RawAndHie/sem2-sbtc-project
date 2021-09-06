@@ -57,7 +57,7 @@
                         @if(Session::has('username'))
                             <li class="dropdown">
                                 <div class="">
-                                    <a href="" class="dropbtn">{{Session::get('username')}} <i class="fa fa-caret-down"></i></a>
+                                    <a href="" class="dropbtn">Xin chào, {{Session::get('username')}} <i class="fa fa-caret-down"></i></a>
                                 </div>
                                 <div class="dropdown-content">
                                     <a href="/personal">Trang cá nhân</a>
@@ -95,13 +95,13 @@
                         <a class="nav-link" href="/"><i class="fas fa-home"></i>Trang chủ</a>
                     </li>
                     <li class="">
-                        <a class="nav-link" href="#"><i class="fas fa-desktop"></i> Điện tử, công nghệ</a>
+                        <a class="nav-link" href="/category"><i class="fas fa-tags"></i> Danh mục bài đăng</a>
                     </li>
                     <li class="">
-                        <a class="nav-link" href="#"><i class="fas fa-chair"></i> Gia dụng, nội thất</a>
+                        <a class="nav-link" href="#"><i class="fas fa-info"></i> Giới thiệu </a>
                     </li>
                     <li class="">
-                        <a class="nav-link" href="#"><i class="fas fa-book"></i> Sách,tiểu thuyết</a>
+                        <a class="nav-link" href="#"><i class="fas fa-address-card"></i> Liên hệ </a>
                     </li>
                 </ul>
             </div>

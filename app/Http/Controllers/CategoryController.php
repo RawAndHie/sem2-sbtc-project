@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 
+use App\Models\City;
 use App\Models\Trade;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
