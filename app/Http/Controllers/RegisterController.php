@@ -82,7 +82,7 @@ class RegisterController extends Controller
         $obj->id_number = $request->get('id_number');
         $obj->image_id = $request->get('imgUpload');
         $obj->save();
-        $data = array('title'=>'Xin chao vietnam', 'content'=>'Day la noi dung');
+        $data = array('title'=>'Xin chao vietnam', 'content'=>'Day la noi dung', 'username'=>$obj->username);
         Mail::send('emails.send', $data, function($message) use ($obj) {
             $message->to($obj->gmail, 'Tutorials Point')->subject
             ('Laravel HTML Testing Mail');
