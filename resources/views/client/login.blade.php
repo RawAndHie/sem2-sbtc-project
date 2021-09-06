@@ -8,15 +8,15 @@
                     @csrf
                     <div class="field email">
                         <div class="input-area">
-                            <input type="text" placeholder="Email">
+                            <input type="text" placeholder="Username" name="username">
                         </div>
-                        @error('email')
+                        @error('username')
                         <div class="alert alert-danger">* {{ $message }}</div>
                         @enderror
                     </div>
                     <div class="field password">
                         <div class="input-area">
-                                <input type="password" placeholder="Password">
+                                <input type="password" placeholder="Password" name="password">
                         </div>
                         @error('password')
                         <div class="alert alert-danger">* {{ $message }}</div>

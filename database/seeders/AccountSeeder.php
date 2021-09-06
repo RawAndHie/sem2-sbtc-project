@@ -82,6 +82,19 @@ class AccountSeeder extends Seeder
                 'image_id_1' => 'https://cdn.luatminhkhue.vn/lmk/articles/12/61370/huong-dan-thu-tuc-cap-lai-chung-minh-thu--cmnd---the-can-cuoc-khi-bi-mat-theo-quy-dinh-moi-nhat---61370.jpg',
                 'id_number' => '1244134324'
             ],
+            [
+                'id' => 6,
+                'username' => 'iamraw1',
+                'password_salt' => 'znvuVnM/uvl8bUSSoJ3jaN8UY1U991ehXLlvZv10lfH7quzFoC5xzYdrbQ33mMRL',
+                'password_hash' => '$2y$10$FLXxjXP3a4/5WJK69vdsaeTLZaE5OBhiFRIujdPygtRjyS829y4jq',
+                'gmail' => 'tranduc92389@gmail.com',
+                'gender' => 1,
+                'full_name' => 'Trần Đức',
+                'phone' => '124232478',
+                'image_avatar' => 'https://png.pngtree.com/png-clipart/20190903/original/pngtree-couple-boy-cute-avatar-png-image_4445471.jpg',
+                'image_id_1' => 'https://cdn.luatminhkhue.vn/lmk/articles/12/61370/huong-dan-thu-tuc-cap-lai-chung-minh-thu--cmnd---the-can-cuoc-khi-bi-mat-theo-quy-dinh-moi-nhat---61370.jpg',
+                'id_number' => '1244134324'
+            ],
 
         ]);
 
