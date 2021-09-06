@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Login;
 use Illuminate\Support\Facades\Hash;
 use MongoDB\Driver\Session;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\AccountClient;
 use Illuminate\Http\Request;
+
 
 class LoginController extends Controller
 {
@@ -38,27 +40,27 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-//        $validated = $request->validate(
-//            [
-//                'username' => 'required',
-//                'password' => 'required',
-//            ],
-//            [
-//                'username.required' => 'Email không được để trống',
-//                'password.required' => 'Mật khẩu không được để trống',
-//            ]
-//        );
+        $acn = new \stdClass();
         $username = $request->get('username');
         $password = $request->get('password');
         $login = AccountClient::where('username', $username)->first();
-        if (Hash::check($password,$login->password_hash )){
-//            $account->\Illuminate\Support\Facades\Session::put('login', $login);
-            alert()->success('Success','Đăng nhập thành công');
-            return redirect('/');
+        if (Hash::check($password, $login->password_hash)) {
+//            \Illuminate\Support\Facades\Session::put('login', $login->username);
+            $request->session()->put('username', $login->username);
+            alert()->success('Success', 'Đăng nhập thành công');
+            return redirect('/',);
 
-        }else{
-            alert()->error('Error','Tài khoản hoặc mật khẩu không đúng');
+        } else {
+            alert()->error('Error', 'Tài khoản hoặc mật khẩu không đúng');
             return redirect('/login',);
+        }
+    }
+
+    public function logout()
+    {
+        if (session()->has('username')) {
+            session()->forget('username');
+            return redirect('/');
         }
     }
 

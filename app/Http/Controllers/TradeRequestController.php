@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TradeRequest;
 use Illuminate\Http\Request;
 
 class TradeRequestController extends Controller
@@ -34,7 +35,8 @@ class TradeRequestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $trade = new TradeRequest();
+
     }
 
     /**
