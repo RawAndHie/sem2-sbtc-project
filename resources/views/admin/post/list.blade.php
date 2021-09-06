@@ -49,7 +49,7 @@
                                                 <td>{{ $item->account->full_name }}</td>
                                                 <td><img class="img-responsive" src="{{ $item->firstImg }}"
                                                          style="width: 120px; height: 120px" alt=""></td>
-                                                <td>{{ $item->content }}</td>
+                                                <td>{{ $item->description }}</td>
                                                 <td>{{ $item->category->category_name }}</td>
                                                 <td>{{ $item->status_trade }}</td>
                                                 <td>
