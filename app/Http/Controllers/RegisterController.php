@@ -76,7 +76,7 @@ class RegisterController extends Controller
         $obj->username = $request->get('username');
         $obj->gmail = $request->get('email');
         $obj->password_salt = $salt;
-        $obj->password_hash = Hash::make($password . $salt);
+        $obj->password_hash = Hash::make($password);
         $obj->phone = $request->get('phone');
         $obj->full_name = $request->get('fullName');
         $obj->id_number = $request->get('id_number');
