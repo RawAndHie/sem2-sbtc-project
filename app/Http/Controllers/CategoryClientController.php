@@ -18,12 +18,11 @@ class CategoryClientController extends Controller
     {
         $selectCate = $request->get('category');
         $category = Category::all();
-        $list = Trade::where('status',  2);
+        $list = Trade::where('status',2);
         if ($selectCate != 0 ){
             $list = $list->where('category_id', $selectCate);
         }
         $list = $list->orderBy('updated_at', 'desc')->paginate(10);
-
         return view('client.category',['category'=>$category, 'selectCate' =>$selectCate, 'list'=>$list]);
     }
 

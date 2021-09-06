@@ -98,10 +98,10 @@
                         <a class="nav-link" href="/category"><i class="fas fa-tags"></i> Danh mục bài đăng</a>
                     </li>
                     <li class="">
-                        <a class="nav-link" href="#"><i class="fas fa-info"></i> Giới thiệu </a>
+                        <a class="nav-link" href="/about-us"><i class="fas fa-info"></i> Giới thiệu </a>
                     </li>
                     <li class="">
-                        <a class="nav-link" href="#"><i class="fas fa-address-card"></i> Liên hệ </a>
+                        <a class="nav-link" href="/contact-us"><i class="fas fa-address-card"></i> Liên hệ </a>
                     </li>
                 </ul>
             </div>

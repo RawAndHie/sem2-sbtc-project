@@ -19,23 +19,9 @@ class ConfigSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('configs')->insert([
             [
                 'id' => 1,
-                'contactUsPage' => '<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Li&ecirc;n Hệ</p>
+                'contactUsPage' => '<p style="text-align:center"><span style="font-size:36px"><strong>Li&ecirc;n hệ</strong></span></p>
 
-<p>\r\n\r\n</p>
-
-<p>Để kh&ocirc;ng ngừng n&acirc;ng cao chất lượng dịch vụ v&agrave; đ&aacute;p ứng tốt hơn những y&ecirc;u cầu của Qu&yacute; Kh&aacute;ch,</p>
-
-<p>\r\n\r\n</p>
-
-<p>ch&uacute;ng t&ocirc;i mong muốn nhận được những th&ocirc;ng tin phản hồi. Nếu qu&yacute; kh&aacute;ch c&oacute; bất kỳ thắc mắc hoặc&nbsp;</p>
-
-<p>\r\n\r\n</p>
-
-<p>d&oacute;ng g&oacute;p n&agrave;o , xin vui l&ograve;ng li&ecirc;n hệ với ch&uacute;ng t&ocirc;i theo th&ocirc;ng tin dưới đ&acirc;y.&nbsp; Ch&uacute;ng t&ocirc;i sẽ phản hồi lại&nbsp;</p>
-
-<p>\r\n\r\n</p>
-
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Qu&yacute; kh&aacute;ch trong thơi gian mới nhất.</p>
+<p style="text-align:center"><span style="font-size:18px">Để kh&ocirc;ng ngừng n&acirc;ng cao chất lượng dịch vụ v&agrave; đ&aacute;p ứng tốt hơn nữa c&aacute;c y&ecirc;u cầu của Qu&yacute; kh&aacute;ch, ch&uacute;ng t&ocirc;i mong muốn nhận được c&aacute;c th&ocirc;ng tin phản hồi. Nếu Qu&yacute; kh&aacute;ch c&oacute; bất kỳ thắc mắc hoặc đ&oacute;ng g&oacute;p n&agrave;o, xin vui l&ograve;ng li&ecirc;n hệ với ch&uacute;ng t&ocirc;i theo th&ocirc;ng tin dưới đ&acirc;y. Ch&uacute;ng t&ocirc;i sẽ phản hồi lại Qu&yacute; kh&aacute;ch trong thời gian sớm nhất.</span></p>
 ',
                 'aboutUsPage' => '<h3><span style="font-size:22px">Giới thiệu</span></h3>
 
