@@ -13,7 +13,7 @@ class TradeRequestController extends Controller
      */
     public function index()
     {
-        return view('trade-request');
+        return view('client.trade-request');
     }
 
     /**

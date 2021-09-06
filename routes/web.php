@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TradeRequestController;
 use Database\Seeders\TradeRequestSeeder;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\AboutUsController;
@@ -55,7 +56,8 @@ Route::post('/login',[LoginController::class,'store']);
 Route::get('/account-settings',[AccountSettingsController::class,'index']);
 Route::post('/account-settings',[AccountSettingsController::class,'store']);
 
-Route::get('/trade-request',[TradeRequestSeeder::class,'index']);
+Route::get('/trade-request',[TradeRequestController::class,'index']);
+
 Route::get('/post/upload',[TradeController::class,'index']);
 Route::post('/post/upload',[TradeController::class,'store']);
 Route::get('/post/city',[TradeController::class,'getCity']);
