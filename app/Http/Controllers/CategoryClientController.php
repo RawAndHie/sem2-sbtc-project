@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\City;
+use App\Models\Trade;
 use Illuminate\Http\Request;
 
 class CategoryClientController extends Controller
@@ -11,9 +14,17 @@ class CategoryClientController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('client.category');
+        $selectCate = $request->get('category');
+        $category = Category::all();
+        $list = Trade::where('status',  2);
+        if ($selectCate != 0 ){
+            $list = $list->where('category_id', $selectCate);
+        }
+        $list = $list->orderBy('updated_at', 'desc')->paginate(10);
+
+        return view('client.category',['category'=>$category, 'selectCate' =>$selectCate, 'list'=>$list]);
     }
 
     /**

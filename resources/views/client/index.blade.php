@@ -49,26 +49,26 @@
                                 <h2 class="title">Tin nổi bật</h2>
                             </div>
                             <div class="list-item-sidebar">
-                                @for($list = 0; $list <3 ; $list ++ )
+                                @for($i = 0; $i <3 ; $i ++ )
                                     <div class="item-post">
-                                        <a href="/detail/{{$item->id}}" class="item-image">
-                                            <img src="{{ $item->firstImg }}" style="max-width: 30%" alt="">
+                                        <a href="/detail/{{$list[$i]->id}}" class="item-image">
+                                            <img src="{{ $list[$i]->firstImg }}" style="max-width: 30%" alt="">
                                         </a>
                                         <div class="item-info">
                                             <h3>
-                                                <a href="/detail/{{$item->id}}"> {{ $item->title }} </a>
+                                                <a href="/detail/{{$list[$i]->id}}"> {{ $list[$i]->title }} </a>
                                             </h3>
                                             <div class="price">
                                                 <p>
-                                                    {{ $item->description }}
+                                                    {{ $list[$i]->description }}
                                                 </p>
                                             </div>
                                             <p class="location">
-                                                {{ $item->address }}
+                                                {{ $list[$i]->address }}
                                             </p>
                                             <div class="box-price clearfix">
                                                 <p class="price-current" id="statusName">Trạng thái:
-                                                    <span class="{{$item->statusColor}}">{{$item->statusName}}</span>
+                                                    <span class="{{$list[$i]->statusColor}}">{{$list[$i]->statusName}}</span>
                                                 </p>
                                             </div>
                                         </div>
