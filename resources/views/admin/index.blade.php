@@ -10,7 +10,99 @@
                             <div class="management-history-area-inner">
                                 <div class="box-title-area">
                                     <h2 class="title-name">Bảng điều khiển</h2>
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-6">
+                                            <div class="card bg-primary text-white mb-4">
+                                                <div class="card-body">
+                                                    <div class="row align-items-center">
 
+                                                        <div class="col-xl-8 col-md-8">
+                                                            <h2>100000</h2>
+                                                            <h5>Thành viên</h5>
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-4">
+                                                            <i class="fas fa-users"></i>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div
+                                                    class="card-footer d-flex align-items-center justify-content-between">
+                                                    <a class="small text-white stretched-link"
+                                                       href="account-list">Xem chi tiết</a>
+                                                    <div class="small text-white"><i class="fas fa-angle-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md-6">
+                                            <div class="card bg-warning text-white mb-4">
+                                                <div class="card-body">
+                                                    <div class="row align-items-center">
+
+                                                        <div class="col-xl-8 col-md-8">
+                                                            <h2>100000</h2>
+                                                            <h5>Bài đăng</h5>
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-4">
+                                                            <i class="fas fa-copy"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="card-footer d-flex align-items-center justify-content-between">
+                                                    <a class="small text-white stretched-link" href="post-list">Xem chi
+                                                        tiết</a>
+                                                    <div class="small text-white"><i class="fas fa-angle-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md-6">
+                                            <div class="card bg-success text-white mb-4">
+                                                <div class="card-body">
+                                                    <div class="row align-items-center">
+
+                                                        <div class="col-xl-8 col-md-8">
+                                                            <h2>100000</h2>
+                                                            <h5>Trao đổi thành công</h5>
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-4">
+                                                            <i class="fas fa-sync-alt"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="card-footer d-flex align-items-center justify-content-between">
+                                                    <a class="small text-white stretched-link" href="#">Xem chi tiết</a>
+                                                    <div class="small text-white"><i class="fas fa-angle-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md-6">
+                                            <div class="card bg-danger text-white mb-4">
+                                                <div class="card-body">
+                                                    <div class="row align-items-center">
+
+                                                        <div class="col-xl-8 col-md-8">
+                                                            <h2>100000</h2>
+                                                            <h5>Người truy cập</h5>
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-4">
+                                                            <i class="fas fa-eye"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="card-footer d-flex align-items-center justify-content-between">
+                                                    <a class="small text-white stretched-link" href="#">Xem chi tiết</a>
+                                                    <div class="small text-white"><i class="fas fa-angle-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </section>
