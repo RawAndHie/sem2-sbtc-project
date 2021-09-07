@@ -19,7 +19,7 @@ class CreateTradeRequestsTable extends Migration
             $table->bigInteger('trade_request_id')->unsigned();  // id món đồ của người gửi yêu cầu
             $table->bigInteger('account_id')->unsigned();;
             $table->text('messenger_request');
-            $table->integer('status_request');
+            $table->integer('status_request');  // 1. Đang chờ, 2. Đã đồng ý, 3. Từ chối, 4. Hoàn thành
             $table->foreign('trade_id')->references('id')->on('trades');
             $table->foreign('trade_request_id')->references('id')->on('trades');
             $table->foreign('account_id')->references('id')->on('account_clients');
