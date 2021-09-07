@@ -38,6 +38,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[IndexController::class,'index']);
 Route::get('/detail/{id}',[IndexController::class,'show']);
+Route::get('/trade-request/{id}',[TradeRequestController::class,'index']);
+Route::post('/trade-request/{id}',[TradeRequestController::class,'store']);
 
 Route::get('/category', [CategoryClientController::class, 'index']);
 
@@ -57,8 +59,6 @@ Route::post('/login',[LoginController::class,'store']);
 
 Route::get('/account-settings',[AccountSettingsController::class,'index']);
 Route::post('/account-settings',[AccountSettingsController::class,'store']);
-
-Route::get('/trade-request',[TradeRequestController::class,'index']);
 
 Route::get('/post/upload',[TradeController::class,'index']);
 Route::post('/post/upload',[TradeController::class,'store']);

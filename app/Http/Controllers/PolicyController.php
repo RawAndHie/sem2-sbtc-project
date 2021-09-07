@@ -15,7 +15,7 @@ class PolicyController extends Controller
     public function index()
     {
         $líst = Config::find(1);
-        return view('client.about-us', ['list' => $líst]);
+        return view('client.policy', ['list' => $líst]);
     }
 
     /**

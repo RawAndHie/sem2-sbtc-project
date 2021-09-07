@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Trade;
 use App\Models\TradeRequest;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,10 @@ class TradeRequestController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index()
+    public function index($id )
     {
-        return view('client.trade-request');
+        $item = Trade::find($id);
+        return view('client.trade-request',['item' =>$item]);
     }
 
     /**
@@ -24,19 +26,27 @@ class TradeRequestController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
         $trade = new TradeRequest();
-
+        $trade->trade_id = $request->get('trade_id');
+        $trade->trade_request_id = 1; // cái này lôi từ session ra
+        $trade->account_id = 1; // cái này lôi từ session ra
+        $trade->messenger_request = $request->get('messenger_request');
+        $trade->status_request = 1; // trạng thaí mặc định là 1
+        // đoạn này phải join tới bảng của cả 2 người để lấy ra email gửi về
+        $trade->save();
+        alert()->success('Success','Đã gửi yêu cầu thành công, hãy chờ được đồng ý');
+        return redirect('/');
     }
 
     /**
