@@ -72,6 +72,9 @@ Route::get('/post/ward',[TradeController::class,'getWard']);
 //admin
 
 Route::get('/admin/index',[AdminController::class,'index']);
+Route::get('/admin/login',[AdminController::class,'login']);
+Route::get('/admin/logout',[AdminController::class,'logout']);
+Route::post('/admin/login',[AdminController::class,'store']);
 
 Route::get('/admin/account-list',[AccountForAdminController::class,'list']);
 Route::post('/admin/account-list/{id}',[AccountForAdminController::class,'update']);

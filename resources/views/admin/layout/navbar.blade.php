@@ -16,7 +16,7 @@
                 <li><a class="dropdown-item" href="#!">Cài đặt</a></li>
                 <li><a class="dropdown-item" href="#!">Hoạt động đăng nhập</a></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#!">Đăng xuất</a></li>
+                <li><a class="dropdown-item" href="/admin/logout">Đăng xuất</a></li>
             </ul>
         </li>
     </ul>
