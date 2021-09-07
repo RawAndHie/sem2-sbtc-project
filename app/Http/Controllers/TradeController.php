@@ -30,7 +30,13 @@ class TradeController extends Controller
         $thanhpho = City::all();
 //        $phuongxa = PhuongXa::all();
         $category = Category::all();
-        return view('client.postTrade', ['thanhpho' => $thanhpho, 'category' => $category]);
+        if (session()->has('username')) {
+            return view('client.postTrade', ['thanhpho' => $thanhpho, 'category' => $category]);
+        } else{
+            alert()->info('Thông báo','Vui lòng đăng nhập');
+            return redirect('/login');
+        }
+//        return view('client.postTrade', ['thanhpho' => $thanhpho, 'category' => $category]);
     }
 
     /**
@@ -51,31 +57,31 @@ class TradeController extends Controller
      */
     public function store(Request $request)
     {
-//        $validated = $request->validate(
-//            [
-//                'title' => 'required|min:5',
-//                'category_id' => 'required',
-//                'address' => 'required',
-//                'city' => 'required',
-//                'district' => 'required',
-//                'ward' => 'required',
-//                'description' => 'required',
-//                'content' => 'required',
-//
-//            ],
-//            [
-//                'title.required' => 'Tiêu đề không được để trống',
-//                'title.min' => 'Tiêu đề tối thiểu 4 ký tự',
-//                'category_id.required' => 'Vui lòng chọn danh mục bài viết',
-//                'address.required' => 'Vui lòng nhập địa chỉ',
-//                'city.required' => 'Vui lòng chọn thành phố',
-//                'district.required' => 'Vui lòng chọn quận, huyện',
-//                'ward.required' => 'Vui lòng chọn phường',
-////                'address.required' => 'Địa chỉ không được để trống',
-//                'description.required' => 'Vui lòng giới thiệu về sản phẩm',
-//                'content.required' => 'Nhập chi tiết về sản phẩm',
-//            ]
-//        );
+        $validated = $request->validate(
+            [
+                'title' => 'required|min:5',
+                'category_id' => 'required',
+                'address' => 'required',
+                'city' => 'required',
+                'district' => 'required',
+                'ward' => 'required',
+                'description' => 'required',
+                'content' => 'required',
+
+            ],
+            [
+                'title.required' => 'Tiêu đề không được để trống',
+                'title.min' => 'Tiêu đề tối thiểu 4 ký tự',
+                'category_id.required' => 'Vui lòng chọn danh mục bài viết',
+                'address.required' => 'Vui lòng nhập địa chỉ',
+                'city.required' => 'Vui lòng chọn thành phố',
+                'district.required' => 'Vui lòng chọn quận, huyện',
+                'ward.required' => 'Vui lòng chọn phường',
+//                'address.required' => 'Địa chỉ không được để trống',
+                'description.required' => 'Vui lòng giới thiệu về sản phẩm',
+                'content.required' => 'Nhập chi tiết về sản phẩm',
+            ]
+        );
         //db
         $obj = new Trade();
 
@@ -90,6 +96,7 @@ class TradeController extends Controller
         $obj->content = $request->get('content');
         $obj->image = $request->get('imgUpload');
         $obj->save();
+        alert()->warning('Thông báo','Đăng bài thành công, bạn sẽ nhận được email khi bài viết được duyệt');
         return redirect('/');
     }
 

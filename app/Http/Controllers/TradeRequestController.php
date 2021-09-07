@@ -16,7 +16,13 @@ class TradeRequestController extends Controller
     public function index($id )
     {
         $item = Trade::find($id);
-        return view('client.trade-request',['item' =>$item]);
+        if (session()->has('username')) {
+            return view('client.trade-request',['item' =>$item]);
+        } else{
+            alert()->warning('Thông báo','Vui lòng đăng nhập');
+            return redirect('/login');
+        }
+//        return view('client.trade-request',['item' =>$item]);
     }
 
     /**

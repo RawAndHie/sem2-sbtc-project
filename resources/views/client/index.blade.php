@@ -37,8 +37,9 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                    @include('.client.pagination.default', ['paginator' => $list])
+
                             </div>
-                            @include('.client.pagination.default', ['paginator' => $list])
                         </div>
                     </div>
                 </div>

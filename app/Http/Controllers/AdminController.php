@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AccountClient;
+use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -13,7 +16,17 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        if (session()->has('usernameAdmin')) {
+            return view('admin.index');
+        }
+        else{
+            return redirect('/admin/login');
+        }
+    }
+
+    public function login()
+    {
+        return view('admin.login');
     }
 
     /**
@@ -30,11 +43,29 @@ class AdminController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        //
+        $username = $request->get('username');
+        $password = $request->get('password');
+        $login = Admin::where('username', $username)->first();
+        if (Hash::check($password, $login->password)) {
+            $request->session()->put('usernameAdmin', $login->username);
+            alert()->success('Success', 'Đăng nhập thành công');
+            return redirect('/admin/index',);
+
+        } else {
+            alert()->error('Error', 'Tài khoản hoặc mật khẩu không đúng');
+            return redirect('/admin/login',);
+        }
+    }
+    public function logout()
+    {
+        if (session()->has('usernameAdmin')) {
+            session()->forget('usernameAdmin');
+            return redirect('/admin/login');
+        }
     }
 
     /**
