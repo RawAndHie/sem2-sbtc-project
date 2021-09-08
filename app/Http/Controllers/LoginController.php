@@ -40,7 +40,6 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $acn = new \stdClass();
         $username = $request->get('username');
         $password = $request->get('password');
         $login = AccountClient::where('username', $username)->first();
