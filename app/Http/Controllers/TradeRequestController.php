@@ -13,11 +13,14 @@ class TradeRequestController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index($id )
+    public function index($id)
     {
         $item = Trade::find($id);
-        if (session()->has('username')) {
-            return view('client.trade-request',['item' =>$item]);
+        if (session()->has('userId')) {
+            $userId = session()->get('userId');
+            $listUserTrade = Trade::where('account_id', $userId)->get();
+            return view('client.trade-request',['item' =>$item,'listUserTrade'=>$listUserTrade]);
+
         } else{
             alert()->warning('Thông báo','Vui lòng đăng nhập');
             return redirect('/login');

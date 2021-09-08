@@ -253,7 +253,27 @@ P/s: robot này nhà mình lấy về chưa dùng lần nào mới nguyên hộp
                 'created_at' => '2021-08-30 01:10:28',
                 'updated_at' => '2021-08-30 01:10:37',
             ],
-
+            [
+                'id' => 13,
+                'account_id' => 4,
+                'category_id' => 5,
+                'title' => 'HUB hàng chế tác cao cấp máy thuỵ sỹ . còn Bh 3 năm',
+                'description' => 'Cần Giao Lưu iphone ngang tầm',
+                'content' => 'HUB hàng chế tác cao cấp máy thuỵ sỹ . còn Bh 3
+                Em mua 15tr5 đeo được 1 lần
+                DG : 13tr
+                cần gl iphone ngang tầm
+                Giá các bác cứ tham khảo nhé ( em đã tham khảo giá và chưa đeo quá 1 buổi tối )',
+                'image' => 'https://res.cloudinary.com/iamraw/image/upload/v1631084394/lrzoeikvojo1zxcaqhj4.jpg,https://res.cloudinary.com/iamraw/image/upload/v1631084394/islac61jxx9ofk1uwayb.jpg,https://res.cloudinary.com/iamraw/image/upload/v1631084394/jumtshyyly5q8mezeu4k.jpg',
+                'city' => '01',
+                'district' => '001',
+                'ward' => '00001',
+                'address' => '132 Ngọ Khánh',
+                'status_trade' => 1,
+                'status' => 2,
+                'created_at' => '2021-08-30 01:10:28',
+                'updated_at' => '2021-08-30 01:10:37',
+            ],
 
         ]);
     }
