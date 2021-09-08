@@ -47,6 +47,7 @@ class LoginController extends Controller
         if (Hash::check($password, $login->password_hash)) {
 //            \Illuminate\Support\Facades\Session::put('login', $login->username);
             $request->session()->put('username', $login->username);
+            $request->session()->put('userId', $login->id);
             alert()->success('Success', 'Đăng nhập thành công');
             return redirect('/',);
 
@@ -60,6 +61,7 @@ class LoginController extends Controller
     {
         if (session()->has('username')) {
             session()->forget('username');
+            session()->forget('userId');
             return redirect('/');
         }
     }

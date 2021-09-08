@@ -360,8 +360,7 @@
                                 <tr>
                                     <td>
                                         <p>Xin chào,</p>
-                                        <p>{{$username}} muốn xin bạn đã đăng tìm chủ mới, Bạn vui
-                                            lòng kiểm tra chi tiết giao dịch và xác nhận giao dịch tại đây</p>
+                                        <p>Tài khoản của bạn đang chờ phê duyệt, chúng tôi sẽ gửi email thông báo khi có sự thay đổi</p>
                                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                                             <tbody>
                                             <tr>
@@ -369,7 +368,7 @@
                                                     <table border="0" cellpadding="0" cellspacing="0">
                                                         <tbody>
                                                         <tr>
-                                                            <td><a href="http://127.0.0.1:8000/client/transaction/" target="_blank">Kiểm tra</a>
+                                                            <td><a href="http://127.0.0.1:8000/login target=" _blank>Kiểm tra</a>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -378,7 +377,7 @@
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <p><a href="http://127.0.0.1:8000/client/transaction/">http://127.0.0.1:8000/client/transaction/</a></p>
+                                        <p><a href="http://127.0.0.1:8000/login">http://127.0.0.1:8000/client/transaction/</a></p>
                                     </td>
                                 </tr>
                             </table>
@@ -398,7 +397,7 @@
                         </tr>
                         <tr>
                             <td class="content-block powered-by">
-                                Powered by <a href="http://localhost:8000/client/home">Meaning Gift</a>.
+                                Powered by <a href="http://localhost:8000/client/home">SBTC</a>.
                             </td>
                         </tr>
                     </table>

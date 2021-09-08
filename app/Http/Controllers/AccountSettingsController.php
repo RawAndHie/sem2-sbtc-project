@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AccountClient;
 use http\Client;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,10 @@ class AccountSettingsController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('client.account-settings');
+        $account = AccountClient::find($id);
+        return view('client.account-settings',['account'=>$account]);
     }
 
     /**
@@ -35,7 +37,7 @@ class AccountSettingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

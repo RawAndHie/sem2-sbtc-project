@@ -9,6 +9,7 @@
 
                 var imgUpload = document.getElementById('imgUpload');
                 var previewDiv = document.getElementById('previewDiv');
+                var previewAvt = document.getElementById('previewAvt');
                 if (imgUpload) {
                     var currentImageValue = imgUpload.value;  // imgUpload.value = link anh link1, link2 , link 3
                     if (currentImageValue.length > 0) {
@@ -16,10 +17,18 @@
                     }
                     currentImageValue += result.info.secure_url;
 
+                    var avatarImg = document.getElementById('avatarImg');
+                    if (avatarImg){
 
-                    imgUpload.value = currentImageValue;
-                    previewDiv.src = result.info.secure_url;
-                    previewDiv.innerHTML += `<img src="${result.info.secure_url}"  class="img-rounded" alt="" width="100px" style="max-width: 20%">`;
+                        imgUpload.value = currentImageValue;
+                        avatarImg.src = result.info.secure_url;
+                    } else {
+                        imgUpload.value = currentImageValue;
+                        previewDiv.src = result.info.secure_url;
+                        previewDiv.innerHTML += `<img src="${result.info.secure_url}"  class="img-rounded" alt="" width="100px" style="max-width: 20%">`;
+
+                    }
+
                 }
             }
         }
