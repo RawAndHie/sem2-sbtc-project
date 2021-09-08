@@ -85,7 +85,7 @@ class RegisterController extends Controller
         $data = array('title'=>'Xin chao vietnam', 'content'=>'Day la noi dung', 'username'=>$obj->username);
         Mail::send('emails.send', $data, function($message) use ($obj) {
             $message->to($obj->gmail, 'Tutorials Point')->subject
-            ('Laravel HTML Testing Mail');
+            ('Thông báo đăng kí tài khoản');
             $message->from('sbtctraodoi@gmail.com','TraoDoi Sbtc');
         });
         alert()->success('Success','Đã đăng ký thành công tài khoản hãy kiểm tra gmail');

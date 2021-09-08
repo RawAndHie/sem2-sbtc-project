@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="dropdown-content">
                                     <a href="/personal">Trang cá nhân</a>
-                                    <a href="/account-settings">Bảo mật</a>
+                                    <a href="/account-settings/{{Session::get('userId')}}">Bảo mật</a>
                                     <a href="/logout">Đăng xuất</a>
                                 </div>
                             </li>
