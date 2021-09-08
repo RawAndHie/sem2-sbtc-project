@@ -72,5 +72,6 @@ class AdminSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
         ]);
+        // admin / 123456
     }
 }

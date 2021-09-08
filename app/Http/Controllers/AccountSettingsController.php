@@ -16,7 +16,12 @@ class AccountSettingsController extends Controller
     public function index($id)
     {
         $account = AccountClient::find($id);
-        return view('client.account-settings',['account'=>$account]);
+        if (session()->has('username')) {
+            return view('client.account-settings',['account'=>$account]);
+        } else{
+            alert()->info('Thông báo','Vui lòng đăng nhập');
+            return redirect('/login');
+        }
     }
 
     /**

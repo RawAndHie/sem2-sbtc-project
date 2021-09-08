@@ -16,14 +16,15 @@ class CategoryClientController extends Controller
      */
     public function index(Request $request)
     {
-        $selectCate = $request->get('category');
+        $selectCate = $request->get('category_id');
+        $all = Trade::where('status',2)->paginate(10);
         $category = Category::all();
         $list = Trade::where('status',2);
         if ($selectCate != 0 ){
             $list = $list->where('category_id', $selectCate);
         }
         $list = $list->orderBy('updated_at', 'desc')->paginate(10);
-        return view('client.category',['category'=>$category, 'selectCate' =>$selectCate, 'list'=>$list]);
+        return view('client.category',['category'=>$category, 'selectCate' =>$selectCate, 'list'=>$list, 'total'=>$all]);
     }
 
     /**

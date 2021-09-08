@@ -19,7 +19,7 @@
 {{--                        </select>--}}
 {{--                    </form>--}}
                     <form action="/category" method="get" name="filter-form">
-                    <select name="category">
+                    <select name="category_id">
                         <option value="0" >Tất cả danh mục</option>
                         @foreach($category as $listCate)
                             <option {{$selectCate == $listCate->id ? 'selected': ''}} value="{{$listCate->id}}">{{$listCate->category_name}}</option>
@@ -92,24 +92,24 @@
 
                                     @for($i = 0; $i <3 ; $i ++ )
                                         <div class="item-post">
-                                            <a href="/detail/{{$list[$i]->id}}" class="item-image">
-                                                <img src="{{ $list[$i]->firstImg }}" style="max-width: 30%" alt="">
+                                            <a href="/detail/{{$total[$i]->id}}" class="item-image">
+                                                <img src="{{ $total[$i]->firstImg }}" style="max-width: 30%" alt="">
                                             </a>
                                             <div class="item-info">
                                                 <h3>
-                                                    <a href="/detail/{{$list[$i]->id}}"> {{ $list[$i]->title }} </a>
+                                                    <a href="/detail/{{$total[$i]->id}}"> {{ $total[$i]->title }} </a>
                                                 </h3>
                                                 <div class="price">
                                                     <p>
-                                                        {{ $list[$i]->description }}
+                                                        {{ $total[$i]->description }}
                                                     </p>
                                                 </div>
                                                 <p class="location">
-                                                    {{ $list[$i]->address }}
+                                                    {{ $total[$i]->address }}
                                                 </p>
                                                 <div class="box-price clearfix">
                                                     <p class="price-current" id="statusName">Trạng thái:
-                                                        <span class="{{$list[$i]->statusColor}}">{{$list[$i]->statusName}}</span>
+                                                        <span class="{{$total[$i]->statusColor}}">{{$total[$i]->statusName}}</span>
                                                     </p>
                                                 </div>
                                             </div>
@@ -148,7 +148,7 @@
         })
     </script>
     <script>
-        var selectCate =document.forms['filter-form']['category'];
+        var selectCate =document.forms['filter-form']['category_id'];
         selectCate.onchange = function (){
             document.forms['filter-form'].submit()    ;
         }

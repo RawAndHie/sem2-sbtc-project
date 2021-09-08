@@ -39,6 +39,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[IndexController::class,'index']);
 Route::get('/detail/{id}',[IndexController::class,'show']);
 Route::get('/trade-request/{id}',[TradeRequestController::class,'index']);
+Route::post('/trade-request/{id}',[TradeRequestController::class,'store']);
 
 Route::get('/category', [CategoryClientController::class, 'index']);
 
