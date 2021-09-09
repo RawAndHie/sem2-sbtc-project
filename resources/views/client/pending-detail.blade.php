@@ -25,17 +25,21 @@
                     <div class="main-left">
                         <div class="line-break"></div>
                         {{--                        detail--}}
+
                         <div class="details-post">
-                            <h1><a href="/detail/{{$requestDetail->myTrade->id}}"> {{$requestDetail->myTrade->title}}</a></h1>
+                            <h1>
+                                <a href="/detail/{{$requestDetail->myRequest->id}}"> {{$requestDetail->myRequest->title}}</a>
+                            </h1>
                             <p class="info-posting-time">Ngày tạo : {{$requestDetail->created_at}}</p>
-                            <p><a href="/detail/{{$requestDetail->trade_request_id}}">Xem bài viết của bạn</a></p>
-                            <p><a href="/detail/{{$requestDetail->trade_id}}">Xem bài bạn muốn trao đổi</a></p>
+                            <p><a href="/detail/{{$requestDetail->trade_id}}">Xem bài viết của bạn</a></p>
+                            <p><a href="/detail/{{$requestDetail->trade_request_id}}">Xem bài viết muốn trao đổi với
+                                    bạn</a></p>
                             <div class="info-post">
                                 <div class="box-title">
                                     <h2 class="title">Trạng thái:</h2>
                                 </div>
-                                <div class="box-information {{$requestDetail->myTrade->statusColor}}">
-                                    {{$requestDetail->myTrade->statusName}}
+                                <div class="box-information {{$requestDetail->myRequest->statusColor}}">
+                                    {{$requestDetail->myRequest->statusName}}
                                 </div>
                                 <div class="line-break"></div>
                             </div>
@@ -48,6 +52,29 @@
                                     {{$requestDetail->messenger_request}}
                                 </div>
                                 <div class="line-break"></div>
+                                <div class="box-module box-supplier-fluid-2">
+                                    <div class="box-body">
+                                        <div class="box-img">
+                                            <a href="" title="" class="box">
+                                                <img src="{{$requestDetail->findAccountRequest->image_avatar}}">
+                                            </a>
+                                        </div>
+                                        <div class="info-supplier">
+                                            <p class="info-item">
+                                                <span class="info-label">Người yêu cầu:</span>
+                                                <a href="/personal">{{$requestDetail->findAccountRequest->full_name}}</a>
+                                            </p>
+                                            <div class="border-line"></div>
+                                            <p class="info-item">
+                                                <div>
+                                                <span class="info-label">Yêu cầu trao đổi: </span>
+                                                    <a href="/pending-detail/{{$requestDetail->id}}/accept" class="btn btn-success"><i class="fas fa-check"></i> Đồng ý</a>
+                                                    <a href="/pending-detail/{{$requestDetail->id}}/cancel" class="btn btn-warning"><i class="fas fa-window-close"></i>Từ chối</a>
+                                            </div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

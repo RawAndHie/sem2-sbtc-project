@@ -26,6 +26,7 @@ class CreateTradesTable extends Migration
             $table->string('ward');
             $table->string('address');
             $table->integer('status_trade')->default(1);
+//           \status_trade:  1 = chua trao doi, 2 = dang trao doi, 3 = da xong
             $table->integer('status')->default(1);
             $table->foreign('account_id')->references('id')->on('account_clients');
             $table->foreign('category_id')->references('id')->on('categories');

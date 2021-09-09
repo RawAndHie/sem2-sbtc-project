@@ -15,4 +15,28 @@ class TradeRequest extends Model
     public function myTrade(){
         return $this->hasOne(Trade::class, 'id', 'trade_request_id');
     }
+    public function findAccountRequest(){
+        return $this->hasOne(AccountClient::class, 'id', 'account_request_id');
+    }
+
+    public function getStatusColorAttribute(){
+
+        if($this->status_trade == 1){
+            return 'text-primary';
+        }elseif ($this->status_trade == 2) {
+            return 'text-warning';
+        } else {
+            return 'text-success';
+        }
+    }
+    public function getStatusNameAttribute(){
+
+        if($this->status_trade == 1){
+            return 'Chưa trao đổi';
+        }elseif ($this->status_trade == 2) {
+            return 'Đang trao đổi';
+        } else {
+            return 'Đã xong';
+        }
+    }
 }

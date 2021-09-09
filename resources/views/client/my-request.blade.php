@@ -45,7 +45,7 @@
                                         </a>
                                         <div class="item-info">
                                             <h3>
-                                                <a href="/detail/{{$item->myRequest->id}}">Lời nhắn: {{ $item->messenger_request }}</a>
+                                                <a href="/request-detail/{{$item->id}}">Lời nhắn: {{ $item->messenger_request }}</a>
                                             </h3>
                                             <div class="price">
                                                 <p>

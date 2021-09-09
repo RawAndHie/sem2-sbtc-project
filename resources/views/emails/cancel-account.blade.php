@@ -360,7 +360,7 @@
                                 <tr>
                                     <td>
                                         <p>Xin chào, {{$full_name}}</p>
-                                        <p>Tài khoản của bạn đang chờ phê duyệt, chúng tôi sẽ gửi email thông báo khi có sự thay đổi</p>
+                                        <p>Tài khoản của bạn đẫ bị từ chối, có thể do ảnh giấy tờ tùy thân không phù hợp, hãy thử lại</p>
                                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                                             <tbody>
                                             <tr>
