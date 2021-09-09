@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RequestDetailController;
 use App\Http\Controllers\TradeRequestController;
 use Database\Seeders\TradeRequestSeeder;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -42,6 +43,8 @@ Route::get('/detail/{id}',[IndexController::class,'show']);
 
 Route::get('/trade-request/{id}',[TradeRequestController::class,'index']);
 Route::post('/trade-request/{id}',[TradeRequestController::class,'store']);
+
+Route::get('/request-detail', [RequestDetailController::class, 'index']);
 
 Route::get('/category', [CategoryClientController::class, 'index']);
 
