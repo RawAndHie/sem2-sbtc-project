@@ -38,12 +38,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[IndexController::class,'index']);
 Route::get('/detail/{id}',[IndexController::class,'show']);
+
+
 Route::get('/trade-request/{id}',[TradeRequestController::class,'index']);
 Route::post('/trade-request/{id}',[TradeRequestController::class,'store']);
 
 Route::get('/category', [CategoryClientController::class, 'index']);
 
 Route::get('/personal',[PersonalController::class,'index']);
+Route::get('/my-request',[PersonalController::class,'tradeRequest']);
+Route::get('/request-pending',[PersonalController::class,'requestPending']);
 
 Route::get('/contact-us',[ContactUsController::class,'index']);
 Route::get('/about-us',[AboutUsController::class,'index']);

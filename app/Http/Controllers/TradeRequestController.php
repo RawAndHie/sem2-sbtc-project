@@ -19,7 +19,7 @@ class TradeRequestController extends Controller
         if (session()->has('userId')) {
             $userId = session()->get('userId');
             $listUserTrade = Trade::where('account_id', $userId)->get();
-            return view('client.trade-request',['item' =>$item,'listUserTrade'=>$listUserTrade]);
+            return view('client.trade-request',['item' =>$item,'listUserTrade'=>$listUserTrade, 'userId' =>$userId]);
 
         } else{
             alert()->warning('Thông báo','Vui lòng đăng nhập');
@@ -27,6 +27,8 @@ class TradeRequestController extends Controller
         }
 //        return view('client.trade-request',['item' =>$item]);
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -47,9 +49,10 @@ class TradeRequestController extends Controller
     public function store(Request $request)
     {
         $trade = new TradeRequest();
-        $trade->trade_id = $request->get('trade_id');
-        $trade->trade_request_id = 1; // cái này lôi từ session ra
-        $trade->account_id = 1; // cái này lôi từ session ra
+        $trade->trade_id = $request->get('trade_id');    // id bài viết
+        $trade->trade_request_id = $request->get('trade_request_id'); ; //  id của bài viết của người gửi
+        $trade->account_id = $request->get('account_id');; // cái này thì lôi từ bài viết ra, id người đăng
+        $trade->account_request_id = $request->get('account_request_id');; // cái này lôi từ session ra, id người gửi yêu cầu
         $trade->messenger_request = $request->get('messenger_request');
         $trade->status_request = 1; // trạng thaí mặc định là 1
         // đoạn này phải join tới bảng của cả 2 người để lấy ra email gửi về

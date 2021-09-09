@@ -43,15 +43,20 @@ class LoginController extends Controller
         $username = $request->get('username');
         $password = $request->get('password');
         $login = AccountClient::where('username', $username)->first();
-        if (Hash::check($password, $login->password_hash)) {
+        if ($login && $login->status == 2){
+            if (Hash::check($password, $login->password_hash)) {
 //            \Illuminate\Support\Facades\Session::put('login', $login->username);
-            $request->session()->put('username', $login->username);
-            $request->session()->put('userId', $login->id);
-            alert()->success('Success', 'Đăng nhập thành công');
-            return redirect('/',);
+                $request->session()->put('username', $login->username);
+                $request->session()->put('userId', $login->id);
+                alert()->success('Success', 'Đăng nhập thành công');
+                return redirect('/',);
 
+            } else {
+                alert()->error('Error', 'Tài khoản hoặc mật khẩu không đúng');
+                return redirect('/login',);
+            }
         } else {
-            alert()->error('Error', 'Tài khoản hoặc mật khẩu không đúng');
+            alert()->error('Error', 'Tài khoản không tồn tại hoặc chưa được duyệt');
             return redirect('/login',);
         }
     }

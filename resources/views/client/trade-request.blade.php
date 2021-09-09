@@ -36,8 +36,15 @@
                                        class="form-control input-md" value="">
                             </div>
                         </div>
+
+{{--                        đoạn này để lấy ra id bài viết và tài khoản của người đăng--}}
                         <input maxlength="70" required id="title" name="trade_id" type="hidden" placeholder=""
                                class="form-control input-md" value="{{$item->id}}">
+                        <input maxlength="70" required id="title" name="account_id" type="hidden" placeholder=""
+                               class="form-control input-md" value="{{$item->account_id}}">
+{{--                        đoạn này lấy ra id account của người gửi --}}
+                        <input maxlength="70" required id="title" name="account_request_id" type="hidden" placeholder=""
+                               class="form-control input-md" value="{{$userId}}">
                         <!-- Select Basic -->
                         <div class="form-group row">
                             <label class="col-md-12 control-label">Lựa chọn bài viết của bạn (<span
@@ -45,6 +52,9 @@
                             <div class="col-md-12">
                                     <select name="trade_request_id">
                                         <option value="">Bài viết của bạn</option>
+                                        @foreach($listUserTrade as $trade)
+                                            <option value="{{$trade->id}}">{{$trade->title}}</option>
+                                        @endforeach
                                     </select>
                             </div>
                         </div>
