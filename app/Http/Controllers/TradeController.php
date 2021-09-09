@@ -84,7 +84,7 @@ class TradeController extends Controller
         );
         //db
         $obj = new Trade();
-
+        $userId = session()->get('userId');
         $obj->title = $request->get('title');
         $obj->category_id = $request->get('category_id');
         $obj->address = $request->get('address');
@@ -92,7 +92,7 @@ class TradeController extends Controller
         $obj->district = $request->get('district');
         $obj->ward = $request->get('ward');
         $obj->description = $request->get('description');
-        $obj->account_id = 1;
+        $obj->account_id = $userId;
         $obj->content = $request->get('content');
         $obj->image = $request->get('imgUpload');
         $obj->save();

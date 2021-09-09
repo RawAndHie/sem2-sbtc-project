@@ -44,7 +44,10 @@ Route::get('/detail/{id}',[IndexController::class,'show']);
 Route::get('/trade-request/{id}',[TradeRequestController::class,'index']);
 Route::post('/trade-request/{id}',[TradeRequestController::class,'store']);
 
-Route::get('/request-detail', [RequestDetailController::class, 'index']);
+Route::get('/request-detail/{id}', [RequestDetailController::class, 'index']);
+Route::get('/pending-detail/{id}', [RequestDetailController::class, 'pendingDetail']);
+Route::get('/pending-detail/{id}/accept', [RequestDetailController::class, 'acceptPending']);
+Route::get('/pending-detail/{id}/cancel', [RequestDetailController::class, 'cancelPending']);
 
 Route::get('/category', [CategoryClientController::class, 'index']);
 

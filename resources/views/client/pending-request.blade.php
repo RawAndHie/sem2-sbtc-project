@@ -35,7 +35,7 @@
                         </div>
                         <div class="wrap-list-item-fluid">
                             <div class="title-page">
-                                <h2 class="title">Bài viết đã yêu cầu trao đổi : <span class="total-post"></span></h2>
+                                <h2 class="title">Bài viết đang chờ bạn đồng ý : <span class="total-post"></span></h2>
                             </div>
                             <div class="list-item-post">
                                 @foreach($listRequest as $item)
@@ -45,7 +45,7 @@
                                         </a>
                                         <div class="item-info">
                                             <h3>
-                                                <a href="/detail/{{$item->myTrade->id}}">Lời nhắn: {{ $item->messenger_request }}</a>
+                                                <a href="/pending-detail/{{$item->id}}">Lời nhắn: {{ $item->messenger_request }}</a>
                                             </h3>
                                             <div class="price">
                                                 <p>
@@ -61,6 +61,7 @@
                                             <div class="box-price clearfix">
                                                 <p class="price-current" id="statusName">Trạng thái:
                                                     <span class="{{$item->myTrade->statusColor}}">{{$item->myTrade->statusName}}</span>
+
                                                 </p>
                                             </div>
                                         </div>

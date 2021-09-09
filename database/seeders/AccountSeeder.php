@@ -38,7 +38,7 @@ class AccountSeeder extends Seeder
                 'username' => 'iamraw',
                 'password_salt' => '4fIQTyOqjzFI5JByx3ck31dmvXkUr9RtcDzmbwXsWb2NkNC6NeDgwn9x3p6GkAfW',
                 'password_hash' => '$2y$10$UsutNM44xd/5Z5wcmoDCGuDkd7x0Xoar5U4.ze.WMK1vdJViniOga',
-                'gmail' => 'tranduc@gmail.com',
+                'gmail' => 'tranduc72729@gmail.com',
                 'gender' => 1,
                 'full_name' => 'Trần Đức',
                 'phone' => '124365473',

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AccountClient;
+use App\Models\Trade;
+use App\Models\TradeRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class RequestDetailController extends Controller
 {
@@ -11,11 +15,62 @@ class RequestDetailController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('client.request-detail');
+        if (session()->has('userId')) {
+            $requestDetail = TradeRequest::find($id);
+            return view('client.request-detail',['requestDetail'=>$requestDetail]);
+        } else {
+            alert()->warning('Thông báo', 'Vui lòng đăng nhập');
+            return redirect('/login');
+        }
     }
 
+    public function pendingDetail($id)
+    {
+        if (session()->has('userId')) {
+            $requestDetail = TradeRequest::find($id);
+            return view('client.pending-detail',['requestDetail'=>$requestDetail]);
+        } else {
+            alert()->warning('Thông báo', 'Vui lòng đăng nhập');
+            return redirect('/login');
+        }
+    }
+    public function acceptPending($id){
+        $item = TradeRequest::find($id);
+        $item->status_request = 2;
+        $item->save();
+        $trade = Trade::find($item->trade_id);
+        $trade->status_trade = 3;
+        $trade->save();
+        $trade_request = Trade::find($item->trade_request_id);
+        $trade_request->status_trade = 3;
+        $trade_request->save();
+        $account_request = AccountClient::find($trade_request->account_id);
+        $account = AccountClient::find($trade->account_id);
+        alert()->success('Success', 'Bạn đã đồng ý trao đổi, người yêu cầu trao đổi sẽ nhận được thông tin liên hệ');
+        $data = array('phone'=>$account->phone, 'full_name'=>$account_request->full_name);
+        Mail::send('emails.accept', $data, function($message) use ($account_request) {
+            $message->to($account_request->gmail, 'Tutorials Point')->subject
+            ('Thông báo về yêu cầu trao đổi');
+            $message->from('sbtctraodoi@gmail.com','TraoDoi Sbtc');
+        });
+        return redirect('/');
+    }
+    public function cancelPending($id){
+        $item = TradeRequest::find($id);
+        $item->status_request = 3;
+        $item->save();
+        $account_request = AccountClient::find($item->account_request_id);
+        alert()->success('Success', 'Bạn đã từ chối trao đổi, chúng tôi sẽ gửi mail cho người yêu cầu trao đổi');
+        $data = array('full_name'=>$account_request->full_name);
+        Mail::send('emails.cancel', $data, function($message) use ($account_request) {
+            $message->to($account_request->gmail, 'Tutorials Point')->subject
+            ('Thông báo về yêu cầu trao đổi');
+            $message->from('sbtctraodoi@gmail.com','TraoDoi Sbtc');
+        });
+        return redirect('/');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -29,7 +84,7 @@ class RequestDetailController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -40,7 +95,7 @@ class RequestDetailController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -51,7 +106,7 @@ class RequestDetailController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -62,8 +117,8 @@ class RequestDetailController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -74,7 +129,7 @@ class RequestDetailController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
