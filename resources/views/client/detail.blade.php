@@ -160,23 +160,23 @@
                                 <h2 class="title">Gợi ý cho bạn:</h2>
                             </div>
                             <div class="row">
-                                @for($list = 0; $list < 6; $list ++ )
+                                @for($i = 0; $i < 6; $i ++ )
                                     <div class="col-lg-4 col-6">
                                         <div class="item-post-related">
-                                            <a href="/detail/{{$item->id}}" class="item-image">
-                                                <img src="{{ $item->firstImg }}" alt="">
+                                            <a href="/detail/{{$trade[$i]->id}}" class="item-image">
+                                                <img src="{{ $trade[$i]->firstImg }}" alt="">
                                             </a>
                                             <div class="item-info">
                                                 <h3>
-                                                    <a href="/detail/{{$item->id}}">{{ $item->title }}</a>
+                                                    <a href="/detail/{{$trade[$i]->id}}">{{ $trade[$i]->title }}</a>
                                                 </h3>
                                                 <div class="price">
                                                     <p>
-                                                        {{ $item->trade_status }}
+                                                        {{ $trade[$i]->trade_status }}
                                                     </p>
                                                 </div>
                                                 <p class="location">
-                                                    {{ $item->address }}
+                                                    {{ $trade[$i]->address }}
                                                 </p>
                                             </div>
                                         </div>
@@ -195,23 +195,28 @@
                             <div class="box-title">
                                 <h2 class="title">Tin rao nổi bật</h2>
                             </div>
-                            @for($list = 0; $list < 3; $list ++ )
+                            @for($i = 0; $i <3 ; $i ++ )
                                 <div class="item-post">
-                                    <a href="/detail/{{$item->id}}" class="item-image">
-                                        <img src="{{ $item->firstImg }}" style="max-width: 30%" alt="">
+                                    <a href="/detail/{{$trade[$i]->id}}" class="item-image">
+                                        <img src="{{ $trade[$i]->firstImg }}" style="max-width: 30%" alt="">
                                     </a>
                                     <div class="item-info">
                                         <h3>
-                                            <a href="/detail/{{$item->id}}"> {{ $item->title }} </a>
+                                            <a href="/detail/{{$trade[$i]->id}}"> {{ $trade[$i]->title }} </a>
                                         </h3>
                                         <div class="price">
                                             <p>
-                                                {{ $item->description }}
+                                                {{ $trade[$i]->description }}
                                             </p>
                                         </div>
                                         <p class="location">
-                                            {{ $item->address }}
+                                            {{ $trade[$i]->address }}
                                         </p>
+                                        <div class="box-price clearfix">
+                                            <p class="price-current" id="statusName">Trạng thái:
+                                                <span class="{{$trade[$i]->statusColor}}">{{$trade[$i]->statusName}}</span>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             @endfor

@@ -58,7 +58,7 @@
                                 @enderror
                             </div>
                             <div class="input-box">
-                                <span class="details">Ảnh cccd</span>
+                                <span class="details">Ảnh CMND/CCCD</span>
                                 <input type="hidden" name="imgUpload" id="imgUpload">
                                 <div name="previewDiv" id="previewDiv">
 

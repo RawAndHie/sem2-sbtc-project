@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AccountClient;
+use App\Models\Trade;
+use App\Models\TradeRequest;
 use Illuminate\Http\Request;
 
 class PersonalController extends Controller
@@ -15,7 +18,20 @@ class PersonalController extends Controller
     {
         return view('client.personal');
     }
-
+    public function tradeRequest()
+    {
+        $userId = session()->get('userId');
+        $accountUser = AccountClient::find($userId);
+        $listRequest = TradeRequest::where('account_request_id',$userId)->get();
+        return view('client.my-request',['accountUser'=>$accountUser,'listRequest'=>$listRequest]);
+    }
+    public function requestPending()
+    {
+        $userId = session()->get('userId');
+        $accountUser = AccountClient::find($userId);
+        $listRequest = TradeRequest::where('account_id',$userId)->get();
+        return view('client.pending-request',['accountUser'=>$accountUser,'listRequest'=>$listRequest]);
+    }
     /**
      * Show the form for creating a new resource.
      *

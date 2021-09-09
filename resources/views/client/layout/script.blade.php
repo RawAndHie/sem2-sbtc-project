@@ -19,8 +19,7 @@
 
                     var avatarImg = document.getElementById('avatarImg');
                     if (avatarImg){
-
-                        imgUpload.value = currentImageValue;
+                        imgUpload.value = result.info.secure_url;
                         avatarImg.src = result.info.secure_url;
                     } else {
                         imgUpload.value = currentImageValue;
