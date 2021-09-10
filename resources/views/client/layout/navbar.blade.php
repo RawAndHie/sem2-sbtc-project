@@ -60,7 +60,7 @@
                                     <a href="" class="dropbtn">Xin chào, {{Session::get('username')}} <i class="fa fa-caret-down"></i></a>
                                 </div>
                                 <div class="dropdown-content">
-                                    <a href="/personal">Trang cá nhân</a>
+                                    <a href="/personal/{{Session::get('userId')}}">Trang cá nhân</a>
                                     <a href="/my-request">Yêu cầu của tôi</a>
                                     <a href="/request-pending">Yêu cầu đang chờ</a>
                                     <a href="/account-settings/{{Session::get('userId')}}">Bảo mật</a>
