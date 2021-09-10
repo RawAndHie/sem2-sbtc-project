@@ -62,7 +62,7 @@
                                         <div class="info-supplier">
                                             <p class="info-item">
                                                 <span class="info-label">Người yêu cầu:</span>
-                                                <a href="/personal">{{$requestDetail->findAccountRequest->full_name}}</a>
+                                                <a href="/personal/{{$requestDetail->findAccountRequest->id}}">{{$requestDetail->findAccountRequest->full_name}}</a>
                                             </p>
                                             <div class="border-line"></div>
                                             <p class="info-item">

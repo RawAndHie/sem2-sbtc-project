@@ -51,7 +51,7 @@ Route::get('/pending-detail/{id}/cancel', [RequestDetailController::class, 'canc
 
 Route::get('/category', [CategoryClientController::class, 'index']);
 
-Route::get('/personal',[PersonalController::class,'index']);
+Route::get('/personal/{id}',[PersonalController::class,'index']);
 Route::get('/my-request',[PersonalController::class,'tradeRequest']);
 Route::get('/request-pending',[PersonalController::class,'requestPending']);
 

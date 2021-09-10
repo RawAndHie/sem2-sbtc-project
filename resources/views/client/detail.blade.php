@@ -139,7 +139,7 @@
                                     <div class="info-supplier">
                                         <p class="info-item">
                                             <span class="info-label">Người đăng: </span>
-                                            <a href="/personal">{{$item->account->full_name}}</a>
+                                            <a href="/personal/{{$item->account->id}}">{{$item->account->full_name}}</a>
                                         </p>
                                         <div class="border-line"></div>
                                         <p class="info-item">

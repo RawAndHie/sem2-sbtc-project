@@ -14,9 +14,11 @@ class PersonalController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('client.personal');
+        $account = AccountClient::find($id);
+        $trade = Trade::where('account_id' , $account->id)->paginate(10);
+        return view('client.personal',['account'=>$account, 'trade'=>$trade]);
     }
     public function tradeRequest()
     {
