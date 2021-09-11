@@ -20,7 +20,6 @@ class TradeRequestController extends Controller
             $userId = session()->get('userId');
             $listUserTrade = Trade::where('account_id', $userId)->get();
             return view('client.trade-request',['item' =>$item,'listUserTrade'=>$listUserTrade, 'userId' =>$userId]);
-
         } else{
             alert()->warning('Thông báo','Vui lòng đăng nhập');
             return redirect('/login');

@@ -19,7 +19,8 @@ class RequestDetailController extends Controller
     {
         if (session()->has('userId')) {
             $requestDetail = TradeRequest::find($id);
-            return view('client.request-detail',['requestDetail'=>$requestDetail]);
+            $leftItem = Trade::where('status',  2)->orderBy('updated_at', 'desc')->paginate(10);
+            return view('client.request-detail',['requestDetail'=>$requestDetail,'leftItem'=>$leftItem]);
         } else {
             alert()->warning('Thông báo', 'Vui lòng đăng nhập');
             return redirect('/login');
@@ -30,7 +31,8 @@ class RequestDetailController extends Controller
     {
         if (session()->has('userId')) {
             $requestDetail = TradeRequest::find($id);
-            return view('client.pending-detail',['requestDetail'=>$requestDetail]);
+            $leftItem = Trade::where('status',  2)->orderBy('updated_at', 'desc')->paginate(10);
+            return view('client.pending-detail',['requestDetail'=>$requestDetail,'leftItem'=>$leftItem]);
         } else {
             alert()->warning('Thông báo', 'Vui lòng đăng nhập');
             return redirect('/login');
