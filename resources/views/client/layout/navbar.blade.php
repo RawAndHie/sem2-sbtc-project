@@ -45,8 +45,9 @@
             </div>
             <div class="col-lg-5 col-md-5 d-none d-md-block">
                 <div class="search-header">
-                    <form action="">
-                        <input type="text" placeholder="Nhập từ khóa cần tìm kiếm...">
+                    <form action="/" method="get">
+                        @csrf
+                        <input type="text"  name="search_text" placeholder="Nhập từ khóa cần tìm kiếm...">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
