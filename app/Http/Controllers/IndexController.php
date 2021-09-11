@@ -14,12 +14,18 @@ class IndexController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $list = Trade::where('status',  2)->orderBy('updated_at', 'desc')->paginate(10);
-        return view('client.index',['list' => $list]);
+        $search_text = $request->get('search_text');
+        $list = Trade::where('status',  2)->orderBy('updated_at', 'desc');
+        $leftItem = Trade::where('status',  2)->orderBy('updated_at', 'desc')->paginate(10);
+        if ($search_text){
+            $list = $list->where('title', 'LIKE' , '%'.$search_text.'%')->paginate(10);
+        } else {
+            $list = $list->paginate(10);
+        }
+        return view('client.index',['list' => $list, 'leftItem'=>$leftItem]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
