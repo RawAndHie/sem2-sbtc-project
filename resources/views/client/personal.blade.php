@@ -1,7 +1,6 @@
 @extends('client.layout.master')
 @section('content')
-    <main class="main">
-
+    <main>
         <div class="container">
             <nav class="breadcrumb-area" aria-label="breadcrumb">
                 <ol class="breadcrumb-inner">
@@ -35,7 +34,8 @@
                         </div>
                         <div class="wrap-list-item-fluid">
                             <div class="title-page">
-                                <h2 class="title">Tin đã đăng: <span class="total-post">{{$trade->count()}} tin</span></h2>
+                                <h2 class="title">Tin đã đăng: <span class="total-post">{{$trade->count()}} tin</span>
+                                </h2>
                             </div>
                             <div class="list-item-post">
                                 @foreach($trade as $item)

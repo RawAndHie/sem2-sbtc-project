@@ -19641,7 +19641,7 @@ ul.pagination li:not(:last-child) a {
 }
 
 .seller_content_area {
-    position: relative;
+    /*position: relative;*/
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
