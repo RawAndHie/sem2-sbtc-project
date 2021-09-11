@@ -27,6 +27,27 @@
                         {{--                        detail--}}
                         <div class="details-post">
                             <h1><a href="/detail/{{$requestDetail->myTrade->id}}"> {{$requestDetail->myTrade->title}}</a></h1>
+                            <div class="image-post clearfix">
+
+                                <div class="image-post-left">
+                                    @foreach($requestDetail->myTrade->listPhoto as $url )
+                                        <div class="items-image-details">
+                                            <a href="#">
+                                                <img src="{{$url}}" alt="">
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <div class="image-post-right">
+                                    @foreach($requestDetail->myTrade->listPhoto as $url )
+                                        <div class="">
+                                            <a href="#">
+                                                <img src="{{$url}}" alt="">
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
                             <p class="info-posting-time">Ngày tạo : {{$requestDetail->created_at}}</p>
                             <p><a href="/detail/{{$requestDetail->trade_request_id}}">Xem bài viết của bạn</a></p>
                             <p><a href="/detail/{{$requestDetail->trade_id}}">Xem bài bạn muốn trao đổi</a></p>
@@ -60,25 +81,32 @@
                             <div class="box-title">
                                 <h2 class="title">Tin rao nổi bật</h2>
                             </div>
-                            <div class="item-post">
-                                <a href="#" class="item-image">
-                                    <img
-                                        src="https://res.cloudinary.com/iamraw/image/upload/v1630282760/xqkpcdssr4mdp2val5on.jpg"
-                                        style="max-width: 30%" alt="">
-                                </a>
-                                <div class="item-info">
-                                    <h3>
-                                        <a href="#">Đồng hồ fake</a>
-                                    </h3>
-                                    <div class="price">
-                                        <p>
-                                            Muốn đổi đồng hồ real
-                                        </p>
+                            <div class="list-item-sidebar">
+                                @for($i = 0; $i <3 ; $i ++ )
+                                    <div class="item-post">
+                                        <a href="/detail/{{$leftItem[$i]->id}}" class="item-image">
+                                            <img src="{{ $leftItem[$i]->firstImg }}" style="max-width: 30%" alt="">
+                                        </a>
+                                        <div class="item-info">
+                                            <h3>
+                                                <a href="/detail/{{$leftItem[$i]->id}}"> {{ $leftItem[$i]->title }} </a>
+                                            </h3>
+                                            <div class="price">
+                                                <p>
+                                                    {{ $leftItem[$i]->description }}
+                                                </p>
+                                            </div>
+                                            <p class="location">
+                                                {{ $leftItem[$i]->address }}
+                                            </p>
+                                            <div class="box-price clearfix">
+                                                <p class="price-current" id="statusName">Trạng thái:
+                                                    <span class="{{$leftItem[$i]->statusColor}}">{{$leftItem[$i]->statusName}}</span>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="location">
-                                        8 Tôn Thất Thuyết
-                                    </p>
-                                </div>
+                                @endfor
                             </div>
                         </div>
                     </div>
