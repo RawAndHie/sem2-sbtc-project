@@ -27,15 +27,15 @@ class PostForAdmin extends Controller
      */
     public function list(Request $request)
     {
-        $status = $request->get('status');
+        $checkedStatus = $request->get('status');
         // 1 : đang chờ duyệt, 2 là đòng
         // ý, 3 là từ chối
         $list = Trade::where('id', '!=', 0)->orderBy('updated_at', 'desc');
-        if ($status != 0 ){
-            $list = $list->where('status', $status);
+        if ($checkedStatus != 0 ){
+            $list = $list->where('status', $checkedStatus);
         };
         $list = $list->paginate(10);
-        return view('admin.post.list',['list' =>$list, 'checkedStatus' => $status]);
+        return view('admin.post.list',['list' =>$list, 'checkedStatus' => $checkedStatus]);
     }
 
     /**

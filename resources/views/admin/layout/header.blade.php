@@ -25,8 +25,6 @@
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                         <a class="nav-link" href="/admin/post-list">Danh sách bài đăng</a>
-                        <a class="nav-link" href="">Text</a>
-                        <a class="nav-link" href="">Text</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMembers" aria-expanded="false" aria-controls="collapseMembers">
@@ -37,8 +35,6 @@
                 <div class="collapse" id="collapseMembers" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="/admin/account-list">Danh sách thành viên</a>
-                        <a class="nav-link" href="">Text</a>
-                        <a class="nav-link" href="">Text</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePage" aria-expanded="false" aria-controls="collapsePage">

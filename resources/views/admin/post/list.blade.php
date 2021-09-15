@@ -1,4 +1,4 @@
-@extends('admin.layout.master')
+    @extends('admin.layout.master')
 
 @section('content')
     <div id="layoutSidenav_content">
@@ -51,7 +51,7 @@
                                                          style="width: 120px; height: 120px" alt=""></td>
                                                 <td>{{ $item->description }}</td>
                                                 <td>{{ $item->category->category_name }}</td>
-                                                <td>{{ $item->status_trade }}</td>
+                                                <td class="{{ $item->tradeColor}}">{{ $item->tradeStatus     }}</td>
                                                 <td>
                                                     <form action="/admin/post-list/{{$item->id}}" method="post">
                                                         @csrf

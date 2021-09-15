@@ -64,6 +64,27 @@ class Trade extends Model
             }
     }
 
+    public function getTradeColorAttribute(){
+
+        if($this->status == 1){
+            return 'text-warning';
+        }elseif ($this->status == 2) {
+            return 'text-success';
+        } else {
+            return 'text-danger';
+        }
+    }
+    public function getTradeStatusAttribute(){
+
+        if($this->status == 1){
+            return 'Chưa duyệt';
+        }elseif ($this->status == 2) {
+            return 'Đã duyệt';
+        } else {
+            return 'Đã từ chối';
+        }
+    }
+
     public function getCountStringAttribute(){
 
         $countString = strlen($this->content);
@@ -77,7 +98,7 @@ class Trade extends Model
 
     public function getAcceptButtonAttribute(){
         $disabled = $this->status;
-        if ($disabled == 1 or $disabled == 3){
+        if ($disabled == 1){
             return '';
         } else {
             return 'disabled';
@@ -85,7 +106,7 @@ class Trade extends Model
     }
     public function getCancelButtonAttribute(){
         $disabled = $this->status;
-        if ($disabled == 1 or $disabled == 2){
+        if ($disabled == 1){
             return '';
         } else {
             return 'disabled';
