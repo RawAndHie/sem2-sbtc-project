@@ -51,7 +51,7 @@ class RequestDetailController extends Controller
         $account_request = AccountClient::find($trade_request->account_id);
         $account = AccountClient::find($trade->account_id);
         alert()->success('Success', 'Bạn đã đồng ý trao đổi, người yêu cầu trao đổi sẽ nhận được thông tin liên hệ');
-        $data = array('phone'=>$account->phone,'image'=>$account->phone, 'full_name'=>$account_request->full_name);
+        $data = array('phone'=>$account->phone,'title'=>$trade->title, 'full_name'=>$account_request->full_name);
         Mail::send('emails.accept', $data, function($message) use ($account_request) {
             $message->to($account_request->gmail, 'Tutorials Point')->subject
             ('Thông báo về yêu cầu trao đổi');

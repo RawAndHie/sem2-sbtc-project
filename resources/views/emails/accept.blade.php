@@ -360,7 +360,7 @@
                                 <tr>
                                     <td>
                                         <p>Xin chào, {{$full_name}}</p>
-                                        <p>Yêu cầu trao đổi của bạn đẫ được đồng ý, hãy liên lạc theo số điện thoại {{$phone}}</p>
+                                        <p>Yêu cầu trao đổi {{$title}} của bạn đẫ được đồng ý, hãy liên lạc theo số điện thoại {{$phone}}</p>
                                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                                             <tbody>
                                             <tr>
